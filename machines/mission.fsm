@@ -1,0 +1,380 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Universal Mission Machine">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Universal_Mission",0,250,350.000000,-75.000000,450.000000,-25.000000,0.000000,"Universal" \n "Mission" \n "Machine"};
+item1[] = {"Not_looping",8,218,350.000000,0.000000,450.000000,50.000000,0.000000,"Not looping"};
+item2[] = {"Set_to_loop",5,218,475.000000,-75.000000,575.000000,-25.000000,1.000000,"Set to" \n "loop"};
+item3[] = {"Wait___",2,250,475.000000,0.000000,575.000000,50.000000,0.000000,"Wait..."};
+item4[] = {"Ready_to_spawn",4,218,475.000000,75.000000,575.000000,125.000000,0.000000,"Ready to" \n "spawn"};
+item5[] = {"Wait_for_complet",4,218,475.000000,375.000000,575.000000,425.000000,0.000000,"Wait for" \n "completion"};
+item6[] = {"Get_result_from",2,250,600.000000,375.000000,700.000000,425.000000,0.000000,"Get result from" \n "FSM & delete" \n "markers"};
+item7[] = {"Let_s_choose_a_m",2,250,350.000000,75.000000,450.000000,125.000000,0.000000,"Let's choose" \n "a mission"};
+item8[] = {"Success",4,218,525.000000,300.000000,625.000000,350.000000,1.000000,"Success"};
+item9[] = {"Failure",8,4314,675.000000,300.000000,775.000000,350.000000,0.000000,"Failure"};
+item10[] = {"What_do__FSM_",2,250,600.000000,225.000000,700.000000,275.000000,0.000000,"What do," \n "FSM?"};
+item11[] = {"Already_exists_",4,218,225.000000,75.000000,325.000000,125.000000,1.000000,"Already" \n "exists?"};
+item12[] = {"What_do__FSM__1",2,250,100.000000,75.000000,200.000000,125.000000,0.000000,"What do," \n "FSM?"};
+item13[] = {"Can_be_duplicate",5,218,225.000000,150.000000,325.000000,200.000000,0.000000,"Can be" \n "duplicates"};
+item14[] = {"Must_be_unique",5,218,225.000000,0.000000,325.000000,50.000000,1.000000,"Must be" \n "unique"};
+item15[] = {"Mission_is_uniqu",8,218,350.000000,150.000000,450.000000,200.000000,0.000000,"Mission is" \n "unique"};
+item16[] = {"Create_unique_marker",2,250,350.000000,225.000000,450.000000,275.000000,0.000000,"Create unique" \n "marker name"};
+item17[] = {"Unique_variable",8,218,350.000000,300.000000,450.000000,350.000000,0.000000,"Unique" \n "variable" \n "found"};
+item18[] = {"Name_not_unique",4,218,225.000000,225.000000,325.000000,275.000000,1.000000,"Name not" \n "unique"};
+item19[] = {"Create_markers_",2,250,350.000000,375.000000,450.000000,425.000000,0.000000,"Create markers" \n "& load" \n "mission FSM"};
+item20[] = {"No_loop__Finish",8,218,725.000000,225.000000,825.000000,275.000000,0.000000,"No loop." \n "Finish."};
+item21[] = {"Loop_",5,218,600.000000,0.000000,700.000000,50.000000,1.000000,"Loop?"};
+item22[] = {"Delete_Machine",1,250,850.000000,225.000000,950.000000,275.000000,0.000000,"Delete" \n "Machine"};
+item23[] = {"No_missions_to_spawn",4,218,225.000000,-75.000000,325.000000,-25.000000,1.000000,"No missions" \n "to spawn?"};
+item24[] = {"Delete_Machine_1",1,250,100.000000,-75.000000,200.000000,-25.000000,0.000000,"Delete" \n "Machine"};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {0,23};
+link3[] = {1,7};
+link4[] = {2,3};
+link5[] = {3,4};
+link6[] = {4,7};
+link7[] = {5,6};
+link8[] = {6,8};
+link9[] = {6,9};
+link10[] = {7,11};
+link11[] = {7,15};
+link12[] = {8,10};
+link13[] = {9,10};
+link14[] = {10,20};
+link15[] = {10,21};
+link16[] = {11,12};
+link17[] = {12,13};
+link18[] = {12,14};
+link19[] = {13,16};
+link20[] = {14,7};
+link21[] = {15,16};
+link22[] = {16,17};
+link23[] = {16,18};
+link24[] = {17,19};
+link25[] = {18,16};
+link26[] = {19,5};
+link27[] = {20,22};
+link28[] = {21,3};
+link29[] = {23,24};
+globals[] = {25.000000,1,0,0,0,640,480,1,35,6316128,1,-249.984467,1029.074707,674.179016,-227.696289,1042,920,1};
+window[] = {2,-1,-1,-1,-1,819,-1868,-428,52,3,1060};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Universal Mission Machine";
+  class States
+  {
+    /*%FSM<STATE "Universal_Mission">*/
+    class Universal_Mission
+    {
+      name = "Universal_Mission";
+      init = /*%FSM<STATEINIT""">*/"//EXAMPLE RUN" \n
+       "// [""side"", [], true] execFSM ""machines\side.fsm"";" \n
+       "// [""side"", [""destroySomething"", ""captureTheDude""]] execFSM ""machines\side.fsm"";" \n
+       "" \n
+       "_type = _this select 0;" \n
+       "_loop = if ((count _this) > 2) then { _this select 2 } else { false };" \n
+       "_missions = if ((count _this) > 1 && (count (_this select 1)) > 0) then" \n
+       "{" \n
+       "	_this select 1" \n
+       "} else {" \n
+       "	[format[""AW_%1"", _type]] call BIS_fnc_getCfgSubClasses" \n
+       "};" \n
+       "" \n
+       "_unique = false; _tmp = 0;" \n
+       "call compile format[""_tmp = PARAMS_%1Unique;"", _type];" \n
+       "if (_tmp == 1) then { _unique = true; };"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Set_to_loop">*/
+        class Set_to_loop
+        {
+          priority = 1.000000;
+          to="Wait___";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_loop"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "No_missions_to_spawn">*/
+        class No_missions_to_spawn
+        {
+          priority = 1.000000;
+          to="Delete_Machine_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(count _missions) < 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Not_looping">*/
+        class Not_looping
+        {
+          priority = 0.000000;
+          to="Let_s_choose_a_m";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Wait___">*/
+    class Wait___
+    {
+      name = "Wait___";
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (random 30));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Ready_to_spawn">*/
+        class Ready_to_spawn
+        {
+          priority = 0.000000;
+          to="Let_s_choose_a_m";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Get_result_from">*/
+    class Get_result_from
+    {
+      name = "Get_result_from";
+      init = /*%FSM<STATEINIT""">*/"{ [_x] call AW_fnc_deleteMarker; } forEach [_missionMarker, _missionIcon];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Success">*/
+        class Success
+        {
+          priority = 1.000000;
+          to="What_do__FSM_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_succeeded"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"[" \n
+           "	[""type"", format[""%1_completed"", _type]]," \n
+           "	[""message"", _title]" \n
+           "] call AW_fnc_showNotification;" \n
+           "" \n
+           "[_code, ""SUCCEEDED"", false] call BIS_fnc_taskSetState;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Failure">*/
+        class Failure
+        {
+          priority = 0.000000;
+          to="What_do__FSM_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"[" \n
+           "	[""type"", format[""%1_failed"", _type]]," \n
+           "	[""message"", _title]" \n
+           "] call AW_fnc_showNotification;" \n
+           "" \n
+           "[_code, ""FAILED"", false] call BIS_fnc_taskSetState;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Let_s_choose_a_m">*/
+    class Let_s_choose_a_m
+    {
+      name = "Let_s_choose_a_m";
+      init = /*%FSM<STATEINIT""">*/"_mission = _missions call BIS_fnc_selectRandom;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Already_exists_">*/
+        class Already_exists_
+        {
+          priority = 1.000000;
+          to="What_do__FSM__1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_exists = false;" \n
+           "_code = format[""%1_%2"", _type, _mission];" \n
+           "{" \n
+           "	if ([_code, _x] call BIS_fnc_inString) exitWith { _exists = true; };" \n
+           "} forEach allMapMarkers;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_exists"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Mission_is_uniqu">*/
+        class Mission_is_uniqu
+        {
+          priority = 0.000000;
+          to="Create_unique_marker";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_number = 1;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "What_do__FSM_">*/
+    class What_do__FSM_
+    {
+      name = "What_do__FSM_";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Loop_">*/
+        class Loop_
+        {
+          priority = 1.000000;
+          to="Wait___";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_loop"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "No_loop__Finish">*/
+        class No_loop__Finish
+        {
+          priority = 0.000000;
+          to="Delete_Machine";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "What_do__FSM__1">*/
+    class What_do__FSM__1
+    {
+      name = "What_do__FSM__1";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Must_be_unique">*/
+        class Must_be_unique
+        {
+          priority = 1.000000;
+          to="Let_s_choose_a_m";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_unique"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Can_be_duplicate">*/
+        class Can_be_duplicate
+        {
+          priority = 0.000000;
+          to="Create_unique_marker";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_number = 1;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Create_unique_marker">*/
+    class Create_unique_marker
+    {
+      name = "Create_unique_marker";
+      init = /*%FSM<STATEINIT""">*/"_code = format[""%1_%2_%3"", _type, _mission, _number];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Name_not_unique">*/
+        class Name_not_unique
+        {
+          priority = 1.000000;
+          to="Create_unique_marker";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_exists = false;" \n
+           "{" \n
+           "	if (_code == _x) exitWith { _exists = true; };" \n
+           "} forEach allMapMarkers;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_exists"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_number = _number + 1;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Unique_variable">*/
+        class Unique_variable
+        {
+          priority = 0.000000;
+          to="Create_markers_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Create_markers_">*/
+    class Create_markers_
+    {
+      name = "Create_markers_";
+      init = /*%FSM<STATEINIT""">*/"_missionDetails = missionConfigFile >> format[""AW_%1"", _type] >> _mission;" \n
+       "_title = getText (_missionDetails >> ""title"");" \n
+       "_description = getText (_missionDetails >> ""description"");" \n
+       "_pos = call compile (getText (_missionDetails >> ""pos""));" \n
+       "_fsmHandle = [_type, _mission, _code, _pos] call AW_fnc_startMission;" \n
+       "_fsmHandle setFSMVariable [""_thisFSM"", _fsmHandle];" \n
+       "" \n
+       "_fuzzyPos = [_pos, 300] call AW_fnc_getFuzzyPos;" \n
+       "_fuzzyPos = _pos;" \n
+       "" \n
+       "_missionMarker = [format[""%1Marker"", _type], _code, _fuzzyPos] call AW_fnc_createMarker;" \n
+       "_missionIcon = [format[""%1Icon"", _type], format[""%1_icon"", _code], _fuzzyPos, format[""%1: %2"", _type, _title]] call AW_fnc_createMarker;" \n
+       "[[""type"", format[""%1_created"", _type]], [""message"", _title]] call AW_fnc_showNotification;" \n
+       "[_code, true, [_description, _title, _missionIcon], _pos, ""CREATED"", 5, false, true] call BIS_fnc_setTask;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Wait_for_complet">*/
+        class Wait_for_complet
+        {
+          priority = 0.000000;
+          to="Get_result_from";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_result = completedFSM _fsmHandle;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_result"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_succeeded = result;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Delete_Machine">*/
+    class Delete_Machine
+    {
+      name = "Delete_Machine";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Delete_Machine_1">*/
+    class Delete_Machine_1
+    {
+      name = "Delete_Machine_1";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Universal_Mission";
+  finalStates[] =
+  {
+    "Delete_Machine",
+    "Delete_Machine_1",
+  };
+};
+/*%FSM</COMPILE>*/

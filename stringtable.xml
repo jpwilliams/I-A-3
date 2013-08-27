@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Virtual Ammobox System">
+	<Package name="Main">
+		<Key ID="STR_VAS_Main_Weapons">
+			<Original>Weapons</Original>
+			<German>Waffen</German>
+		</Key>
+		<Key ID="STR_VAS_Main_Magazines">
+			<Original>Magazines</Original>
+			<German>Magazine</German>
+		</Key>
+		<Key ID="STR_VAS_Main_Items">
+			<Original>Items</Original>
+			<German>Gegenstände</German>
+		</Key>
+		<Key ID="STR_VAS_Main_Backpacks">
+			<Original>Backpacks</Original>
+			<German>Rucksäcke</German>
+		</Key>
+		<Key ID="STR_VAS_Main_Goggles">
+			<Original>Goggles</Original>
+			<German>Goggles</German>
+		</Key>
+		<Key ID="STR_VAS_Main_Uniforms">
+			<Original>Uniforms</Original>
+			<German>Uniformen</German>
+		</Key>
+		<Key ID="STR_VAS_Main_Vests">
+			<Original>Vests</Original>
+			<German>Vesten</German>
+		</Key>
+		<Key ID="STR_VAS_Main_Headgear">
+			<Original>Headgear</Original>
+			<German>Kopfbekleidung</German>
+		</Key>
+		<Key ID="STR_VAS_Main_Attachments">
+			<Original>Attachments</Original>
+			<German>Befestigungsgegenstände</German>
+		</Key>
+		<Key ID="STR_VAS_Main_Misc">
+			<Original>Misc</Original>
+			<German>Diverses</German>
+		</Key>
+		<Key ID="STR_VAS_Main_btnAdd">
+			<Original>Add Item</Original>
+			<German>Gegenstand hinzufügen</German>
+		</Key>
+		<Key ID="STR_VAS_Main_btnRemove">
+			<Original>Remove Item</Original>
+			<German>Gegenstand entfernen</German>
+		</Key>
+		<Key ID="STR_VAS_Main_btnClose">
+			<Original>Close</Original>
+			<German>schließen</German>
+		</Key>
+		<Key ID="STR_VAS_Main_btnLoad">
+			<Original>Load Gear</Original>
+			<German>Ausrüstung laden</German>
+		</Key>
+		<Key ID="STR_VAS_Main_btnSave">
+			<Original>Save Gear</Original>
+			<German>Ausrüstung speichern</German>
+		</Key>
+		<Key ID="STR_VAS_Main_btnRemoveAll">
+			<Original>Remove All</Original>
+			<German>alles entfernen</German>
+		</Key>
+		<Key ID="STR_VAS_Main_VirtGear">
+			<Original>Virtual Ammobox</Original>
+		</Key>
+		<Key ID="STR_VAS_Main_YCG">
+			<Original>Your Current Gear</Original>
+			<German>Ihre momentane Ausrüstung</German>
+		</Key>
+		<Key ID="STR_Vas_Main_CL">
+			<Original>Custom Loadout</Original>
+			<German>angepasste Ausrüstung</German>
+		</Key>
+		<Key ID="STR_Vas_Main_Rifles">
+			<Original>Rifles</Original>
+			<German>Gewehre</German>
+		</Key>
+		<Key ID="STR_Vas_Main_Scoped">
+			<Original>Scoped</Original>
+		</Key>
+		<Key ID="STR_Vas_Main_Heavy">
+			<Original>Heavy</Original>
+			<German>Schwere Waffen</German>
+		</Key>
+		<Key ID="STR_Vas_Main_Launcher">
+			<Original>Launcher</Original>
+			<German>Raketenwerfer</German>
+		</Key>
+		<Key ID="STR_Vas_Main_Pistols">
+			<Original>Pistols</Original>
+			<German>Pistolen</German>
+		</Key>
+	</Package>
+	<Package name="LoadGear">
+		<Key ID="STR_VAS_Load_Title">
+				<Original>Virtual Ammobox System - Load Gear</Original>
+				<English>Virtual Ammobox System - Load Gear</English>
+			</Key>
+		<Key ID="STR_VAS_Load_LOR">
+			<Original>Load On Respawn</Original>
+			<German>beim Respawn laden</German>
+		</Key>
+		<Key ID="STR_VAS_Load_btnLoad">
+			<Original>Load</Original>
+			<German>laden</German>
+		</Key>
+		<Key ID="STR_VAS_Load_btnDelete">
+			<Original>Delete</Original>
+			<German>löschen</German>
+		</Key>
+	</Package>
+	<Package name="SaveGear">
+		<Key ID="STR_VAS_Save_Title">
+				<Original>Virtual Ammobox System - Save Gear</Original>
+				<English>Virtual Ammobox System - Save Gear</English>
+			</Key>
+		<Key ID="STR_VAS_Save_btnSave">
+			<Original>Save</Original>
+			<German>speichern</German>
+		</Key>
+		<Key ID="STR_VAS_Save_CLN">
+			<Original>Custom Loadout Name</Original>
+		</Key>
+	</Package>
+</Project>

@@ -1,0 +1,90 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Destroy Chopper">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Destroy_Chopper",0,4346,621.253113,530.210815,711.253113,580.210815,0.000000,"Destroy" \n "Chopper" \n "Side Mission"};
+item1[] = {"Here_we_go",8,218,622.421570,600.105347,712.421570,650.105347,0.000000,"Here we go"};
+item2[] = {"Chopper_destroye",4,218,620.305725,748.854797,710.305725,798.854797,0.000000,"Chopper" \n "destroyed"};
+item3[] = {"Mission_success",1,250,621.154541,831.196167,711.154541,881.196167,0.000000,"Mission" \n "success!"};
+item4[] = {"Create_Side_Miss",2,250,620.564209,675.335449,710.564209,725.335449,0.000000,"Create" \n "Side Mission"};
+link0[] = {0,1};
+link1[] = {1,4};
+link2[] = {2,3};
+link3[] = {4,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,11,6316128,1,148.338150,1171.237793,1169.633911,389.312531,1205,920,1};
+window[] = {2,-1,-1,-1,-1,838,78,1518,78,3,1223};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Destroy Chopper";
+  class States
+  {
+    /*%FSM<STATE "Destroy_Chopper">*/
+    class Destroy_Chopper
+    {
+      name = "Destroy_Chopper";
+      init = /*%FSM<STATEINIT""">*/"_pos = _this; //REQUIRED! This is the position you've been given!"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Here_we_go">*/
+        class Here_we_go
+        {
+          priority = 0.000000;
+          to="Create_Side_Miss";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Mission_success">*/
+    class Mission_success
+    {
+      name = "Mission_success";
+      init = /*%FSM<STATEINIT""">*/"_result = true;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Create_Side_Miss">*/
+    class Create_Side_Miss
+    {
+      name = "Create_Side_Miss";
+      init = /*%FSM<STATEINIT""">*/"_randomDir = (random 360);" \n
+       "_hangar = ""Land_TentHangar_V1_F"" createVehicle _pos;" \n
+       "_hangar setPos [(getPos _hangar select 0), (getPos _hangar select 1), ((getPos _hangar select 2) - 1)];" \n
+       "_chopper = ""O_Heli_Light_02_F"" createVehicle _pos;" \n
+       "{ _x setDir _randomDir; } forEach [_chopper, _hangar];" \n
+       "_chopper setVehicleLock ""LOCKED"";" \n
+       "" \n
+       "_sideUnits = [EAST, 5, _pos, 300] call AW_fnc_spawnEnemy;" \n
+       "[_sideUnits, [[""defend"", _pos, 150], [""patrol"", _pos, 300]]] call AW_fnc_setBehaviour;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Chopper_destroye">*/
+        class Chopper_destroye
+        {
+          priority = 0.000000;
+          to="Mission_success";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _chopper"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Destroy_Chopper";
+  finalStates[] =
+  {
+    "Mission_success",
+  };
+};
+/*%FSM</COMPILE>*/

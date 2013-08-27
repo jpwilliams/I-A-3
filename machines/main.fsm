@@ -1,0 +1,348 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Main AO">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Create_Main_AO",0,250,50.000000,100.000000,150.000000,150.000000,0.000000,"Create" \n "Main AO"};
+item1[] = {"true",8,218,175.000000,100.000000,275.000000,150.000000,0.000000,"true"};
+item2[] = {"Find_Random_Loca",2,250,175.000000,175.000000,275.000000,225.000000,0.000000,"Find" \n "Random" \n "Location"};
+item3[] = {"In_last_5_targets",4,218,300.000000,175.000000,400.000000,225.000000,3.000000,"In last 5" \n "targets?"};
+item4[] = {"Players_within_1km",4,218,175.000000,250.000000,275.000000,300.000000,2.000000,"Players within" \n "1km?"};
+item5[] = {"Location_found",8,218,50.000000,175.000000,150.000000,225.000000,1.000000,"Location" \n "found"};
+item6[] = {"Create_Enemies",2,250,50.000000,250.000000,150.000000,300.000000,0.000000,"Create" \n "Enemies"};
+item7[] = {"Is_coastal_town",4,218,-75.000000,250.000000,25.000000,300.000000,2.000000,"Is" \n "coastal" \n "town?"};
+item8[] = {"Create_Enemy_Boat",2,250,-75.000000,325.000000,25.000000,375.000000,0.000000,"Create" \n "Enemy" \n "Boat Patrols"};
+item9[] = {"Finished_creatin",8,218,-75.000000,400.000000,25.000000,450.000000,0.000000,"Finished" \n "creating"};
+item10[] = {"Finished_creatin",8,218,50.000000,325.000000,150.000000,375.000000,0.000000,"Finished" \n "creating"};
+item11[] = {"Create_Task___Ma",2,4346,50.000000,400.000000,150.000000,450.000000,0.000000,"Create" \n "Task &" \n "Marker"};
+item12[] = {"Task_sent_to_all",8,218,175.000000,400.000000,275.000000,450.000000,0.000000,"Task" \n "sent to all" \n "players"};
+item13[] = {"Choose_Sub_objec",2,250,300.000000,400.000000,400.000000,450.000000,0.000000,"Choose" \n "Sub-objective"};
+item14[] = {"sub__objective_c",8,218,425.000000,400.000000,525.000000,450.000000,0.000000,"sub-" \n "objective" \n "chosen"};
+item15[] = {"Trigger_clean_up",2,250,425.000000,100.000000,525.000000,150.000000,0.000000,"Trigger" \n "clean-up" \n "scripts"};
+item16[] = {"Wait_random_time",4,218,300.000000,100.000000,400.000000,150.000000,0.000000,"Wait" \n "random" \n "time"};
+item17[] = {"Wait_for_complet",2,250,425.000000,325.000000,525.000000,375.000000,0.000000,"Wait" \n "for" \n "completion"};
+item18[] = {"Next_check_",4,218,425.000000,250.000000,525.000000,300.000000,0.000000,"Next" \n "check?"};
+item19[] = {"Do_the_checks",2,250,425.000000,175.000000,525.000000,225.000000,0.000000,"Do" \n "the" \n "checks"};
+item20[] = {"Sub__objective_not",4,218,300.000000,250.000000,400.000000,300.000000,5.000000,"Sub-" \n "objective not" \n "complete?"};
+item21[] = {"Mission_over",8,218,550.000000,100.000000,650.000000,150.000000,0.000000,"Mission" \n "over"};
+item22[] = {"Enemy_not_below",4,218,550.000000,250.000000,650.000000,300.000000,4.000000,"Enemy" \n "not below" \n "threshold?"};
+item23[] = {"____FAKE____",9,920,0.000000,0.000000,0.000000,0.000000,0.000000,"____FAKE____"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,4};
+link4[] = {2,5};
+link5[] = {3,2};
+link6[] = {4,2};
+link7[] = {5,6};
+link8[] = {6,7};
+link9[] = {6,10};
+link10[] = {7,8};
+link11[] = {8,9};
+link12[] = {9,11};
+link13[] = {10,11};
+link14[] = {11,12};
+link15[] = {12,13};
+link16[] = {13,14};
+link17[] = {14,17};
+link18[] = {15,16};
+link19[] = {16,2};
+link20[] = {17,18};
+link21[] = {18,19};
+link22[] = {19,21};
+link23[] = {19,22};
+link24[] = {21,15};
+link25[] = {22,17};
+link26[] = {20,23};
+link27[] = {23,20};
+globals[] = {25.000000,1,0,0,0,640,480,1,57,6316128,1,-148.258179,845.264160,600.734436,9.627154,1365,920,1};
+window[] = {2,-1,-1,-1,-1,812,-1868,-428,52,3,1383};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Main AO";
+  class States
+  {
+    /*%FSM<STATE "Create_Main_AO">*/
+    class Create_Main_AO
+    {
+      name = "Create_Main_AO";
+      init = /*%FSM<STATEINIT""">*/"_previousLocations = [];" \n
+       "_locations = _this select 0;" \n
+       "_number = 0;" \n
+       "_priority = 10;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Find_Random_Loca";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Find_Random_Loca">*/
+    class Find_Random_Loca
+    {
+      name = "Find_Random_Loca";
+      init = /*%FSM<STATEINIT""">*/"//find location here" \n
+       "_location = _locations call bis_fnc_selectRandom;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "In_last_5_targets">*/
+        class In_last_5_targets
+        {
+          priority = 3.000000;
+          to="Find_Random_Loca";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_location in _previousLocations"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Players_within_1km">*/
+        class Players_within_1km
+        {
+          priority = 2.000000;
+          to="Find_Random_Loca";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"({(_x distance (getMarkerPos _location)) < 1000} count playableUnits) > 0"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Location_found">*/
+        class Location_found
+        {
+          priority = 1.000000;
+          to="Create_Enemies";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_previousLocations = _previousLocations + [_location];" \n
+           "" \n
+           "if ((count _previousLocations) > 5) then" \n
+           "{" \n
+           "	_previousLocations = _previousLocations - [_previousLocations select 0];" \n
+           "};" \n
+           "" \n
+           "_pos = getMarkerPos _location;" \n
+           "_number = _number + 1;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Create_Enemies">*/
+    class Create_Enemies
+    {
+      name = "Create_Enemies";
+      init = /*%FSM<STATEINIT""">*/"_spawnedUnits = [EAST, 30, _pos, 600] call AW_fnc_spawnEnemy;" \n
+       "[_spawnedUnits, [[""defend"", _pos, 100], [""patrol"", _pos, 600]]] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Is_coastal_town">*/
+        class Is_coastal_town
+        {
+          priority = 2.000000;
+          to="Create_Enemy_Boat";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"false"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Finished_creatin">*/
+        class Finished_creatin
+        {
+          priority = 0.000000;
+          to="Create_Task___Ma";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Create_Enemy_Boat">*/
+    class Create_Enemy_Boat
+    {
+      name = "Create_Enemy_Boat";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Finished_creatin">*/
+        class Finished_creatin
+        {
+          priority = 0.000000;
+          to="Create_Task___Ma";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Create_Task___Ma">*/
+    class Create_Task___Ma
+    {
+      name = "Create_Task___Ma";
+      init = /*%FSM<STATEINIT""">*/"//DEBUG - Remove BIS_fnc_setTask notification setting!" \n
+       "//[""main"", true, [format[""Take and hold %1, eliminating forces in the area and completing any objectives HQ sees fit along the way."", _location], format[""Invade %1"", _location], _location], _pos, ""CREATED"", _priority, false, true] call BIS_fnc_setTask;" \n
+       "" \n
+       "_name = getText (missionConfigFile >> ""AW_main"" >> _location >> ""title"");" \n
+       "diag_log format[""DEBUG TIME! _name = %1"", _name];" \n
+       "" \n
+       "[[""type"", ""main_created""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
+       "_marker = [""mainMarker"", format[""main_%1"", _number], _pos] call AW_fnc_createMarker;" \n
+       "_icon = [""mainIcon"", format[""main_%1_icon"", _number], _pos, _name] call AW_fnc_createMarker;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Task_sent_to_all">*/
+        class Task_sent_to_all
+        {
+          priority = 0.000000;
+          to="Choose_Sub_objec";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Choose_Sub_objec">*/
+    class Choose_Sub_objec
+    {
+      name = "Choose_Sub_objec";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sub__objective_c">*/
+        class sub__objective_c
+        {
+          priority = 0.000000;
+          to="Wait_for_complet";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Trigger_clean_up">*/
+    class Trigger_clean_up
+    {
+      name = "Trigger_clean_up";
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (round (random 5)));" \n
+       "//DEBUG TIME"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Wait_random_time">*/
+        class Wait_random_time
+        {
+          priority = 0.000000;
+          to="Find_Random_Loca";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Wait_for_complet">*/
+    class Wait_for_complet
+    {
+      name = "Wait_for_complet";
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + 15);"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Next_check_">*/
+        class Next_check_
+        {
+          priority = 0.000000;
+          to="Do_the_checks";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Do_the_checks">*/
+    class Do_the_checks
+    {
+      name = "Do_the_checks";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Enemy_not_below">*/
+        class Enemy_not_below
+        {
+          priority = 4.000000;
+          to="Wait_for_complet";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"({ side _x == EAST && (_x distance _pos) < 600 } count allUnits) > 5"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Mission_over">*/
+        class Mission_over
+        {
+          priority = 0.000000;
+          to="Trigger_clean_up";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"//DEBUG - Don't show taskSetState notification!" \n
+           "//[""main"", ""SUCCEEDED"", false] call BIS_fnc_taskSetState;" \n
+           "[[""type"", ""main_completed""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
+           "{[_x] call AW_fnc_deleteMarker;} forEach [_marker, _icon];" \n
+           "" \n
+           "_priority = _priority + 10;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "____FAKE____">*/
+    class ____FAKE____
+    {
+      name = "____FAKE____";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Sub__objective_not">*/
+        class Sub__objective_not
+        {
+          priority = 5.000000;
+          to="____FAKE____";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_subsExist = false;" \n
+           "{ if ([""sub_"", _x] call BIS_fnc_inString) exitWith { _subsExist = true; }; } forEach allMapMarkers;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(CompletedFSM _subHandle)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Create_Main_AO";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/

@@ -1,0 +1,95 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Example Mission">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Example_Side_Mission",0,4346,625.000000,525.000000,725.000000,575.000000,0.000000,"Example" \n "Side Mission" \n "Start"};
+item1[] = {"Let_s_go_",8,218,625.000000,600.000000,725.000000,650.000000,0.000000,"Let's go!"};
+item2[] = {"Hostage_dead__FA",4,218,550.000000,750.000000,650.000000,800.000000,0.000000,"Hostage dead?" \n "FAIL"};
+item3[] = {"End_the_Mission",1,250,625.000000,825.000000,725.000000,875.000000,0.000000,"End the" \n "Mission"};
+item4[] = {"Create_Side_Miss",2,250,625.000000,675.000000,725.000000,725.000000,0.000000,"Create" \n "Side Mission"};
+item5[] = {"Enemy_dead__SUCCEED",4,218,700.000000,750.000000,800.000000,800.000000,0.000000,"Enemy dead?" \n "SUCCEED!"};
+link0[] = {0,1};
+link1[] = {1,4};
+link2[] = {2,3};
+link3[] = {4,2};
+link4[] = {4,5};
+link5[] = {5,3};
+globals[] = {25.000000,1,0,0,0,640,480,1,13,6316128,1,148.338150,1171.237793,1169.633911,389.312531,1205,911,1};
+window[] = {2,-1,-1,-1,-1,835,75,1515,75,3,1223};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Example Mission";
+  class States
+  {
+    /*%FSM<STATE "Example_Side_Mission">*/
+    class Example_Side_Mission
+    {
+      name = "Example_Side_Mission";
+      init = /*%FSM<STATEINIT""">*/"_pos = _this select 0; //REQUIRED! This is the position you've been given!"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Let_s_go_">*/
+        class Let_s_go_
+        {
+          priority = 0.000000;
+          to="Create_Side_Miss";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "End_the_Mission">*/
+    class End_the_Mission
+    {
+      name = "End_the_Mission";
+      init = /*%FSM<STATEINIT""">*/"[_hostage, _enemy] call AW_fnc_collectGarbage;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Create_Side_Miss">*/
+    class Create_Side_Miss
+    {
+      name = "Create_Side_Miss";
+      init = /*%FSM<STATEINIT""">*/"//spawn 1 ""hostage""" \n
+       "//spawn 1 ""enemy"""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Enemy_dead__SUCCEED">*/
+        class Enemy_dead__SUCCEED
+        {
+          priority = 0.000000;
+          to="End_the_Mission";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _enemy"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_result = true;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Hostage_dead__FA">*/
+        class Hostage_dead__FA
+        {
+          priority = 0.000000;
+          to="End_the_Mission";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _hostage"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_result = false;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Example_Side_Mission";
+  finalStates[] =
+  {
+    "End_the_Mission",
+  };
+};
+/*%FSM</COMPILE>*/

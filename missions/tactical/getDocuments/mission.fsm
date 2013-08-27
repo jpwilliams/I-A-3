@@ -1,0 +1,1171 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Get the Documents">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Get_the_Message",0,250,75.000000,-225.000000,175.000000,-175.000000,0.000000,"Get the" \n "Message" \n "Side Mission"};
+item1[] = {"Let_s_go_",8,218,75.000000,-150.000000,175.000000,-100.000000,0.000000,"Let's go!"};
+item2[] = {"Create_officer_",2,250,75.000000,-75.000000,175.000000,-25.000000,0.000000,"Create officer," \n "troops, escape" \n "chopper + radio, gun bag"};
+item3[] = {"Captured",4,218,-225.000000,-75.000000,-125.000000,-25.000000,2.000000,"Captured"};
+item4[] = {"Spooked",4,218,75.000000,0.000000,175.000000,50.000000,1.000000,"Spooked"};
+item5[] = {"Dead",4,218,375.000000,-75.000000,475.000000,-25.000000,0.000000,"Dead"};
+item6[] = {"What_do_",2,250,375.000000,150.000000,475.000000,200.000000,0.000000,"What do?"};
+item7[] = {"Papers_on_corpse",4,218,500.000000,225.000000,600.000000,275.000000,1.000000,"Papers" \n "on corpse" \n "(small chance)"};
+item8[] = {"Nothing__FAIL",8,218,375.000000,225.000000,475.000000,275.000000,0.000000,"Nothing." \n "FAIL"};
+item9[] = {"FAIL_No_papers_on",1,250,375.000000,300.000000,475.000000,350.000000,0.000000,"FAIL" \n "No papers" \n "on corpse"};
+item10[] = {"Papers_shot__unr",4,218,250.000000,225.000000,350.000000,275.000000,2.000000,"Papers shot;" \n "unreadable"};
+item11[] = {"Where_ya_gonna_go",2,250,75.000000,350.000000,175.000000,400.000000,0.000000,"Where ya" \n "gonna go?"};
+item12[] = {"Run_to_chopper",4,218,450.000000,575.000000,550.000000,625.000000,1.000000,"Run to" \n "chopper"};
+item13[] = {"Run_to_radio__if",4,218,-350.000000,425.000000,-250.000000,475.000000,1.000000,"Run to" \n "radio" \n "(if near)"};
+item14[] = {"Run_to_gun__small",4,218,-225.000000,725.000000,-125.000000,775.000000,1.000000,"Run to" \n "gun" \n "(small chance)" \n "(if near)"};
+item15[] = {"Set_talk_action",2,250,-350.000000,-75.000000,-250.000000,-25.000000,0.000000,"Set talk action;" \n "knows where" \n "papers are?"};
+item16[] = {"On_officer__more",4,218,-225.000000,225.000000,-125.000000,275.000000,0.000000,"On officer" \n "(more inclined" \n "if hurt)"};
+item17[] = {"__Fuck_you____not",4,218,-100.000000,150.000000,0.000000,200.000000,2.000000,"""Fuck you.""" \n "(not if hurt)"};
+item18[] = {"RUUUUUN_",2,250,575.000000,650.000000,675.000000,700.000000,0.000000,"RUUUUUN!"};
+item19[] = {"Gets_into_choppe",4,218,700.000000,650.000000,800.000000,700.000000,1.000000,"Gets into" \n "chopper"};
+item20[] = {"Chopper_don_t_exist",4,218,450.000000,650.000000,550.000000,700.000000,0.000000,"Chopper" \n "don't exist!"};
+item21[] = {"Wait_for_some_cool",2,250,825.000000,650.000000,925.000000,700.000000,0.000000,"Wait for some" \n "cool shit to" \n "happen"};
+item22[] = {"Captured",4,218,700.000000,725.000000,800.000000,775.000000,0.000000,"Captured"};
+item23[] = {"Chopper_got_away",4,218,950.000000,650.000000,1050.000000,700.000000,2.000000,"Chopper got" \n "away" \n "(>2000m)"};
+item24[] = {"Chopper_down_BUT",4,218,950.000000,725.000000,1050.000000,775.000000,1.000000,"Chopper down" \n "BUT ALIVE"};
+item25[] = {"Woo_chase_sequence",2,250,-350.000000,500.000000,-250.000000,550.000000,0.000000,"Woo chase" \n "sequence!"};
+item26[] = {"Wait_for_even_more",2,250,1075.000000,725.000000,1175.000000,775.000000,0.000000,"Wait for even" \n "more cool shit" \n "to happen"};
+item27[] = {"got_away___2000m",4,218,1200.000000,650.000000,1300.000000,700.000000,1.000000,"got away" \n "(>2000m)"};
+item28[] = {"Captured",4,218,1200.000000,800.000000,1300.000000,850.000000,0.000000,"Captured"};
+item29[] = {"FAIL_Officer_dead",1,250,825.000000,800.000000,925.000000,850.000000,0.000000,"FAIL" \n "Officer dead;" \n "corpse lost"};
+item30[] = {"Dead",4,218,-475.000000,575.000000,-375.000000,625.000000,0.000000,"Dead"};
+item31[] = {"Shot_Papers__if",4,218,-100.000000,225.000000,0.000000,275.000000,1.000000,"Shot Papers" \n "(if hurt)" \n "(small chance)"};
+item32[] = {"Dead",4,218,700.000000,575.000000,800.000000,625.000000,0.000000,"Dead"};
+item33[] = {"He_gots_shot_in",4,218,825.000000,725.000000,925.000000,775.000000,0.000000,"He gots shot" \n "in the chopper!"};
+item34[] = {"SUCCESS_Papers_on",1,250,500.000000,300.000000,600.000000,350.000000,0.000000,"SUCCESS" \n "Papers on" \n "corpse"};
+item35[] = {"Units_more_than",4,218,-100.000000,0.000000,0.000000,50.000000,3.000000,"Units" \n "more than" \n "10m away"};
+item36[] = {"Just_go_SOMEWHERE",8,218,75.000000,500.000000,175.000000,550.000000,0.000000,"Just go" \n "SOMEWHERE" \n "(last resort)"};
+item37[] = {"Get_going_",2,250,-350.000000,800.000000,-250.000000,850.000000,0.000000,"Get going!"};
+item38[] = {"Get_gun",4,218,-475.000000,800.000000,-375.000000,850.000000,0.000000,"Get gun"};
+item39[] = {"Dead",4,218,-475.000000,875.000000,-375.000000,925.000000,0.000000,"Dead"};
+item40[] = {"Engage_until_hur",2,250,-600.000000,800.000000,-500.000000,850.000000,0.000000,"Engage until hurt"};
+item41[] = {"Captured",4,218,-725.000000,800.000000,-625.000000,850.000000,0.000000,"Captured"};
+item42[] = {"Dead",4,218,-350.000000,75.000000,-250.000000,125.000000,4.000000,"Dead"};
+item43[] = {"SUCCESS_Papers_on_1",1,250,-225.000000,300.000000,-125.000000,350.000000,0.000000,"SUCCESS" \n "Papers on" \n "Officer"};
+item44[] = {"FAIL_Papers_have",1,250,250.000000,300.000000,350.000000,350.000000,0.000000,"FAIL" \n "Papers have" \n "been shot"};
+item45[] = {"",7,210,746.000000,-54.000000,754.000000,-45.999996,0.000000,""};
+item46[] = {"Captured",4,218,-475.000000,725.000000,-375.000000,775.000000,0.000000,"Captured"};
+item47[] = {"Wait_for_action",4,218,-225.000000,75.000000,-125.000000,125.000000,0.000000,"Wait for" \n "action trigger"};
+item48[] = {"Captured",4,218,-475.000000,500.000000,-375.000000,550.000000,0.000000,"Captured"};
+item49[] = {"Get_to_radio",4,218,-350.000000,575.000000,-250.000000,625.000000,0.000000,"Get to" \n "radio"};
+item50[] = {"Transmit_coords",2,250,-350.000000,650.000000,-250.000000,700.000000,0.000000,"Transmit" \n "coords;" \n "spawn PT"};
+item51[] = {"Run_again_",4,218,-225.000000,575.000000,-125.000000,625.000000,0.000000,"Run again!"};
+item52[] = {"Going_somewhere",2,250,75.000000,575.000000,175.000000,625.000000,0.000000,"Going" \n "somewhere"};
+item53[] = {"Dead",4,218,200.000000,650.000000,300.000000,700.000000,0.000000,"Dead"};
+item54[] = {"Got_away___1000m",4,218,75.000000,650.000000,175.000000,700.000000,0.000000,"Got away" \n "(>1000m)"};
+item55[] = {"Dead",4,218,1200.000000,725.000000,1300.000000,775.000000,0.000000,"Dead"};
+item56[] = {"Captured",4,218,-50.000000,650.000000,50.000000,700.000000,0.000000,"Captured"};
+item57[] = {"What_do__1",2,250,-225.000000,150.000000,-125.000000,200.000000,0.000000,"What do?"};
+item58[] = {"FAIL_Shot_Papers",1,250,-100.000000,300.000000,0.000000,350.000000,0.000000,"FAIL" \n "Shot Papers"};
+item59[] = {"FAIL_Lost_Office",1,250,75.000000,725.000000,175.000000,775.000000,0.000000,"FAIL" \n "Lost Officer"};
+item60[] = {"FAIL_Lost_Office_1",1,250,1075.000000,650.000000,1175.000000,700.000000,0.000000,"FAIL" \n "Lost Officer"};
+item61[] = {"Dead",4,218,-600.000000,875.000000,-500.000000,925.000000,0.000000,"Dead"};
+item62[] = {"",7,210,1371.000000,746.000000,1379.000000,754.000000,0.000000,""};
+item63[] = {"",7,210,1371.000000,-54.000000,1379.000000,-45.999996,0.000000,""};
+item64[] = {"",7,210,246.000000,971.000000,254.000000,979.000000,0.000000,""};
+item65[] = {"",7,210,1371.000000,971.000000,1379.000000,979.000000,0.000000,""};
+item66[] = {"",7,210,-429.000000,971.000000,-421.000000,979.000000,0.000000,""};
+item67[] = {"",7,210,-554.000000,971.000000,-546.000000,979.000000,0.000000,""};
+item68[] = {"",7,210,-804.000000,596.000000,-796.000000,604.000000,0.000000,""};
+item69[] = {"",7,210,-804.000000,971.000000,-796.000000,979.000000,0.000000,""};
+item70[] = {"",7,210,-804.000000,96.000008,-796.000000,104.000000,0.000000,""};
+item71[] = {"",7,210,746.000000,1021.000000,754.000000,1029.000000,0.000000,""};
+item72[] = {"",7,210,-854.000000,1021.000000,-846.000000,1029.000000,0.000000,""};
+item73[] = {"",7,210,-854.000000,-54.000023,-846.000000,-45.999977,0.000000,""};
+item74[] = {"",7,210,1246.000000,1021.000000,1254.000000,1029.000000,0.000000,""};
+item75[] = {"",7,210,-4.000000,1021.000000,4.000000,1029.000000,0.000000,""};
+item76[] = {"",7,210,-854.000000,821.000000,-846.000000,829.000000,0.000000,""};
+item77[] = {"",7,210,-854.000000,746.000000,-846.000000,754.000000,0.000000,""};
+item78[] = {"",7,210,-854.000000,521.000061,-846.000000,529.000000,0.000000,""};
+item79[] = {"And_to_the_actio",8,218,-350.000000,0.000000,-250.000000,50.000000,0.000000,"And to" \n "the actions"};
+item80[] = {"Add_action",2,4346,-225.000000,0.000000,-125.000000,50.000000,0.000000,"Add" \n "action"};
+item81[] = {"Add_dead_marker",2,250,500.000000,-75.000000,600.000000,-25.000000,0.000000,"Add dead marker"};
+item82[] = {"And_to_the_actions",8,218,500.000000,0.000000,600.000000,50.000000,0.000000,"And to" \n "the actions!"};
+item83[] = {"Add_action_1",2,250,375.000000,0.000000,475.000000,50.000000,0.000000,"Add action"};
+item84[] = {"Wait_for_action",4,218,375.000000,75.000000,475.000000,125.000000,0.000000,"Wait for" \n "action trigger"};
+item85[] = {"Damaged__JUMP_",4,218,950.000000,800.000000,1050.000000,850.000000,0.000000,"Damaged?" \n "JUMP!"};
+item86[] = {"Wait_for_it___",2,250,1000.000000,875.000000,1100.000000,925.000000,0.000000,"Wait for it..."};
+item87[] = {"Open_dat__chute",4,218,1075.000000,800.000000,1175.000000,850.000000,0.000000,"Open dat 'chute!"};
+item88[] = {"Body___wreckage",4,218,500.000000,75.000000,600.000000,125.000000,0.000000,"Body / wreckage" \n "gone?"};
+item89[] = {"FAIL_Well__fuck",1,250,625.000000,75.000000,725.000000,125.000000,0.000000,"FAIL" \n "Well, fuck."};
+item90[] = {"Wait_until_on_the",2,250,700.000000,-150.000000,800.000000,-100.000000,0.000000,"Wait until on" \n "the floor..."};
+item91[] = {"On_the_floor",4,218,500.000000,-150.000000,600.000000,-100.000000,0.000000,"On the floor"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,4};
+link4[] = {2,5};
+link5[] = {3,15};
+link6[] = {4,11};
+link7[] = {5,81};
+link8[] = {6,7};
+link9[] = {6,8};
+link10[] = {6,10};
+link11[] = {7,34};
+link12[] = {8,9};
+link13[] = {10,44};
+link14[] = {11,12};
+link15[] = {11,13};
+link16[] = {11,14};
+link17[] = {11,36};
+link18[] = {12,18};
+link19[] = {13,25};
+link20[] = {14,37};
+link21[] = {15,79};
+link22[] = {16,43};
+link23[] = {17,80};
+link24[] = {18,19};
+link25[] = {18,20};
+link26[] = {18,22};
+link27[] = {18,32};
+link28[] = {19,21};
+link29[] = {20,11};
+link30[] = {21,23};
+link31[] = {21,24};
+link32[] = {21,33};
+link33[] = {21,85};
+link34[] = {22,71};
+link35[] = {23,60};
+link36[] = {24,26};
+link37[] = {25,30};
+link38[] = {25,48};
+link39[] = {25,49};
+link40[] = {26,27};
+link41[] = {26,28};
+link42[] = {26,55};
+link43[] = {27,60};
+link44[] = {28,74};
+link45[] = {30,68};
+link46[] = {31,58};
+link47[] = {32,45};
+link48[] = {33,29};
+link49[] = {35,11};
+link50[] = {36,52};
+link51[] = {37,38};
+link52[] = {37,39};
+link53[] = {37,46};
+link54[] = {38,40};
+link55[] = {39,66};
+link56[] = {40,41};
+link57[] = {40,61};
+link58[] = {41,76};
+link59[] = {42,70};
+link60[] = {45,90};
+link61[] = {46,77};
+link62[] = {47,57};
+link63[] = {48,78};
+link64[] = {49,50};
+link65[] = {50,51};
+link66[] = {51,11};
+link67[] = {52,53};
+link68[] = {52,54};
+link69[] = {52,56};
+link70[] = {53,64};
+link71[] = {54,59};
+link72[] = {55,62};
+link73[] = {56,75};
+link74[] = {57,16};
+link75[] = {57,17};
+link76[] = {57,31};
+link77[] = {61,67};
+link78[] = {62,63};
+link79[] = {63,45};
+link80[] = {64,65};
+link81[] = {65,62};
+link82[] = {66,64};
+link83[] = {67,66};
+link84[] = {68,69};
+link85[] = {69,67};
+link86[] = {70,68};
+link87[] = {71,75};
+link88[] = {72,76};
+link89[] = {73,15};
+link90[] = {74,71};
+link91[] = {75,72};
+link92[] = {76,77};
+link93[] = {77,78};
+link94[] = {78,73};
+link95[] = {79,80};
+link96[] = {80,35};
+link97[] = {80,42};
+link98[] = {80,47};
+link99[] = {81,82};
+link100[] = {82,83};
+link101[] = {83,84};
+link102[] = {83,88};
+link103[] = {84,6};
+link104[] = {85,86};
+link105[] = {86,87};
+link106[] = {87,26};
+link107[] = {88,89};
+link108[] = {90,91};
+link109[] = {91,81};
+globals[] = {25.000000,1,0,0,0,640,480,1,132,6316128,1,-1081.694214,1559.880493,949.978210,-699.885132,1473,920,1};
+window[] = {2,-1,-1,-1,-1,864,2024,3531,104,3,1491};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Get the Documents";
+  class States
+  {
+    /*%FSM<STATE "Get_the_Message">*/
+    class Get_the_Message
+    {
+      name = "Get_the_Message";
+      init = /*%FSM<STATEINIT""">*/"_pos = _this select 0;" \n
+       "_code = _this select 1;" \n
+       "_captureDistance = 10;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Let_s_go_">*/
+        class Let_s_go_
+        {
+          priority = 0.000000;
+          to="Create_officer_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Create_officer_">*/
+    class Create_officer_
+    {
+      name = "Create_officer_";
+      init = /*%FSM<STATEINIT""">*/"_friendlyMan = objNull;" \n
+       "_options = [""radio"", ""chopper"", ""gun""];" \n
+       "" \n
+       "_gEnemies = createGroup east;" \n
+       "_gChopper = createGroup east;" \n
+       "_gOfficer = createGroup east;" \n
+       "" \n
+       "_rDir = random 360;" \n
+       "_rDist = (4 + (random 11));" \n
+       "_pOfficer = [_pos, _rDist, _rDir] call BIS_fnc_relPos;" \n
+       "_rChopperDir = random 360;" \n
+       "" \n
+       "_officer = _gOfficer createUnit [""O_officer_F"", _pOfficer, [], 0, ""NONE""];" \n
+       "removeAllWeapons _officer;" \n
+       "removeAllItems _officer;" \n
+       "_chopper = ""O_Heli_Light_02_F"" createVehicle _pos;" \n
+       "_chopper setDir _rChopperDir;" \n
+       "[_chopper, _gChopper] call BIS_fnc_spawnCrew;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Captured">*/
+        class Captured
+        {
+          priority = 2.000000;
+          to="Set_talk_action";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_isCaptured = false;" \n
+           "" \n
+           "{" \n
+           "	if ((_x distance _officer) <= _captureDistance) then" \n
+           "	{" \n
+           "		_watching = [_x, _officer, 0] call BIS_fnc_isInFrontOf;" \n
+           "		if (_watching) exitWith { _isCaptured = true; _friendlyMan = _x; };" \n
+           "	};" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_isCaptured"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"hint ""Captured!"";"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Spooked">*/
+        class Spooked
+        {
+          priority = 1.000000;
+          to="Where_ya_gonna_go";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_officer call BIS_fnc_enemyDetected)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"hint ""Spooked!"";"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 0.000000;
+          to="Add_dead_marker";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"hint ""DEAD!"";"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "What_do_">*/
+    class What_do_
+    {
+      name = "What_do_";
+      init = /*%FSM<STATEINIT""">*/"_chance = random 1;" \n
+       "hint format[""_chance = %1"", _chance];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Papers_shot__unr">*/
+        class Papers_shot__unr
+        {
+          priority = 2.000000;
+          to="FAIL_Papers_have";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_chance < 0.3"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"{ [_x] call AW_fnc_deleteMarker; } forEach _missionUpdate;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Papers_on_corpse">*/
+        class Papers_on_corpse
+        {
+          priority = 1.000000;
+          to="SUCCESS_Papers_on";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_chance > 0.3 && _chance < 0.5"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"{ [_x] call AW_fnc_deleteMarker; } forEach _missionUpdate;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Nothing__FAIL">*/
+        class Nothing__FAIL
+        {
+          priority = 0.000000;
+          to="FAIL_No_papers_on";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"{ [_x] call AW_fnc_deleteMarker; } forEach _missionUpdate;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "FAIL_No_papers_on">*/
+    class FAIL_No_papers_on
+    {
+      name = "FAIL_No_papers_on";
+      init = /*%FSM<STATEINIT""">*/"result = false;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Where_ya_gonna_go">*/
+    class Where_ya_gonna_go
+    {
+      name = "Where_ya_gonna_go";
+      init = /*%FSM<STATEINIT""">*/"//_choice = if ((count _options) > 0) then { _options call BIS_fnc_selectRandom } else { ""somewhere"" };" \n
+       "_choice = ""chopper"";"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Run_to_radio__if">*/
+        class Run_to_radio__if
+        {
+          priority = 1.000000;
+          to="Woo_chase_sequence";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_choice == ""radio"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Run_to_gun__small">*/
+        class Run_to_gun__small
+        {
+          priority = 1.000000;
+          to="Get_going_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_choice == ""gun"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Run_to_chopper">*/
+        class Run_to_chopper
+        {
+          priority = 1.000000;
+          to="RUUUUUN_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_choice == ""chopper"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Just_go_SOMEWHERE">*/
+        class Just_go_SOMEWHERE
+        {
+          priority = 0.000000;
+          to="Going_somewhere";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Set_talk_action">*/
+    class Set_talk_action
+    {
+      name = "Set_talk_action";
+      init = /*%FSM<STATEINIT""">*/"_sounds = [""freeze1"", ""freeze2"", ""freeze3"", ""freeze4"", ""freeze5""];" \n
+       "_sound = _sounds call BIS_fnc_selectRandom;" \n
+       "" \n
+       "[_sound, _friendlyMan, 30] call AW_fnc_playSound;" \n
+       "_officer playAction ""Surrender"";" \n
+       "_officer disableAI ""ANIM"";"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "And_to_the_actio">*/
+        class And_to_the_actio
+        {
+          priority = 0.000000;
+          to="Add_action";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "RUUUUUN_">*/
+    class RUUUUUN_
+    {
+      name = "RUUUUUN_";
+      init = /*%FSM<STATEINIT""">*/"_wOfficer = _gOfficer addWaypoint [(getPosATL _chopper), 5];" \n
+       "_wOfficer setWaypointType ""GETIN NEAREST"";" \n
+       "_wOfficer setWaypointBehaviour ""AWARE"";" \n
+       "_wOfficer setWaypointCombatMode ""GREEN"";" \n
+       "_wOfficer setWaypointSpeed ""FULL"";" \n
+       "_wOfficer setWaypointStatements [""true"", ""_officer assignAsCargo _chopper;""];" \n
+       "_gOfficer setCurrentWaypoint _wOfficer;" \n
+       "" \n
+       "_wChopper = _gChopper addWaypoint [(getPos _chopper), 10];" \n
+       "_wChopper setWaypointType ""LOAD"";" \n
+       "_gChopper setCurrentWaypoint _wChopper;" \n
+       "" \n
+       "_rChance = random 1;" \n
+       "hint format[""_rChance = %1"", _rChance];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Gets_into_choppe">*/
+        class Gets_into_choppe
+        {
+          priority = 1.000000;
+          to="Wait_for_some_cool";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_officer in _chopper"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Captured">*/
+        class Captured
+        {
+          priority = 0.000000;
+          to="Set_talk_action";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_isCaptured = false;" \n
+           "" \n
+           "{" \n
+           "	if ((_x distance _officer) <= _captureDistance) then" \n
+           "	{" \n
+           "		_watching = [_x, _officer, 0] call BIS_fnc_isInFrontOf;" \n
+           "		if (_watching) exitWith { _isCaptured = true; _friendlyMan = _x; };" \n
+           "	};" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_isCaptured"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 0.000000;
+          to="Wait_until_on_the";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Chopper_don_t_exist">*/
+        class Chopper_don_t_exist
+        {
+          priority = 0.000000;
+          to="Where_ya_gonna_go";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _chopper"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_options = _options - [""chopper""];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Wait_for_some_cool">*/
+    class Wait_for_some_cool
+    {
+      name = "Wait_for_some_cool";
+      init = /*%FSM<STATEINIT""">*/"_officer addBackpack ""B_Parachute"";" \n
+       "" \n
+       "_rDir = random 360;" \n
+       "_rPos = [_pos, 20000, _rDir] call BIS_fnc_relPos;" \n
+       "" \n
+       "_wChopper = _gChopper addWaypoint [_rPos, 5];" \n
+       "_wChopper setWaypointType ""MOVE"";" \n
+       "_wChopper setWaypointBehaviour ""AWARE"";" \n
+       "_wChopper setWaypointCombatMode ""BLUE"";" \n
+       "_wChopper setWaypointSpeed ""FULL"";" \n
+       "_gChopper setCurrentWaypoint _wChopper;" \n
+       "" \n
+       "_chopper flyInHeight 200;" \n
+       "" \n
+       "_timeout = (time + 15);" \n
+       "_willJump = [true] call BIS_fnc_selectRandom;" \n
+       "_liftedOff = false;" \n
+       "" \n
+       "" \n
+       "[_thisFSM, _chopper] spawn" \n
+       "{" \n
+       "	_fsmHandle = _this select 0;" \n
+       "	_chopper = _this select 1;" \n
+       "	" \n
+       "	waitUntil { !(isTouchingGround _chopper) };" \n
+       "	_fsmHandle setFSMVariable [""_liftedOff"", true];" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Chopper_got_away">*/
+        class Chopper_got_away
+        {
+          priority = 2.000000;
+          to="FAIL_Lost_Office_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout && ({ (_x distance _officer) < 2000 } count playableUnits) < 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Chopper_down_BUT">*/
+        class Chopper_down_BUT
+        {
+          priority = 1.000000;
+          to="Wait_for_even_more";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout && _liftedOff && isTouchingGround _chopper && alive _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Damaged__JUMP_">*/
+        class Damaged__JUMP_
+        {
+          priority = 0.000000;
+          to="Wait_for_it___";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout && _willJump && (damage _chopper) > 0.6"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_officer action [""EJECT"", _chopper];" \n
+           "" \n
+           "_rChance = [false] call BIS_fnc_selectRandom;" \n
+           "if (_rChance) then" \n
+           "{" \n
+           "	_crew = [];" \n
+           "" \n
+           "	{" \n
+           "		_x action [""EJECT"", _chopper];" \n
+           "		_crew = _crew + [_x];" \n
+           "	} foreach (crew _chopper);" \n
+           "};"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "He_gots_shot_in">*/
+        class He_gots_shot_in
+        {
+          priority = 0.000000;
+          to="FAIL_Officer_dead";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout && !alive _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Woo_chase_sequence">*/
+    class Woo_chase_sequence
+    {
+      name = "Woo_chase_sequence";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Captured">*/
+        class Captured
+        {
+          priority = 0.000000;
+          to="Set_talk_action";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_isCaptured = false;" \n
+           "" \n
+           "{" \n
+           "	if ((_x distance _officer) <= _captureDistance) then" \n
+           "	{" \n
+           "		_watching = [_x, _officer, 0] call BIS_fnc_isInFrontOf;" \n
+           "		if (_watching) exitWith { _isCaptured = true; _friendlyMan = _x; };" \n
+           "	};" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_isCaptured"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Get_to_radio">*/
+        class Get_to_radio
+        {
+          priority = 0.000000;
+          to="Transmit_coords";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 0.000000;
+          to="Wait_until_on_the";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Wait_for_even_more">*/
+    class Wait_for_even_more
+    {
+      name = "Wait_for_even_more";
+      init = /*%FSM<STATEINIT""">*/"[_gOfficer, [[""retreat"", (getPosATL _officer), 2000]]] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "got_away___2000m">*/
+        class got_away___2000m
+        {
+          priority = 1.000000;
+          to="FAIL_Lost_Office_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_gotAway = true;" \n
+           "{" \n
+           "	if ((_x distance _officer) < 2000) exitWith { _gotAway = false; };" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_gotAway"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 0.000000;
+          to="Wait_until_on_the";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Captured">*/
+        class Captured
+        {
+          priority = 0.000000;
+          to="Set_talk_action";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_isCaptured = false;" \n
+           "" \n
+           "{" \n
+           "	if ((_x distance _officer) <= _captureDistance) then" \n
+           "	{" \n
+           "		_watching = [_x, _officer, 0] call BIS_fnc_isInFrontOf;" \n
+           "		if (_watching) exitWith { _isCaptured = true; _friendlyMan = _x; };" \n
+           "	};" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_isCaptured"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "FAIL_Officer_dead">*/
+    class FAIL_Officer_dead
+    {
+      name = "FAIL_Officer_dead";
+      init = /*%FSM<STATEINIT""">*/"result = false;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "SUCCESS_Papers_on">*/
+    class SUCCESS_Papers_on
+    {
+      name = "SUCCESS_Papers_on";
+      init = /*%FSM<STATEINIT""">*/"result = true;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Get_going_">*/
+    class Get_going_
+    {
+      name = "Get_going_";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 0.000000;
+          to="Wait_until_on_the";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Captured">*/
+        class Captured
+        {
+          priority = 0.000000;
+          to="Set_talk_action";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_isCaptured = false;" \n
+           "" \n
+           "{" \n
+           "	if ((_x distance _officer) <= _captureDistance) then" \n
+           "	{" \n
+           "		_watching = [_x, _officer, 0] call BIS_fnc_isInFrontOf;" \n
+           "		if (_watching) exitWith { _isCaptured = true; _friendlyMan = _x; };" \n
+           "	};" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_isCaptured"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Get_gun">*/
+        class Get_gun
+        {
+          priority = 0.000000;
+          to="Engage_until_hur";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Engage_until_hur">*/
+    class Engage_until_hur
+    {
+      name = "Engage_until_hur";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 0.000000;
+          to="Wait_until_on_the";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Captured">*/
+        class Captured
+        {
+          priority = 0.000000;
+          to="Set_talk_action";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_isCaptured = false;" \n
+           "" \n
+           "{" \n
+           "	if ((_x distance _officer) <= _captureDistance) then" \n
+           "	{" \n
+           "		_watching = [_x, _officer, 0] call BIS_fnc_isInFrontOf;" \n
+           "		if (_watching) exitWith { _isCaptured = true; _friendlyMan = _x; };" \n
+           "	};" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_isCaptured"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "SUCCESS_Papers_on_1">*/
+    class SUCCESS_Papers_on_1
+    {
+      name = "SUCCESS_Papers_on_1";
+      init = /*%FSM<STATEINIT""">*/"result = true;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "FAIL_Papers_have">*/
+    class FAIL_Papers_have
+    {
+      name = "FAIL_Papers_have";
+      init = /*%FSM<STATEINIT""">*/"result = false;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Transmit_coords">*/
+    class Transmit_coords
+    {
+      name = "Transmit_coords";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Run_again_">*/
+        class Run_again_
+        {
+          priority = 0.000000;
+          to="Where_ya_gonna_go";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_options = _options - [""radio""];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Going_somewhere">*/
+    class Going_somewhere
+    {
+      name = "Going_somewhere";
+      init = /*%FSM<STATEINIT""">*/"[_gOfficer, [[""retreat"", (getPosATL _officer), 2000]]] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Got_away___1000m">*/
+        class Got_away___1000m
+        {
+          priority = 0.000000;
+          to="FAIL_Lost_Office";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_gotAway = true;" \n
+           "{" \n
+           "	if ((_x distance _officer) < 1000) exitWith { _gotAway = false; };" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_gotAway"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Captured">*/
+        class Captured
+        {
+          priority = 0.000000;
+          to="Set_talk_action";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_isCaptured = false;" \n
+           "" \n
+           "{" \n
+           "	if ((_x distance _officer) <= _captureDistance) then" \n
+           "	{" \n
+           "		_watching = [_x, _officer, 0] call BIS_fnc_isInFrontOf;" \n
+           "		if (_watching) exitWith { _isCaptured = true; _friendlyMan = _x; };" \n
+           "	};" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_isCaptured"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 0.000000;
+          to="Wait_until_on_the";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "What_do__1">*/
+    class What_do__1
+    {
+      name = "What_do__1";
+      init = /*%FSM<STATEINIT""">*/"_chance = random 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "__Fuck_you____not">*/
+        class __Fuck_you____not
+        {
+          priority = 2.000000;
+          to="Add_action";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(damage _officer) <= 0.1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"[""OPFOR_fuckYou"", _officer, 30] call AW_fnc_playSound;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Shot_Papers__if">*/
+        class Shot_Papers__if
+        {
+          priority = 1.000000;
+          to="FAIL_Shot_Papers";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((damage _officer) > 0.1) && _chance < 0.1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "On_officer__more">*/
+        class On_officer__more
+        {
+          priority = 0.000000;
+          to="SUCCESS_Papers_on_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(damage _officer) > 0.1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "FAIL_Shot_Papers">*/
+    class FAIL_Shot_Papers
+    {
+      name = "FAIL_Shot_Papers";
+      init = /*%FSM<STATEINIT""">*/"result = false;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "FAIL_Lost_Office">*/
+    class FAIL_Lost_Office
+    {
+      name = "FAIL_Lost_Office";
+      init = /*%FSM<STATEINIT""">*/"result = false;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "FAIL_Lost_Office_1">*/
+    class FAIL_Lost_Office_1
+    {
+      name = "FAIL_Lost_Office_1";
+      init = /*%FSM<STATEINIT""">*/"result = false;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Add_action">*/
+    class Add_action
+    {
+      name = "Add_action";
+      init = /*%FSM<STATEINIT""">*/"_talkedTo = false;" \n
+       "_id = [];" \n
+       "call compile format[""_id = [_officer, [""""Where are the papers?!"""", { [%1, """"_talkedTo"""", true] call AW_fnc_setFSMVariable; }]] call AW_fnc_createAction;"", _thisFSM];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Dead">*/
+        class Dead
+        {
+          priority = 4.000000;
+          to="Wait_until_on_the";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!alive _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_id call AW_fnc_deleteAction;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Units_more_than">*/
+        class Units_more_than
+        {
+          priority = 3.000000;
+          to="Where_ya_gonna_go";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_shouldRun = true;" \n
+           "" \n
+           "{" \n
+           "	if ((_x distance _officer) < 10) then" \n
+           "	{" \n
+           "		_watching = [_x, _officer, 0] call BIS_fnc_isInFrontOf;" \n
+           "		if (_watching) exitWith { _shouldRun = false; }" \n
+           "	};" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_shouldRun"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_officer enableAI ""ANIM"";" \n
+           "_id call AW_fnc_deleteAction;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Wait_for_action">*/
+        class Wait_for_action
+        {
+          priority = 0.000000;
+          to="What_do__1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_talkedTo"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_id call AW_fnc_deleteAction;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Add_dead_marker">*/
+    class Add_dead_marker
+    {
+      name = "Add_dead_marker";
+      init = /*%FSM<STATEINIT""">*/"_missionUpdate = [" \n
+       "	""tactical"", " \n
+       "	_code, " \n
+       "	[" \n
+       "		[""notification"", ""The officer has died! Check his body for the papers!""]," \n
+       "		[""description"", ""The officer's died! Find and check his body for the papers.""]," \n
+       "		[""marker"", ""Dead Officer""]," \n
+       "		[""pos"", [(getPosATL _officer), 50] call AW_fnc_getFuzzyPos]" \n
+       "	]" \n
+       "] call AW_fnc_updateMission;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "And_to_the_actions">*/
+        class And_to_the_actions
+        {
+          priority = 0.000000;
+          to="Add_action_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Add_action_1">*/
+    class Add_action_1
+    {
+      name = "Add_action_1";
+      init = /*%FSM<STATEINIT""">*/"_searched = false;" \n
+       "_veh = if (typeOf (vehicle _officer) != ""NonSteerable_Parachute_F"") then { vehicle _officer } else { _officer };" \n
+       "call compile format[""[_veh, [""""Search for Papers"""", { [_this] call AW_fnc_deleteAction; %1 setFSMVariable [""""_searched"""", true]; }]] call AW_fnc_createAction;"", _thisFSM];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Body___wreckage">*/
+        class Body___wreckage
+        {
+          priority = 0.000000;
+          to="FAIL_Well__fuck";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isNull _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Wait_for_action">*/
+        class Wait_for_action
+        {
+          priority = 0.000000;
+          to="What_do_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_searched"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Wait_for_it___">*/
+    class Wait_for_it___
+    {
+      name = "Wait_for_it___";
+      init = /*%FSM<STATEINIT""">*/"_timeout = time + 3;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Open_dat__chute">*/
+        class Open_dat__chute
+        {
+          priority = 0.000000;
+          to="Wait_for_even_more";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"if (!(isTouchingGround _officer)) then" \n
+           "{" \n
+           "	_chute = ""B_Parachute_02_F"" createVehicle (getPos _officer);" \n
+           "	_chute setPosATL (getPosATL _officer);" \n
+           "	_officer moveInDriver _chute;" \n
+           "" \n
+           "	if (_rChance) then" \n
+           "	{" \n
+           "		{" \n
+           "			_chute = ""NonSteerable_Parachute_F"" createVehicle (getPosATL _x);" \n
+           "			_chute setPosATL (getPosATL _x);" \n
+           "			_x moveInDriver _chute;" \n
+           "		} foreach _crew;" \n
+           "	};" \n
+           "};"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "FAIL_Well__fuck">*/
+    class FAIL_Well__fuck
+    {
+      name = "FAIL_Well__fuck";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Wait_until_on_the">*/
+    class Wait_until_on_the
+    {
+      name = "Wait_until_on_the";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "On_the_floor">*/
+        class On_the_floor
+        {
+          priority = 0.000000;
+          to="Add_dead_marker";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isTouchingGround _officer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Get_the_Message";
+  finalStates[] =
+  {
+    "FAIL_No_papers_on",
+    "FAIL_Officer_dead",
+    "SUCCESS_Papers_on",
+    "SUCCESS_Papers_on_1",
+    "FAIL_Papers_have",
+    "FAIL_Shot_Papers",
+    "FAIL_Lost_Office",
+    "FAIL_Lost_Office_1",
+    "FAIL_Well__fuck",
+  };
+};
+/*%FSM</COMPILE>*/

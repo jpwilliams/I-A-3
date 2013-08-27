@@ -1,0 +1,417 @@
+enableDebugConsole = 1;
+
+class Header
+{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 40;
+};
+
+class Params
+{
+	class title1
+	{
+		title = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Generic Settings ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	};
+
+		class startTime
+		{
+			title = "Time of day to start the mission";
+			values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+			texts[] = {"00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"};
+			default = 6;
+		};
+
+		class pilotRestrictions
+		{
+			title = "Who is allowed to fly?";
+			values[] = {0, 1, 2};
+			texts[] = {"Everyone", "Pilots", "Administrators"};
+			default = 1;
+		};
+
+		class bodyLimit
+		{
+			title = "Maximum number of dead bodies on the map";
+			values[] = {5, 10, 20, 50, 75, 100, 200};
+			texts[] = {"5", "10", "20", "50 (Recommended)", "75", "100", "200 (NOT recommended)"};
+			default = 50;
+		};
+
+	class gap2
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class gap21
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class title2
+	{
+		title = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Bases ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+		class gracePeriod
+		{
+			title = "Grace period given to new bases before they're vulnerable to attack";
+			values[] = {0, 300, 600, 900};
+			texts[] = {"None", "5 minutes", "10 minutes", "15 minutes"};
+			default = 0;
+		};
+
+	class gap3
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class gap31
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class title3
+	{
+		title = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Main AOs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class gap4
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class gap41
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class title4
+	{
+		title = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Tactical Missions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+		class tacticalMissionsEnabled
+		{
+			title = "Enable Tactical Missions?";
+			values[] = {0, 1};
+			texts[] = {"No", "Yes"};
+			default = 1;
+		};
+
+		class tacticalNumber
+		{
+			title = "Amount of Tactical Missions being created at random";
+			values[] = {1, 2, 3, 4, 5};
+			texts[] = {"1", "2", "3", "4", "5"};
+			default = 1;
+		};
+
+		class tacticalUnique
+		{
+			title = "Should Tactical Missions be unique? (i.e. no duplicates on the map)";
+			values[] = {0, 1};
+			texts[] = {"No", "Yes"};
+			default = 0;
+		};
+
+	class gap5
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class gap51
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class title5
+	{
+		title = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Priority Targets ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+		class priorityMissionsEnabled
+		{
+			title = "Enable Priority Targets?";
+			values[] = {0, 1};
+			texts[] = {"No", "Yes"};
+			default = 0;
+		};
+
+		class priorityNumber
+		{
+			title = "Amount of Priority Targets being created at random";
+			values[] = {1, 2, 3, 4, 5};
+			texts[] = {"1", "2", "3", "4", "5"};
+			default = 1;
+		};
+
+		class priorityUnique
+		{
+			title = "Should Priority Targets be unique? (i.e. no duplicates on the map)";
+			values[] = {0, 1};
+			texts[] = {"No", "Yes"};
+			default = 0;
+		};
+
+	class gap6
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class gap61
+	{
+		title = "";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+	class title6
+	{
+		title = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Ghost Missions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+		values[] = {0};
+		texts[] = {""};
+		default = 0;
+	}
+
+		class ghostMissionsEnabled
+		{
+			title = "Enable Ghost Missions?";
+			values[] = {0, 1};
+			texts[] = {"No", "Yes"};
+			default = 0;
+		};
+
+		class ghostNumber
+		{
+			title = "Amount of Ghost Missions being created at random";
+			values[] = {1, 2, 3, 4, 5};
+			texts[] = {"1", "2", "3", "4", "5"};
+			default = 1;
+		};
+
+		class ghostUnique
+		{
+			title = "Should Ghost Missions be unique? (i.e. no duplicates on the map)";
+			values[] = {0, 1};
+			texts[] = {"No", "Yes"};
+			default = 0;
+		};
+}
+
+author = "Rarek [AW]";
+overviewText = "Invade &amp; Annex is the ever-popular co-operative game-mode allowing players to unite to overcome an increasingly-large OPFOR force. I&amp;A 3 hails in tonnes of new content in an all-new, perfectly co-operative experience. Go on; give it a go.";
+OnLoadName = "AW Invade & Annex 3";
+OnLoadMission = "Conceived and developed by the Ahoy World community, Invade &amp; Annex is an ever-popular co-operative game-mode allowing players to unite to overcome an increasingly-large OPFOR force. See www.AhoyWorld.co.uk for more information.";
+loadScreen = "images\loadingScreen.jpg";
+overviewPicture = "images\loadingScreen.jpg";
+disabledAI = 1;
+#include "VAS\menu.hpp"
+
+class CfgFunctions
+{
+	#include "VAS\cfgfunctions.hpp"
+
+	class AW
+	{
+		tag = "AW";
+		class general
+		{
+			file = "functions\generic";
+			class startMission			{ description = "Starts a mission with 4 given parameters."; };
+			class childrenComplete		{ description = "Returns whether or not a task's child tasks are complete."; };
+			class respawnMenuInventory	{ description = "Edited version of the BIS respawn script."; };
+			class findSpace				{ description = "Finds space using a variety of parameters; designed for Tactical Mission / Priority Target development."; };
+			class getFuzzyPos			{ description = "Gets a random position within a given radius."; };
+			class updateMission			{ description = "Updates missions!"; };
+			class setFSMVariable		{ description = "Sets FSM variables exclusively on the server."; };
+		};
+
+		class garbage
+		{
+			file = "functions\garbage";
+			class addDead				{ description = "Buries dead objects once the body limit is reahed."; };
+			class collectGarbage		{ description = "Cleans up given/all groups / dead units."; };
+		};
+
+		class players
+		{
+			file = "functions\players";
+			class givePoints			{ description = "Gives points to a player with an optional notification"; };
+			class showNotification		{ description = "Shows the desired notification"; };
+			class playSound				{ description = "Plays sounds globally."; };
+		};
+
+		class units
+		{
+			file = "functions\units";
+			class spawnEnemy			{ description = "Spawns the required amount of enemies"; };
+			class setBehaviour			{ description = "Sets behaviour of given troops."; };
+			class createVehicle			{ description = "Creates a vehicle and adds a KILLED EH, passing the object to AW_fnc_addDead."; };
+		};
+
+		class markers
+		{
+			file = "functions\markers";
+			class createMarker			{ description = "Creates a marker using a specific template."; };
+			class deleteMarker			{ description = "Handles JIP-compatible deletion of markers."; };
+			class JIPmarkers			{ description = "Allows JIPPs to create local versions of globally-existing markers."; };
+		};
+
+		class actions
+		{
+			file = "functions\actions";
+			class createAction	{ description = "Creates a JIP-compatible action on the client and triggers clients to create the action themselves."; };
+			class deleteAction	{ description = "Deletes a damned action!"; };
+			class JIPactions	{ description = "Allows JIPPs to create already-existing actions on their own machines."; };
+		};
+	};
+};
+
+class CfgRespawnTemplates
+{
+	class AW_Respawn
+	{
+		displayName = "Select Inventory (AW)";
+		onPlayerKilled = "AW_fnc_respawnMenuInventory";
+		onPlayerRespawn = "AW_fnc_respawnMenuInventory";
+	};
+};
+
+class CfgRespawnInventory
+{
+	#include "config\roles.hpp"
+};
+
+class CfgNotifications
+{
+	#include "config\notifications\main.hpp"
+	#include "config\notifications\base.hpp"
+	#include "config\notifications\tactical.hpp"
+	#include "config\notifications\sub.hpp"
+	#include "config\notifications\priority.hpp"
+	#include "config\notifications\ghost.hpp"
+	#include "config\notifications\misc.hpp"
+};
+
+class CfgHints
+{
+	class Base
+	{
+		displayName = "Bases";
+		#include "config\hints\base.hpp"
+	};
+
+	class Main
+	{
+		displayName = "Main AOs";
+		#include "config\hints\main.hpp"
+	};
+
+	class Tactical
+	{
+		displayName = "Tactical Missions";
+		#include "config\hints\tactical.hpp"
+	};
+
+	class Priority
+	{
+		displayName = "Priority Targets";
+		#include "config\hints\priority.hpp"
+	};
+
+	class Ghost
+	{
+		displayName = "Ghost Missions";
+		#include "config\hints\ghost.hpp"
+	};
+
+	class Sub
+	{
+		displayName = "Sub-Objectives";
+		#include "config\hints\sub.hpp"
+	};
+};
+
+class CfgSounds
+{
+	sounds[] = {};
+	#include "missions\tactical\getDocuments\config\CfgSounds.hpp"
+};
+
+class AW_base
+{
+	#include "config\base.hpp"
+};
+
+class AW_ghost
+{
+	#include "config\ghost.hpp"
+};
+
+class AW_main
+{
+	#include "config\main.hpp"
+};
+
+class AW_priority
+{
+	#include "config\priority.hpp"
+};
+
+class AW_sub
+{
+	#include "config\sub.hpp"
+};
+
+class AW_tactical
+{
+	#include "config\tactical.hpp"
+};
+
+respawn = "BASE";
+respawnDelay = 5;
+respawnTemplates[] = {"Counter", "MenuPosition", "MenuInventory"};
