@@ -1,9 +1,3 @@
-//fn_playSound.sqf;
-
-//["mySound", _unit, 30] call AW_fnc_playSound;
-//["mySound", _unit] call AW_fnc_playSound;
-//["mySound"] call AW_fnc_playSound;
-
 _sound = _this select 0;
 _obj = if ((count _this) > 1) then { _this select 1 } else { objNull };
 _radius = 30;
