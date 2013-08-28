@@ -1,13 +1,3 @@
-/*
-	File:	fn_JIPactions.sqf
-	Author:	Rarek [AW]
-
-	Description
-		|	Used to allow JIPPs to create local actions
-		|	in place of currently-existing actions.
-		|____________________
-*/
-
 _localActions = JIPactions;
 
 {
