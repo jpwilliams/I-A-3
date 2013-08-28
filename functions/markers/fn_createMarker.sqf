@@ -5,16 +5,7 @@ _type	=	_this select 0;
 _name	=	_this select 1;
 _pos	=	_this select 2;
 _text	=	if ((count _this) > 3) then { _this select 3 } else { "" };
-
-if (markerColor _name == "") then
-{
-	_marker = createMarker [_name, _pos];
-}
-else
-{
-	_marker = _name;
-	_marker setMarkerPos _pos;
-};
+_markers = [];
 
 if ((typeName _type) == "ARRAY") then
 {
@@ -24,6 +15,15 @@ if ((typeName _type) == "ARRAY") then
 
 _root = missionConfigFile >> "CfgMarkers" >> format["%1_%2", _type, _state];
 {
+	_marker = format["%1_%2", _name, _x];
+
+	if (markerColor _marker == "") then
+	{
+		_marker = createMarker [_marker, _pos];
+	} else {
+		_marker setMarkerPos _pos;
+	};
+
 	_settings = _root >> _x;
 	_lastIndex = ((count _settings) - 1);
 
@@ -41,6 +41,8 @@ _root = missionConfigFile >> "CfgMarkers" >> format["%1_%2", _type, _state];
 			case "text":	{ _marker setMarkerText	format["%1 %2", (getText _s), _text]; };
 		};
 	};
+
+	_markers = _markers + [_marker];
 } forEach ["marker", "icon"];
 
 if (isServer) then
@@ -59,5 +61,5 @@ if (isServer) then
 	publicVariable "JIPmarkers";
 };
 
-//returns marker name
-_marker
+//returns marker names in array (e.g. ["base_connor_marker", "base_connor_icon"])
+_markers

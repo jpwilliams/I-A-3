@@ -12,30 +12,39 @@
 		|____________________
 */
 
-private["_marker", "_local", "_path"];
+private["_markers", "_local", "_path", "_x"];
 
-_marker = _this select 0;
+_markers = _this select 0;
 _local = if ((count _this) > 1) then { (_this select 1) } else { false };
+
+if (typeName _temp != "ARRAY") then
+{
+	_markers = [_markers];
+};
 
 if (!_local) then
 {
-	_path = [JIPmarkers, _marker] call BIS_fnc_findNestedElement;
-	if ((count _path) > 0) then
 	{
-		JIPmarkers = [JIPmarkers, (_path select 0)] call BIS_fnc_removeIndex;
-		publicVariable "JIPmarkers";
-	};
+		_path = [JIPmarkers, _x] call BIS_fnc_findNestedElement;
+		if ((count _path) > 0) then
+		{
+			JIPmarkers = [JIPmarkers, (_path select 0)] call BIS_fnc_removeIndex;
+			publicVariable "JIPmarkers";
+		};
 
-	deleteMarker _marker;
-	[[_marker, true], "AW_fnc_deleteMarker", true, false] call BIS_fnc_MP;
+		deleteMarker _x;
+	} forEach _markers;
+	[[_markers, true], "AW_fnc_deleteMarker", true, false] call BIS_fnc_MP;
 } else {
 	if ((count localMarkers) > 0) then
 	{
-		_path = [localMarkers, _marker] call BIS_fnc_findNestedElement;
-		if ((count _path) > 0) then
 		{
-			localMarkers = [localMarkers, (_path select 0)] call BIS_fnc_removeIndex;
-			deleteMarkerLocal _marker;
-		};
+			_path = [localMarkers, _x] call BIS_fnc_findNestedElement;
+			if ((count _path) > 0) then
+			{
+				localMarkers = [localMarkers, (_path select 0)] call BIS_fnc_removeIndex;
+				deleteMarkerLocal _x;
+			};
+		} forEach _markers;
 	};
 };
