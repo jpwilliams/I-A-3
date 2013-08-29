@@ -48,16 +48,19 @@ _root = missionConfigFile >> "CfgMarkers" >> format["%1_%2", _type, _state];
 if (isServer) then
 {
 	//Add to JIP array
-	_path = [JIPmarkers, _marker] call BIS_fnc_findNestedElement;
-	if ((count _path) > 0) then
 	{
-		_element = _path select 0;
-		[JIPmarkers, [_element, 1], _type] call BIS_fnc_setNestedElement;
-		[JIPmarkers, [_element, 2], _pos] call BIS_fnc_setNestedElement;
-		[JIPmarkers, [_element, 3], _text] call BIS_fnc_setNestedElement;
-	} else {
-		JIPmarkers = JIPmarkers + [[_marker, _type, _pos, _text]];
-	};
+		_path = [JIPmarkers, _x] call BIS_fnc_findNestedElement;
+		if ((count _path) > 0) then
+		{
+			_element = _path select 0;
+			[JIPmarkers, [_element, 1], _type] call BIS_fnc_setNestedElement;
+			[JIPmarkers, [_element, 2], _pos] call BIS_fnc_setNestedElement;
+			[JIPmarkers, [_element, 3], _text] call BIS_fnc_setNestedElement;
+		} else {
+			JIPmarkers = JIPmarkers + [[_x, _type, _pos, _text]];
+		};
+	} forEach _markers;	
+		
 	publicVariable "JIPmarkers";
 };
 
