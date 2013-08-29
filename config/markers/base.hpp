@@ -1,14 +1,10 @@
-/***********************************************************\
-	All root classes must begin with "base_"
-\***********************************************************/
-
-class base_init
+class init
 {
 	class marker {};
 	class icon {};
 };
 
-class base_friendly
+class friendly
 {
 	class marker
 	{
@@ -23,7 +19,7 @@ class base_friendly
 	};
 };
 
-class base_contested
+class contested
 {
 	class marker
 	{
@@ -35,11 +31,11 @@ class base_contested
 		shape = "ICON";
 		type = "n_unknown";
 		color = "ColorOrange";
-		text = "(Under Attack)";
+		text[] = {"(Under Attack)", ""};
 	};
 };
 
-class base_enemy
+class enemy
 {
 	class marker
 	{

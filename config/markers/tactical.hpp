@@ -1,8 +1,4 @@
-/***********************************************************\
-	All root classes must begin with "tactical_"
-\***********************************************************/
-
-class tactical_init
+class init
 {
 	class marker
 	{
@@ -20,7 +16,7 @@ class tactical_init
 	};
 };
 
-class tactical_update
+class update
 {
 	class marker
 	{

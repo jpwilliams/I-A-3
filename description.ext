@@ -311,16 +311,6 @@ class CfgFunctions
 	};
 };
 
-class CfgRespawnTemplates
-{
-	class AW_Respawn
-	{
-		displayName = "Select Inventory (AW)";
-		onPlayerKilled = "AW_fnc_respawnMenuInventory";
-		onPlayerRespawn = "AW_fnc_respawnMenuInventory";
-	};
-};
-
 class CfgRespawnInventory
 {
 	#include "config\roles.hpp"
@@ -339,10 +329,25 @@ class CfgNotifications
 
 class CfgMarkers
 {
-	#include "config\markers\base.hpp";
-	#include "config\markers\main.hpp";
-	#include "config\markers\priority.hpp";
-	#include "config\markers\tactical.hpp";
+	class base
+	{
+		#include "config\markers\base.hpp";
+	};
+
+	class main
+	{
+		#include "config\markers\main.hpp";
+	};
+
+	class priority
+	{
+		#include "config\markers\priority.hpp";
+	};
+
+	class tactical
+	{
+		#include "config\markers\tactical.hpp";
+	};
 };
 
 class CfgHints

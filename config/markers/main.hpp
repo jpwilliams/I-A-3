@@ -1,8 +1,4 @@
-/***********************************************************\
-	All root classes must begin with "main_"
-\***********************************************************/
-
-class main_init
+class init
 {
 	class marker
 	{

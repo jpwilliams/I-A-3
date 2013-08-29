@@ -14,7 +14,7 @@ if ((typeName _type) == "ARRAY") then
 	_type = _type select 0;
 };
 
-_root = missionConfigFile >> "CfgMarkers" >> format["%1_%2", _type, _state];
+_root = missionConfigFile >> "CfgMarkers" >> _type >> _state;
 {
 	_marker = format["%1_%2", _name, _x];
 
@@ -44,7 +44,16 @@ _root = missionConfigFile >> "CfgMarkers" >> format["%1_%2", _type, _state];
 			case "brush":	{ _marker setMarkerBrush (getText _s); };
 			case "color":	{ _marker setMarkerColor (getText _s); };
 			case "size":	{ _marker setMarkerSize (getArray _s); };
-			case "text":	{ _marker setMarkerText	format["%1 %2", (getText _s), _text]; };
+			case "text":
+			{
+				_chars = if (isText (_s)) then
+				{
+					format["%1 %2", (getText _s), _text]
+				} else {
+					_temp = getArray _s;
+					format["%1 %2 %3", (_temp select 0), _text, (_temp select 1)]
+				};
+			};
 		};
 	};
 
@@ -66,8 +75,8 @@ if (isServer) then
 		} else {
 			JIPmarkers = JIPmarkers + [[_x, _type, _state, _pos, _text]];
 		};
-	} forEach _markers;	
-		
+	} forEach _markers;
+
 	publicVariable "JIPmarkers";
 };
 

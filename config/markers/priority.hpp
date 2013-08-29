@@ -1,8 +1,4 @@
-/***********************************************************\
-	All root classes must begin with "priority_"
-\***********************************************************/
-
-class priority_init
+class init
 {
 	class marker
 	{
@@ -20,7 +16,7 @@ class priority_init
 	};
 };
 
-class priority_update
+class update
 {
 	class marker
 	{
