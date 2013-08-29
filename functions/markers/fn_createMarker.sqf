@@ -5,6 +5,7 @@ _type	=	_this select 0;
 _name	=	_this select 1;
 _pos	=	_this select 2;
 _text	=	if ((count _this) > 3) then { _this select 3 } else { "" };
+_local	=	if ((count _this) > 4) then { _this select 4 } else { false };
 _markers = [];
 
 if ((typeName _type) == "ARRAY") then
@@ -19,7 +20,12 @@ _root = missionConfigFile >> "CfgMarkers" >> format["%1_%2", _type, _state];
 
 	if (markerColor _marker == "") then
 	{
-		_marker = createMarker [_marker, _pos];
+		if (_local) then
+		{
+			_marker = createMarkerLocal [_marker, _pos];
+		} else {
+			_marker = createMarker [_marker, _pos];
+		};
 	} else {
 		_marker setMarkerPos _pos;
 	};
@@ -48,16 +54,20 @@ _root = missionConfigFile >> "CfgMarkers" >> format["%1_%2", _type, _state];
 if (isServer) then
 {
 	//Add to JIP array
-	_path = [JIPmarkers, _marker] call BIS_fnc_findNestedElement;
-	if ((count _path) > 0) then
 	{
-		_element = _path select 0;
-		[JIPmarkers, [_element, 1], _type] call BIS_fnc_setNestedElement;
-		[JIPmarkers, [_element, 2], _pos] call BIS_fnc_setNestedElement;
-		[JIPmarkers, [_element, 3], _text] call BIS_fnc_setNestedElement;
-	} else {
-		JIPmarkers = JIPmarkers + [[_marker, _type, _pos, _text]];
-	};
+		_path = [JIPmarkers, _x] call BIS_fnc_findNestedElement;
+		if ((count _path) > 0) then
+		{
+			_element = _path select 0;
+			[JIPmarkers, [_element, 1], _type] call BIS_fnc_setNestedElement;
+			[JIPmarkers, [_element, 2], _state] call BIS_fnc_setNestedElement;
+			[JIPmarkers, [_element, 3], _pos] call BIS_fnc_setNestedElement;
+			[JIPmarkers, [_element, 4], _text] call BIS_fnc_setNestedElement;
+		} else {
+			JIPmarkers = JIPmarkers + [[_x, _type, _state, _pos, _text]];
+		};
+	} forEach _markers;	
+		
 	publicVariable "JIPmarkers";
 };
 
