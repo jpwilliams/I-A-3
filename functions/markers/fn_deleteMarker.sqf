@@ -17,7 +17,7 @@ private["_markers", "_local", "_path", "_x"];
 _markers = _this select 0;
 _local = if ((count _this) > 1) then { (_this select 1) } else { false };
 
-if (typeName _temp != "ARRAY") then
+if (typeName _markers != "ARRAY") then
 {
 	_markers = [_markers];
 };
