@@ -45,7 +45,27 @@ _behaviours = _this select 1;
 		{
 			_behaviour = _behaviours call BIS_fnc_selectRandom;
 			_order = _behaviour select 0;
-			_pos = _behaviour select 1;
+			_pos = [0,0,0];
+
+
+
+
+			if (typeName (_behaviour select 1) == "ARRAY") then
+			{
+				_pos = _behaviour select 1;
+			} else {
+				if (typeName _x == "GROUP") then
+				{
+					_pos = getPos (leader _x);
+				} else {
+					_pos = getPos _x;
+				};
+
+				if (typeName _x == "STRING") then
+				{
+					_pos = [_x, ((markerSize _x) call BIS_fnc_lowestNum)] call AW_fnc_randomPosTrigger;
+				};
+			};
 			_radius = if (count _behaviour > 2) then { _behaviour select 2 } else { 0 };
 			switch (_order) do
 			{
@@ -71,8 +91,6 @@ _behaviours = _this select 1;
 						if (!(surfaceIsWater [(_retreatPos select 0), (_retreatPos select 1)])) exitWith {};
 						_dir = if ((_dir + 45) > 359) then { 0 } else { (_dir + 45) };
 					};
-
-					hint format["_leader = %1\n_group = %2\n_retreatPos = %3\n_dir = %4", _leader, _group, _retreatPos, _dir];
 
 					_waypoint = _group addWaypoint [_retreatPos, 0];
 					_waypoint setWaypointType "MOVE";

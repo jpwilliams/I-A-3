@@ -13,6 +13,7 @@ class init
 		shape = "ICON";
 		type = "mil_dot";
 		color = "ColorOPFOR";
+		text = "Tactical Mission:";
 	};
 };
 
@@ -31,5 +32,6 @@ class update
 		shape = "ICON";
 		type = "selector_selectedEnemy";
 		color = "ColorOPFOR";
+		text = "Tactical Update:";
 	};
 };

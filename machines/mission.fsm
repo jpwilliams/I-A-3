@@ -10,7 +10,7 @@ item5[] = {"Wait_for_complet",4,218,475.000000,375.000000,575.000000,425.000000,
 item6[] = {"Get_result_from",2,250,600.000000,375.000000,700.000000,425.000000,0.000000,"Get result from" \n "FSM & delete" \n "markers"};
 item7[] = {"Let_s_choose_a_m",2,250,350.000000,75.000000,450.000000,125.000000,0.000000,"Let's choose" \n "a mission"};
 item8[] = {"Success",4,218,525.000000,300.000000,625.000000,350.000000,1.000000,"Success"};
-item9[] = {"Failure",8,4314,675.000000,300.000000,775.000000,350.000000,0.000000,"Failure"};
+item9[] = {"Failure",8,218,675.000000,300.000000,775.000000,350.000000,0.000000,"Failure"};
 item10[] = {"What_do__FSM_",2,250,600.000000,225.000000,700.000000,275.000000,0.000000,"What do," \n "FSM?"};
 item11[] = {"Already_exists_",4,218,225.000000,75.000000,325.000000,125.000000,1.000000,"Already" \n "exists?"};
 item12[] = {"What_do__FSM__1",2,250,100.000000,75.000000,200.000000,125.000000,0.000000,"What do," \n "FSM?"};
@@ -20,7 +20,7 @@ item15[] = {"Mission_is_uniqu",8,218,350.000000,150.000000,450.000000,200.000000
 item16[] = {"Create_unique_marker",2,250,350.000000,225.000000,450.000000,275.000000,0.000000,"Create unique" \n "marker name"};
 item17[] = {"Unique_variable",8,218,350.000000,300.000000,450.000000,350.000000,0.000000,"Unique" \n "variable" \n "found"};
 item18[] = {"Name_not_unique",4,218,225.000000,225.000000,325.000000,275.000000,1.000000,"Name not" \n "unique"};
-item19[] = {"Create_markers_",2,250,350.000000,375.000000,450.000000,425.000000,0.000000,"Create markers" \n "& load" \n "mission FSM"};
+item19[] = {"Create_markers_",2,4346,350.000000,375.000000,450.000000,425.000000,0.000000,"Create markers" \n "& load" \n "mission FSM"};
 item20[] = {"No_loop__Finish",8,218,725.000000,225.000000,825.000000,275.000000,0.000000,"No loop." \n "Finish."};
 item21[] = {"Loop_",5,218,600.000000,0.000000,700.000000,50.000000,1.000000,"Loop?"};
 item22[] = {"Delete_Machine",1,250,850.000000,225.000000,950.000000,275.000000,0.000000,"Delete" \n "Machine"};
@@ -57,7 +57,7 @@ link27[] = {20,22};
 link28[] = {21,3};
 link29[] = {23,24};
 globals[] = {25.000000,1,0,0,0,640,480,1,35,6316128,1,-249.984467,1029.074707,674.179016,-227.696289,1042,920,1};
-window[] = {2,-1,-1,-1,-1,819,-1868,-428,52,3,1060};
+window[] = {2,-1,-1,-1,-1,993,-1920,-480,226,3,1060};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -145,7 +145,7 @@ class FSM
     class Get_result_from
     {
       name = "Get_result_from";
-      init = /*%FSM<STATEINIT""">*/"{ [_x] call AW_fnc_deleteMarker; } forEach [_missionMarker, _missionIcon];"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"[_markers] call AW_fnc_deleteMarker;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -327,10 +327,10 @@ class FSM
        "_fuzzyPos = [_pos, 300] call AW_fnc_getFuzzyPos;" \n
        "_fuzzyPos = _pos;" \n
        "" \n
-       "_missionMarker = [format[""%1Marker"", _type], _code, _fuzzyPos] call AW_fnc_createMarker;" \n
-       "_missionIcon = [format[""%1Icon"", _type], format[""%1_icon"", _code], _fuzzyPos, format[""%1: %2"", _type, _title]] call AW_fnc_createMarker;" \n
+       "_markers = [_type, _code, _fuzzyPos, _title] call AW_fnc_createMarker;" \n
+       "" \n
        "[[""type"", format[""%1_created"", _type]], [""message"", _title]] call AW_fnc_showNotification;" \n
-       "[_code, true, [_description, _title, _missionIcon], _pos, ""CREATED"", 5, false, true] call BIS_fnc_setTask;"/*%FSM</STATEINIT""">*/;
+       "[_code, true, [_description, _title, (_markers select 1)], _pos, ""CREATED"", 5, false, true] call BIS_fnc_setTask;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

@@ -1,3 +1,5 @@
+if (debugMode) exitWith {};
+
 basesOwned = 0;
 JIPmarkers = []; publicVariable "JIPmarkers"; localMarkers = [];
 JIPactions = []; publicVariable "JIPactions";

@@ -30,6 +30,14 @@ _root = missionConfigFile >> "CfgMarkers" >> _type >> _state;
 		_marker setMarkerPos _pos;
 	};
 
+	if (_x == "marker" && markerColor _name != "") then
+	{
+		_marker setMarkerSize (markerSize _name);
+		_marker setMarkerDir (markerDir _name);
+	};
+
+	if (_x == "icon" && _text != "") then { _marker setMarkerText _text; };
+
 	_settings = _root >> _x;
 	_lastIndex = ((count _settings) - 1);
 
@@ -53,6 +61,8 @@ _root = missionConfigFile >> "CfgMarkers" >> _type >> _state;
 					_temp = getArray _s;
 					format["%1 %2 %3", (_temp select 0), _text, (_temp select 1)]
 				};
+
+				_marker setMarkerText _chars;
 			};
 		};
 	};

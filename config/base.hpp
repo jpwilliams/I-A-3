@@ -1,54 +1,119 @@
-class base_landing
+class base_alpha
 {
-	name = "Landing Point Alpha";
-	isOwned = 1;
-	radius = 60;
-	groups = 2;
-	respawnGroups = 1;
-	respawnTime = 600;
-	vehicles[] = {};
-};
-
-class base_connor
-{
-	name = "LZ Connor";
+	name = "Base Alpha";
 	isOwned = 0;
-	radius = 100;
-	groups = 5;
+	groups = 3;
 	respawnGroups = 1;
 	respawnTime = 300;
 	vehicles[] = {};
 };
 
-class base_pandosia
+class base_bravo
 {
-	name = "Pandosia";
+	name = "Base Bravo";
 	isOwned = 0;
-	radius = 50;
-	groups = 5;
+	groups = 4;
 	respawnGroups = 1;
 	respawnTime = 300;
 	vehicles[] = {};
 };
 
-class base_byzantium
+class base_charlie
 {
-	name = "Byzantium";
+	name = "Base Charlie";
 	isOwned = 0;
-	radius = 100;
 	groups = 7;
 	respawnGroups = 2;
 	respawnTime = 300;
 	vehicles[] = {};
 };
 
-class base_killfarm
+class base_delta
 {
-	name = "Kill Farm";
+	name = "Base Delta";
 	isOwned = 0;
-	radius = 150;
-	groups = 10;
-	respawnGroups = 2;
-	respawnTime = 30;
+	groups = 4;
+	respawnGroups = 1;
+	respawnTime = 300;
+	vehicles[] = {};
+};
+
+class base_echo
+{
+	name = "Base Echo";
+	isOwned = 0;
+	groups = 2;
+	respawnGroups = 1;
+	respawnTime = 300;
+	vehicles[] = {};
+};
+
+class base_foxtrot
+{
+	name = "Base Foxtrot";
+	isOwned = 0;
+	groups = 2;
+	respawnGroups = 1;
+	respawnTime = 300;
+	vehicles[] = {};
+};
+
+class base_golf
+{
+	name = "Base Golf";
+	isOwned = 0;
+	groups = 3;
+	respawnGroups = 1;
+	respawnTime = 300;
+	vehicles[] = {};
+};
+
+class base_hotel
+{
+	name = "Base Hotel";
+	isOwned = 0;
+	groups = 3;
+	respawnGroups = 1;
+	respawnTime = 300;
+	vehicles[] = {};
+};
+
+class base_india
+{
+	name = "Base India";
+	isOwned = 0;
+	groups = 2;
+	respawnGroups = 1;
+	respawnTime = 300;
+	vehicles[] = {};
+};
+
+class base_juliet
+{
+	name = "Base Juliet";
+	isOwned = 0;
+	groups = 2;
+	respawnGroups = 1;
+	respawnTime = 300;
+	vehicles[] = {};
+};
+
+class base_kilo
+{
+	name = "Base Kilo";
+	isOwned = 0;
+	groups = 2;
+	respawnGroups = 1;
+	respawnTime = 300;
+	vehicles[] = {};
+};
+
+class base_lima
+{
+	name = "Base Lima";
+	isOwned = 0;
+	groups = 2;
+	respawnGroups = 1;
+	respawnTime = 300;
 	vehicles[] = {};
 };

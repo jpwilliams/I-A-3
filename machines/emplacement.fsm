@@ -1,0 +1,353 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Emplacement">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Initialise_Empla",0,250,300.000000,425.000000,400.000000,475.000000,0.000000,"Initialise" \n "Emplacement"};
+item1[] = {"No_type_given",4,218,425.000000,425.000000,525.000000,475.000000,1.000000,"No type given"};
+item2[] = {"Type_given",8,218,175.000000,425.000000,275.000000,475.000000,0.000000,"Type given"};
+item3[] = {"Check_ammo",2,250,50.000000,725.000000,150.000000,775.000000,0.000000,"Check ammo"};
+item4[] = {"No_ammo_",4,218,175.000000,725.000000,275.000000,775.000000,1.000000,"No ammo!"};
+item5[] = {"Build_emplacement",2,4346,300.000000,500.000000,400.000000,550.000000,0.000000,"Build" \n "emplacement" \n "type"};
+item6[] = {"Time_to_check",4,218,175.000000,650.000000,275.000000,700.000000,0.000000,"Time to check"};
+item7[] = {"Have___awaiting",8,218,175.000000,800.000000,275.000000,850.000000,0.000000,"Have /" \n "awaiting" \n "ammo"};
+item8[] = {"Wait_for_the_che",8,218,675.000000,725.000000,775.000000,775.000000,0.000000,"Wait for the" \n "checks"};
+item9[] = {"Attack_",4,218,425.000000,725.000000,525.000000,775.000000,1.000000,"Attack!"};
+item10[] = {"Spawn_attacking",2,250,550.000000,725.000000,650.000000,775.000000,0.000000,"Spawn attacking" \n "enemies"};
+item11[] = {"No_players_remai",4,218,1050.000000,800.000000,1150.000000,850.000000,0.000000,"No players" \n "remaining"};
+item12[] = {"Enemy_defeated",4,218,1050.000000,650.000000,1150.000000,700.000000,0.000000,"Enemy" \n "defeated"};
+item13[] = {"Right_then___",8,218,300.000000,575.000000,400.000000,625.000000,0.000000,"Right then..."};
+item14[] = {"Let_s_wait_here",2,250,300.000000,650.000000,400.000000,700.000000,0.000000,"Let's wait here"};
+item15[] = {"Wait___",2,250,800.000000,725.000000,900.000000,775.000000,0.000000,"Wait..."};
+item16[] = {"Do_the_checks",4,218,925.000000,725.000000,1025.000000,775.000000,0.000000,"Do the checks"};
+item17[] = {"Check",2,250,1050.000000,725.000000,1150.000000,775.000000,0.000000,"Check"};
+item18[] = {"Nothing_yet",8,218,925.000000,800.000000,1025.000000,850.000000,0.000000,"Nothing yet"};
+item19[] = {"That_s_it__The_End",1,250,1050.000000,875.000000,1150.000000,925.000000,0.000000,"That's it." \n "The End."};
+link0[] = {0,1};
+link1[] = {0,2};
+link2[] = {1,5};
+link3[] = {2,5};
+link4[] = {3,4};
+link5[] = {3,7};
+link6[] = {4,14};
+link7[] = {5,13};
+link8[] = {6,3};
+link9[] = {7,14};
+link10[] = {8,15};
+link11[] = {9,10};
+link12[] = {10,8};
+link13[] = {11,19};
+link14[] = {12,14};
+link15[] = {13,14};
+link16[] = {14,6};
+link17[] = {14,9};
+link18[] = {15,16};
+link19[] = {16,17};
+link20[] = {17,11};
+link21[] = {17,12};
+link22[] = {17,18};
+link23[] = {18,15};
+globals[] = {25.000000,1,0,0,0,640,480,1,32,6316128,1,-343.128540,1068.282837,1306.166992,-17.352173,1016,920,1};
+window[] = {2,-1,-1,-1,-1,1136,-1775,-335,376,3,1034};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Emplacement";
+  class States
+  {
+    /*%FSM<STATE "Initialise_Empla">*/
+    class Initialise_Empla
+    {
+      name = "Initialise_Empla";
+      init = /*%FSM<STATEINIT""">*/"_name = """";" \n
+       "_marker = """";" \n
+       "_pos = [];" \n
+       "_type = """";" \n
+       "" \n
+       "{" \n
+       "	switch (_x select 0) do" \n
+       "	{" \n
+       "		case ""name"": { _name = _x select 1; };" \n
+       "		case ""marker"": { _marker = _x select 1; _pos = markerPos _marker; };" \n
+       "		case ""type"": { _type = _x select 1; };" \n
+       "	};" \n
+       "} forEach _this;" \n
+       "" \n
+       "_awaitingAmmo = false;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "No_type_given">*/
+        class No_type_given
+        {
+          priority = 1.000000;
+          to="Build_emplacement";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_type == """""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Type_given">*/
+        class Type_given
+        {
+          priority = 0.000000;
+          to="Build_emplacement";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Check_ammo">*/
+    class Check_ammo
+    {
+      name = "Check_ammo";
+      init = /*%FSM<STATEINIT""">*/"_hasAmmo = true;" \n
+       "" \n
+       "{" \n
+       "	if (!(someAmmo _x)) exitWith { _hasAmmo = false; };	" \n
+       "} forEach _weapons;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "No_ammo_">*/
+        class No_ammo_
+        {
+          priority = 1.000000;
+          to="Let_s_wait_here";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_hasAmmo && !_awaitingAmmo"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"[[""emplacement"", ""ammo""], _marker, _pos, _name] call AW_fnc_createMarker;" \n
+           "[[""type"", ""emplacement_ammo""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Have___awaiting">*/
+        class Have___awaiting
+        {
+          priority = 0.000000;
+          to="Let_s_wait_here";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Build_emplacement">*/
+    class Build_emplacement
+    {
+      name = "Build_emplacement";
+      init = /*%FSM<STATEINIT""">*/"_weapons = [];" \n
+       "_objs = [];" \n
+       "" \n
+       "switch (_type) do" \n
+       "{" \n
+       "	default" \n
+       "	{" \n
+       "		_weapon = [""B_Mortar_01_F"", [(_pos select 0) - 2.5, _pos select 1, _pos select 2]] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
+       "		_weapon = [""B_Mortar_01_F"", [(_pos select 0) + 2.5, _pos select 1, _pos select 2]] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
+       "" \n
+       "		_dir = -45;" \n
+       "		for [{_c = 0}, {_c < 4}, {_c = _c + 1}] do" \n
+       "		{" \n
+       "			_dir = _dir + 90;" \n
+       "			_relPos = [_pos, 7.5, _dir] call BIS_fnc_relPos;" \n
+       "			_obj = [""Land_BagFence_Round_F"", _relPos] call AW_fnc_createVehicle;" \n
+       "			_obj setDir (_dir - 180);" \n
+       "			_objs = _objs + [_obj];" \n
+       "		};" \n
+       "	};" \n
+       "};" \n
+       "" \n
+       "_markers = [""emplacement"", _marker, _pos, _name] call AW_fnc_createMarker;" \n
+       "[[""type"", ""emplacement_created""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
+       "" \n
+       "//Set attack timer" \n
+       "_attackTimeout = time + (3600 + random(10800));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Right_then___">*/
+        class Right_then___
+        {
+          priority = 0.000000;
+          to="Let_s_wait_here";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Spawn_attacking">*/
+    class Spawn_attacking
+    {
+      name = "Spawn_attacking";
+      init = /*%FSM<STATEINIT""">*/"_attackers = [EAST, round(1 + random(2)), _pos, [500, 1500]] call AW_fnc_spawnEnemy;" \n
+       "[_attackers, [[""attack"", _pos, 50]]] call AW_fnc_setBehaviour;" \n
+       "" \n
+       "[[""emplacement"", ""defending""], _marker, _pos, _name] call AW_fnc_createMarker;" \n
+       "[[""type"", ""emplacement_underattack""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Wait_for_the_che">*/
+        class Wait_for_the_che
+        {
+          priority = 0.000000;
+          to="Wait___";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Let_s_wait_here">*/
+    class Let_s_wait_here
+    {
+      name = "Let_s_wait_here";
+      init = /*%FSM<STATEINIT""">*/"_timeout = time + (5 + random(10));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Attack_">*/
+        class Attack_
+        {
+          priority = 1.000000;
+          to="Spawn_attacking";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _attackTimeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Time_to_check">*/
+        class Time_to_check
+        {
+          priority = 0.000000;
+          to="Check_ammo";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Wait___">*/
+    class Wait___
+    {
+      name = "Wait___";
+      init = /*%FSM<STATEINIT""">*/"_timeout = time + (5 + random(5));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Do_the_checks">*/
+        class Do_the_checks
+        {
+          priority = 0.000000;
+          to="Check";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Check">*/
+    class Check
+    {
+      name = "Check";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Enemy_defeated">*/
+        class Enemy_defeated
+        {
+          priority = 0.000000;
+          to="Let_s_wait_here";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"private[""_enemiesDead""];" \n
+           "" \n
+           "_enemiesDead = true;" \n
+           "{" \n
+           "	if (typeName _x == ""GROUP"") then" \n
+           "	{" \n
+           "		{" \n
+           "			if (alive _x) exitWith { _enemiesDead = false; };" \n
+           "		} forEach (units _x);" \n
+           "	};" \n
+           "" \n
+           "	if (!_enemiesDead) exitWith {};" \n
+           "} forEach _attackers;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_enemiesDead"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_attackTimeout = time + (3600 + random(10800));" \n
+           "" \n
+           "[[""emplacement"", ""friendly""], _marker, _pos, _name] call AW_fnc_createMarker;" \n
+           "[[""type"", ""emplacement_defended""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Nothing_yet">*/
+        class Nothing_yet
+        {
+          priority = 0.000000;
+          to="Wait___";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "No_players_remai">*/
+        class No_players_remai
+        {
+          priority = 0.000000;
+          to="That_s_it__The_End";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_friendliesAbsent = true;" \n
+           "_emplacementTaken = false;" \n
+           "" \n
+           "{" \n
+           "	if (alive _x && (_x distance _pos) < 100) exitWith { _friendliesAbsent = false; };" \n
+           "} forEach playableUnits;" \n
+           "" \n
+           "if (_friendliesAbsent) then" \n
+           "{" \n
+           "	{" \n
+           "		if (typeName _x == ""GROUP"") then" \n
+           "		{" \n
+           "			{" \n
+           "				if (alive _x && (_x distance _pos) < 50) exitWith { _emplacementTaken = true; };" \n
+           "			} forEach (units _x);" \n
+           "		};" \n
+           "	} forEach _attackers;" \n
+           "};"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_emplacementTaken"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "That_s_it__The_End">*/
+    class That_s_it__The_End
+    {
+      name = "That_s_it__The_End";
+      init = /*%FSM<STATEINIT""">*/"[_markers] call AW_fnc_deleteMarker;" \n
+       "[[""type"", ""emplacement_lost""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Initialise_Empla";
+  finalStates[] =
+  {
+    "That_s_it__The_End",
+  };
+};
+/*%FSM</COMPILE>*/

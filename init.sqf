@@ -2,6 +2,8 @@
 	LEAVE THESE BE AND THE REST OF THE FILE IS YOURS!
 
 	*/
+		debugMode = false;
+
 		enableSaving [false, false];
 		if (isServer) exitWith { [] execVM "init\server.sqf"; };
 		_settings = player execVM "init\player.sqf"; waitUntil { scriptDone _settings };

@@ -6,7 +6,7 @@ _spawnedUnits = [];
 _side = _this select 0;
 _amount = _this select 1;
 _loc = _this select 2;
-_radius = _this select 3;
+_radius = if ((count _this) > 3) then { _this select 3 } else { "" };
 
 _soldiers =
 [
@@ -47,18 +47,47 @@ for [{_i = 0}, {_i < _amount}, {_i = _i + 1}] do
 {
 	_toSpawn = [];
 	_type = if ((random 1) > 0.2) then { "infantry" } else { "vehicle" };
-	_pos = if (typeName _radius == "ARRAY") then
+
+	_lName = typeName _loc;
+	_ret = [];
+
+	_pos = switch (_lName) do
 	{
-		[_loc, (_radius select 0), (_radius select 1), 1, 0, 2000, 0] call BIS_fnc_findSafePos
-	} else {
-		[[[_loc, _radius]], ["water", "out"]] call BIS_fnc_randomPos
+		case "ARRAY":
+		{
+			_rName = typeName _radius;
+			_ret = switch (_rName) do
+			{
+				case "ARRAY":
+				{
+					[_loc, (_radius select 0), (_radius select 1), 1, 0, 2000, 0] call BIS_fnc_findSafePos
+				};
+
+				case "SCALAR":
+				{
+					[[[_loc, _radius]], ["water", "out"]] call BIS_fnc_randomPos
+				};
+			};
+
+			_ret
+		};
+
+		case "STRING":
+		{
+			_tempPos = [_loc] call AW_fnc_randomPosTrigger;
+			_ret = [_tempPos, 0, 50, 2, 0, 2000, 0] call BIS_fnc_findSafePos;
+
+			_ret
+		};
 	};
 
 	switch (_type) do
 	{
 		case "infantry":
 		{
-			for [{_c = 0}, {_c < 10}, {_c = _c + 1}] do
+			_rand = round(4 + random(6));
+
+			for [{_c = 0}, {_c < _rand}, {_c = _c + 1}] do
 			{
 				_randomUnit = _soldiers call BIS_fnc_selectRandom;
 				_toSpawn = _toSpawn + [_randomUnit];

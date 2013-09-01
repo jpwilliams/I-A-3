@@ -8,7 +8,7 @@ class friendly
 {
 	class marker
 	{
-		color = "ColorBLUFOR"
+		color = "ColorBLUFOR";
 	};
 
 	class icon
@@ -48,4 +48,4 @@ class enemy
 		type = "o_unknown";
 		color = "ColorOPFOR";
 	};
-}
+};

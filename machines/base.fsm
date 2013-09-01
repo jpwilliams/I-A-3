@@ -1,33 +1,41 @@
 /*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Bases">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"Initialise_Base",0,4346,275.000000,275.000000,375.000000,325.000000,0.000000,"Initialise" \n "Base"};
+item0[] = {"Initialise_Base",0,250,275.000000,275.000000,375.000000,325.000000,0.000000,"Initialise" \n "Base"};
 item1[] = {"Is_friendly",4,218,150.000000,275.000000,250.000000,325.000000,1.000000,"Is" \n "friendly"};
 item2[] = {"Is_enemy",4,218,400.000000,275.000000,500.000000,325.000000,0.000000,"Is" \n "enemy"};
 item3[] = {"Add_Respawn_Location",2,250,25.000000,275.000000,125.000000,325.000000,0.000000,"Add Respawn" \n "Location &" \n "Vehicles"};
 item4[] = {"Spawn_defenders",2,250,525.000000,275.000000,625.000000,325.000000,0.000000,"Spawn" \n "defenders & set" \n "marker"};
-item5[] = {"Stop_vehicles_respawning",2,250,275.000000,425.000000,375.000000,475.000000,0.000000,"Stop vehicles" \n "respawning &" \n "remove spawn"};
-item6[] = {"Base_being_captu",2,250,650.000000,500.000000,750.000000,550.000000,0.000000,"Base being" \n "captured"};
-item7[] = {"Calculate___Spawn",2,250,650.000000,350.000000,750.000000,400.000000,0.000000,"Calculate &" \n "Spawn" \n "Reinforcements"};
-item8[] = {"Let_s_start_loop",8,218,525.000000,350.000000,625.000000,400.000000,0.000000,"Let's start" \n "looping"};
-item9[] = {"Player_within_base",4,218,575.000000,425.000000,675.000000,475.000000,1.000000,"Player" \n "within base" \n "radius"};
-item10[] = {"No_enemies_left",4,218,900.000000,500.000000,1000.000000,550.000000,1.000000,"No" \n "enemies" \n "left"};
-item11[] = {"Base_Taken_",2,250,900.000000,200.000000,1000.000000,250.000000,0.000000,"Base" \n "Taken!"};
+item5[] = {"Stop_vehicles_respawning",2,250,400.000000,425.000000,500.000000,475.000000,0.000000,"Stop vehicles" \n "respawning &" \n "remove spawn"};
+item6[] = {"Base_being_captu",2,250,900.000000,650.000000,1000.000000,700.000000,0.000000,"Base being" \n "captured"};
+item7[] = {"Calculate___Spawn",2,250,775.000000,350.000000,875.000000,400.000000,0.000000,"Calculate &" \n "Spawn" \n "Reinforcements"};
+item8[] = {"Do_the_checks",8,218,525.000000,350.000000,625.000000,400.000000,0.000000,"Do the checks"};
+item9[] = {"Player_within_base",4,218,650.000000,500.000000,750.000000,550.000000,1.000000,"Player" \n "within base" \n "radius"};
+item10[] = {"No_enemies_left",4,218,1025.000000,500.000000,1125.000000,550.000000,1.000000,"No" \n "enemies" \n "left"};
+item11[] = {"Base_Taken_",2,250,1025.000000,200.000000,1125.000000,250.000000,0.000000,"Base" \n "Taken!"};
 item12[] = {"Base_taken",8,218,25.000000,200.000000,125.000000,250.000000,0.000000,"Base" \n "taken"};
-item13[] = {"Reinforcements_time",4,218,650.000000,275.000000,750.000000,325.000000,0.000000,"Reinforcements" \n "time?"};
-item14[] = {"Players_no_longer",4,218,725.000000,425.000000,825.000000,475.000000,0.000000,"Players" \n "no longer" \n "within radius"};
+item13[] = {"Reinforcements_time",4,218,775.000000,275.000000,875.000000,325.000000,0.000000,"Reinforcements" \n "time?"};
+item14[] = {"Players_no_longer",4,4314,900.000000,500.000000,1000.000000,550.000000,0.000000,"Players" \n "no longer" \n "within radius"};
 item15[] = {"Base_taken",8,218,400.000000,350.000000,500.000000,400.000000,0.000000,"Base" \n "taken"};
 item16[] = {"Wait_for_grace_p",4,218,25.000000,350.000000,125.000000,400.000000,0.000000,"Wait for" \n "grace period"};
 item17[] = {"Set_time_before",2,250,25.000000,425.000000,125.000000,475.000000,0.000000,"Set time" \n "before next" \n "attack"};
 item18[] = {"Wait_for_the_att",4,218,25.000000,500.000000,125.000000,550.000000,0.000000,"Wait" \n "for the" \n "attack"};
-item19[] = {"Attack_the_base",2,250,150.000000,500.000000,250.000000,550.000000,0.000000,"Attack the" \n "base!"};
-item20[] = {"Enemies_defeated",4,218,150.000000,425.000000,250.000000,475.000000,1.000000,"Enemies" \n "defeated"};
-item21[] = {"No_players_remai",4,218,275.000000,500.000000,375.000000,550.000000,0.000000,"No players" \n "remaining"};
-item22[] = {"Only_1_base_left",4,218,150.000000,575.000000,250.000000,625.000000,2.000000,"Only 1" \n "base left"};
-item23[] = {"Organise_tactical",2,250,25.000000,575.000000,125.000000,625.000000,0.000000,"Organise" \n "tactical" \n "retreat"};
+item19[] = {"Attack_the_base",2,250,25.000000,575.000000,125.000000,625.000000,0.000000,"Attack the" \n "base!"};
+item20[] = {"Enemies_defeated",4,218,150.000000,425.000000,250.000000,475.000000,2.000000,"Enemies" \n "defeated"};
+item21[] = {"No_players_remai",4,218,400.000000,500.000000,500.000000,550.000000,1.000000,"No players" \n "remaining"};
+item22[] = {"Only_1_base_left",4,218,25.000000,650.000000,125.000000,700.000000,2.000000,"Only 1" \n "base left"};
+item23[] = {"Organise_tactical",2,250,-100.000000,650.000000,0.000000,700.000000,0.000000,"Organise" \n "tactical" \n "retreat"};
 item24[] = {"Ready_to_delete",4,218,-100.000000,575.000000,0.000000,625.000000,0.000000,"Ready" \n "to delete"};
 item25[] = {"Clean_up_attacke",2,250,-100.000000,500.000000,0.000000,550.000000,0.000000,"Clean up" \n "attackers"};
 item26[] = {"Wait_for_more_than",4,218,-100.000000,425.000000,0.000000,475.000000,0.000000,"Wait for" \n "more than 1" \n "base"};
+item27[] = {"Do_the_checks",4,218,150.000000,575.000000,250.000000,625.000000,0.000000,"Do the checks"};
+item28[] = {"Check",2,250,275.000000,500.000000,375.000000,550.000000,0.000000,"Check"};
+item29[] = {"Nothing_yet",8,218,150.000000,650.000000,250.000000,700.000000,0.000000,"Nothing yet"};
+item30[] = {"Wait___",2,250,275.000000,650.000000,375.000000,700.000000,0.000000,"Wait..."};
+item31[] = {"Do_the_checks",4,218,775.000000,425.000000,875.000000,475.000000,0.000000,"Do the checks"};
+item32[] = {"Check_1",2,250,775.000000,500.000000,875.000000,550.000000,0.000000,"Check"};
+item33[] = {"Ready_to_check",4,218,275.000000,575.000000,375.000000,625.000000,0.000000,"Ready to check"};
+item34[] = {"Nothing_yet",8,218,650.000000,425.000000,750.000000,475.000000,0.000000,"Nothing yet"};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,3};
@@ -37,8 +45,8 @@ link5[] = {4,8};
 link6[] = {5,15};
 link7[] = {6,10};
 link8[] = {6,14};
-link9[] = {7,9};
-link10[] = {7,13};
+link9[] = {7,13};
+link10[] = {7,31};
 link11[] = {8,7};
 link12[] = {9,6};
 link13[] = {10,11};
@@ -50,18 +58,28 @@ link18[] = {15,4};
 link19[] = {16,17};
 link20[] = {17,18};
 link21[] = {18,19};
-link22[] = {19,20};
-link23[] = {19,21};
-link24[] = {19,22};
-link25[] = {20,17};
-link26[] = {21,5};
-link27[] = {22,23};
-link28[] = {23,24};
-link29[] = {24,25};
-link30[] = {25,26};
-link31[] = {26,17};
-globals[] = {25.000000,1,0,0,0,640,480,1,39,6316128,1,-169.546661,1335.612549,990.682800,-70.425552,1304,920,1};
-window[] = {2,-1,-1,-1,-1,890,130,1570,130,3,1322};
+link22[] = {19,22};
+link23[] = {19,27};
+link24[] = {20,17};
+link25[] = {21,5};
+link26[] = {22,23};
+link27[] = {23,24};
+link28[] = {24,25};
+link29[] = {25,26};
+link30[] = {26,17};
+link31[] = {27,28};
+link32[] = {28,20};
+link33[] = {28,21};
+link34[] = {28,29};
+link35[] = {29,30};
+link36[] = {30,33};
+link37[] = {31,32};
+link38[] = {32,9};
+link39[] = {32,34};
+link40[] = {33,28};
+link41[] = {34,7};
+globals[] = {25.000000,1,0,0,0,640,480,1,53,6316128,1,-169.546661,1335.612549,990.682800,-70.425552,1304,920,1};
+window[] = {2,-1,-1,-1,-1,1006,-1920,-480,246,3,1322};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -78,7 +96,7 @@ class FSM
        "_marker = """";" \n
        "_markerText = """";" \n
        "_iconMarker = """";" \n
-       "_radius = 50;" \n
+       "_radius = 100;" \n
        "_groups = 5;" \n
        "_respawnGroups = 0;" \n
        "_respawnTime = 300;" \n
@@ -96,8 +114,8 @@ class FSM
        "			_marker = _x select 1;" \n
        "			_markerText = markerText _marker;" \n
        "			_iconMarker = format[""%1_icon"", _marker];" \n
+       "			_radius = (getMarkerSize _marker) call BIS_fnc_greatestNum;" \n
        "		};" \n
-       "		case ""radius"": { _radius = _x select 1; };" \n
        "		case ""groups"": { _groups = _x select 1; };" \n
        "		case ""respawnGroups"": { _respawnGroups = _x select 1; };" \n
        "		case ""respawnTime"": { _respawnTime = _x select 1; };" \n
@@ -142,8 +160,8 @@ class FSM
       name = "Add_Respawn_Location";
       init = /*%FSM<STATEINIT""">*/"basesOwned = basesOwned + 1;" \n
        "" \n
-       "[""baseMarker_friendly"", _marker, _pos] call AW_fnc_createMarker;" \n
-       "[""baseIcon_friendly"", _iconMarker, _pos, _markerText] call AW_fnc_createMarker;" \n
+       "[[""base"", ""friendly""], _marker, _pos, _markerText] call AW_fnc_createMarker;" \n
+       "" \n
        "_respawnID = [west, _marker] call BIS_fnc_addRespawnPosition;" \n
        "" \n
        "_respawningHandles = [];" \n
@@ -191,10 +209,10 @@ class FSM
     class Spawn_defenders
     {
       name = "Spawn_defenders";
-      init = /*%FSM<STATEINIT""">*/"[""baseMarker_enemy"", _marker, _pos] call AW_fnc_createMarker;" \n
-       "[""baseIcon_enemy"", _iconMarker, _pos, _markerText] call AW_fnc_createMarker;" \n
-       "_spawnedUnits = [EAST, _groups, _pos, _radius] call AW_fnc_spawnEnemy;" \n
-       "[_spawnedUnits, [[""defend"", _pos, _radius], [""patrol"", _pos, (_radius / 2)]]] call AW_fnc_setBehaviour;" \n
+      init = /*%FSM<STATEINIT""">*/"[[""base"", ""enemy""], _marker, _pos, _name] call AW_fnc_createMarker;" \n
+       "" \n
+       "_spawnedUnits = [EAST, _groups, _marker] call AW_fnc_spawnEnemy;" \n
+       "[_spawnedUnits, [[""patrol"", true, 100]]] call AW_fnc_setBehaviour;" \n
        "" \n
        "_unitGroups = [];" \n
        "" \n
@@ -207,12 +225,14 @@ class FSM
        "	};" \n
        "} forEach _spawnedUnits;" \n
        "" \n
-       "_unitCount = count _unitGroups;"/*%FSM</STATEINIT""">*/;
+       "_unitCount = count _unitGroups;" \n
+       "" \n
+       "_respawnTimeout = (time + _respawnTime);"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "Let_s_start_loop">*/
-        class Let_s_start_loop
+        /*%FSM<LINK "Do_the_checks">*/
+        class Do_the_checks
         {
           priority = 0.000000;
           to="Calculate___Spawn";
@@ -272,8 +292,10 @@ class FSM
     class Base_being_captu
     {
       name = "Base_being_captu";
-      init = /*%FSM<STATEINIT""">*/"[""baseIcon_contested"", _iconMarker, _pos, _markerText] call AW_fnc_createMarker;" \n
-       "[[""type"", ""base_attacking""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"[[""base"", ""contested""], _marker, _pos, _markerText] call AW_fnc_createMarker;" \n
+       "[[""type"", ""base_attacking""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;" \n
+       "" \n
+       "[_spawnedUnits, [[""defend"", _marker]]] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -314,7 +336,9 @@ class FSM
            "	if ((_x distance _pos) < _radius) exitWith { _beingTaken = true; };" \n
            "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"!_beingTaken"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"[""baseIcon_enemy"", _iconMarker, _pos] call AW_fnc_createMarker;"/*%FSM</ACTION""">*/;
+          action=/*%FSM<ACTION""">*/"[[""base"", ""enemy""], _marker, _pos, _markerText] call AW_fnc_createMarker;" \n
+           "" \n
+           "[_spawnedUnits, [[""patrol"", _marker, 100]]] call AW_fnc_setBehaviour;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -324,48 +348,17 @@ class FSM
     class Calculate___Spawn
     {
       name = "Calculate___Spawn";
-      init = /*%FSM<STATEINIT""">*/"_unitGroups = [];" \n
-       "_unitsDefending = [];" \n
-       "" \n
-       "{" \n
-       "	if (!isPlayer _x && alive _x && (_x distance _pos) <= _radius) then" \n
-       "	{" \n
-       "		_unitsDefending = _unitsDefending + [_x];" \n
-       "	};" \n
-       "} forEach allUnits;" \n
-       "" \n
-       "{" \n
-       "	_type = typeName _x;" \n
-       "	switch (_type) do" \n
-       "	{" \n
-       "		case ""GROUP"": { if (!(_x in _unitGroups)) then { _unitGroups = _unitGroups + [_x]; }; };" \n
-       "		case ""OBJECT"": { if (!(group _x in _unitGroups)) then { _unitGroups = _unitGroups + [group _x]; }; };" \n
-       "	};" \n
-       "} forEach _unitsDefending;" \n
-       "" \n
-       "if ((count _unitGroups) < _unitCount) then" \n
-       "{" \n
-       "	_lacking = (_unitCount - count _unitGroups);" \n
-       "	_toSpawn = if (_respawnGroups < _lacking) then { _respawnGroups } else { _lacking };" \n
-       "" \n
-       "	_respawnedUnits = [EAST, _toSpawn, _pos, _radius] call AW_fnc_spawnEnemy;" \n
-       "	[_respawnedUnits, [[""defend"", _pos, _radius]]] call AW_fnc_setBehaviour;" \n
-       "};" \n
-       "" \n
-       "_timeout = (time + _respawnTime);"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_timeout = time + (5 + random(10));"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "Player_within_base">*/
-        class Player_within_base
+        /*%FSM<LINK "Do_the_checks">*/
+        class Do_the_checks
         {
-          priority = 1.000000;
-          to="Base_being_captu";
-          precondition = /*%FSM<CONDPRECONDITION""">*/"_beingTaken = false;" \n
-           "{" \n
-           "	if ((_x distance _pos) < _radius) exitWith { _beingTaken = true; };" \n
-           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_beingTaken"/*%FSM</CONDITION""">*/;
+          priority = 0.000000;
+          to="Check_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -375,8 +368,38 @@ class FSM
           priority = 0.000000;
           to="Calculate___Spawn";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _respawnTimeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_unitGroups = [];" \n
+           "_unitsDefending = [];" \n
+           "" \n
+           "{" \n
+           "	if (!isPlayer _x && alive _x && (_x distance _pos) <= _radius) then" \n
+           "	{" \n
+           "		_unitsDefending = _unitsDefending + [_x];" \n
+           "	};" \n
+           "} forEach allUnits;" \n
+           "" \n
+           "{" \n
+           "	_type = typeName _x;" \n
+           "	switch (_type) do" \n
+           "	{" \n
+           "		case ""GROUP"": { if (!(_x in _unitGroups)) then { _unitGroups = _unitGroups + [_x]; }; };" \n
+           "		case ""OBJECT"": { if (!(group _x in _unitGroups)) then { _unitGroups = _unitGroups + [group _x]; }; };" \n
+           "	};" \n
+           "} forEach _unitsDefending;" \n
+           "" \n
+           "if ((count _unitGroups) < _unitCount) then" \n
+           "{" \n
+           "	_lacking = (_unitCount - count _unitGroups);" \n
+           "	_toSpawn = if (_respawnGroups < _lacking) then { _respawnGroups } else { _lacking };" \n
+           "" \n
+           "	_respawnedUnits = [EAST, _toSpawn, _marker] call AW_fnc_spawnEnemy;" \n
+           "	[_respawnedUnits, [[""patrol"", true, 100]]] call AW_fnc_setBehaviour;" \n
+           "" \n
+           "	_spawnedUnits = _spawnedUnits + _respawnedUnits;" \n
+           "};" \n
+           "" \n
+           "_respawnTimeout = (time + _respawnTime);"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -387,7 +410,9 @@ class FSM
     {
       name = "Base_Taken_";
       init = /*%FSM<STATEINIT""">*/"_isOwned = true;" \n
-       "[[""type"", ""base_captured""], [""message"", _markerText], [""global"", true], [""hint"", [""Base"", _marker]]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
+       "[[""type"", ""base_captured""], [""message"", _markerText], [""global"", true], [""hint"", [""Base"", _marker]]] call AW_fnc_showNotification;" \n
+       "" \n
+       "[_spawnedUnits, [[""retreat"", _pos, 1000]]] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -429,10 +454,14 @@ class FSM
     class Attack_the_base
     {
       name = "Attack_the_base";
-      init = /*%FSM<STATEINIT""">*/"_attackers = [EAST, round ((_groups / 2) + random _groups), _pos, [80, 150]] call AW_fnc_spawnEnemy;" \n
-       "[_attackers, [[""attack"", _pos, _radius]]] call AW_fnc_setBehaviour;" \n
-       "[""baseIcon_contested"", _iconMarker, _pos, _markerText] call AW_fnc_createMarker;" \n
-       "[[""type"", ""base_underattack""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_attackers = [EAST, round ((_groups / 2) + random _groups), _pos, [500, 1500]] call AW_fnc_spawnEnemy;" \n
+       "[_attackers, [[""attack"", _pos, 100]]] call AW_fnc_setBehaviour;" \n
+       "" \n
+       "[[""base"", ""contested""], _marker, _pos, _markerText] call AW_fnc_createMarker;" \n
+       "" \n
+       "[[""type"", ""base_underattack""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;" \n
+       "" \n
+       "_timeout = time + (5 + random(5));"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -447,57 +476,14 @@ class FSM
            "[""baseIcon_friendly"", _iconMarker, _pos, _markerText] call AW_fnc_createMarker;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
-        /*%FSM<LINK "Enemies_defeated">*/
-        class Enemies_defeated
-        {
-          priority = 1.000000;
-          to="Set_time_before";
-          precondition = /*%FSM<CONDPRECONDITION""">*/"private[""_enemiesDead""];" \n
-           "" \n
-           "_enemiesDead = true;" \n
-           "{" \n
-           "	if (typeName _x == ""GROUP"") then" \n
-           "	{" \n
-           "		{" \n
-           "			if (alive _x) exitWith { _enemiesDead = false; };" \n
-           "		} forEach (units _x);" \n
-           "	};" \n
-           "" \n
-           "	if (!_enemiesDead) exitWith {};" \n
-           "} forEach _attackers;"/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_enemiesDead"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"[""baseIcon_friendly"", _iconMarker, _pos, _markerText] call AW_fnc_createMarker;" \n
-           "[[""type"", ""base_defended""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;" \n
-           "_attackers call AW_fnc_collectGarbage;"/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-        /*%FSM<LINK "No_players_remai">*/
-        class No_players_remai
+        /*%FSM<LINK "Do_the_checks">*/
+        class Do_the_checks
         {
           priority = 0.000000;
-          to="Stop_vehicles_respawning";
-          precondition = /*%FSM<CONDPRECONDITION""">*/"_friendliesAbsent = true;" \n
-           "_baseTaken = false;" \n
-           "{" \n
-           "	if (alive _x && (_x distance _pos) < _radius) exitWith { _friendliesAbsent = false; };" \n
-           "} forEach playableUnits;" \n
-           "" \n
-           "if (_friendliesAbsent) then" \n
-           "{" \n
-           "	_tighterRad = (_radius / 2);" \n
-           "	{" \n
-           "		if (typeName _x == ""GROUP"") then" \n
-           "		{" \n
-           "			{" \n
-           "				if (alive _x && (_x distance _pos) < _tighterRad) exitWith { _baseTaken = true; };" \n
-           "			} forEach (units _x);" \n
-           "		};" \n
-           "" \n
-           "		if (_baseTaken) exitWith {};" \n
-           "	} forEach _attackers;" \n
-           "};"/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_baseTaken && basesOwned > 1"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"[[""type"", ""base_lost""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</ACTION""">*/;
+          to="Check";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -552,6 +538,135 @@ class FSM
           to="Set_time_before";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"basesOwned > 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Check">*/
+    class Check
+    {
+      name = "Check";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Enemies_defeated">*/
+        class Enemies_defeated
+        {
+          priority = 2.000000;
+          to="Set_time_before";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"private[""_enemiesDead""];" \n
+           "" \n
+           "_enemiesDead = true;" \n
+           "{" \n
+           "	if (typeName _x == ""GROUP"") then" \n
+           "	{" \n
+           "		{" \n
+           "			if (alive _x) exitWith { _enemiesDead = false; };" \n
+           "		} forEach (units _x);" \n
+           "	};" \n
+           "" \n
+           "	if (!_enemiesDead) exitWith {};" \n
+           "} forEach _attackers;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_enemiesDead"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"[[""base"", ""friendly""], _marker, _pos, _markerText] call AW_fnc_createMarker;" \n
+           "[[""type"", ""base_defended""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;" \n
+           "_attackers call AW_fnc_collectGarbage;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "No_players_remai">*/
+        class No_players_remai
+        {
+          priority = 1.000000;
+          to="Stop_vehicles_respawning";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_friendliesAbsent = true;" \n
+           "_baseTaken = false;" \n
+           "{" \n
+           "	if (alive _x && (_x distance _pos) < _radius) exitWith { _friendliesAbsent = false; };" \n
+           "} forEach playableUnits;" \n
+           "" \n
+           "if (_friendliesAbsent) then" \n
+           "{" \n
+           "	_tighterRad = (_radius / 2);" \n
+           "	{" \n
+           "		if (typeName _x == ""GROUP"") then" \n
+           "		{" \n
+           "			{" \n
+           "				if (alive _x && (_x distance _pos) < _tighterRad) exitWith { _baseTaken = true; };" \n
+           "			} forEach (units _x);" \n
+           "		};" \n
+           "" \n
+           "		if (_baseTaken) exitWith {};" \n
+           "	} forEach _attackers;" \n
+           "};"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_baseTaken && basesOwned > 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"[[""type"", ""base_lost""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Nothing_yet">*/
+        class Nothing_yet
+        {
+          priority = 0.000000;
+          to="Wait___";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Wait___">*/
+    class Wait___
+    {
+      name = "Wait___";
+      init = /*%FSM<STATEINIT""">*/"_timeout = time + (5 + random(5));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Ready_to_check">*/
+        class Ready_to_check
+        {
+          priority = 0.000000;
+          to="Check";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Check_1">*/
+    class Check_1
+    {
+      name = "Check_1";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Player_within_base">*/
+        class Player_within_base
+        {
+          priority = 1.000000;
+          to="Base_being_captu";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_beingTaken = false;" \n
+           "{" \n
+           "	if ((_x distance _pos) < _radius) exitWith { _beingTaken = true; };" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_beingTaken"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Nothing_yet">*/
+        class Nothing_yet
+        {
+          priority = 0.000000;
+          to="Calculate___Spawn";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
