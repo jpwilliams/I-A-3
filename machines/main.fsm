@@ -199,7 +199,7 @@ class FSM
        "diag_log format[""DEBUG TIME! _name = %1"", _name];" \n
        "" \n
        "[[""type"", ""main_created""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
-       "_markers = [""main"", format[""main_%1"", _number], _pos, _name] call AW_fnc_createMarker;"/*%FSM</STATEINIT""">*/;
+       "_markers = [""main"", format[""main_%1"", _number], _pos, _name] call AW_fnc_createJIPstateMarker;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

@@ -66,13 +66,21 @@ _behaviours = _this select 1;
 					_pos = [_x, ((markerSize _x) call BIS_fnc_lowestNum)] call AW_fnc_randomPosTrigger;
 				};
 			};
-			_radius = if (count _behaviour > 2) then { _behaviour select 2 } else { 0 };
+			_radius = if (count _behaviour > 2) then { _behaviour select 2 } else { 100 };
 			switch (_order) do
 			{
 				case "defend":
 				{
 					_near = [[[_pos, _radius]], ["water", "out"]] call BIS_fnc_randomPos;
 					[_x, _near] call BIS_fnc_taskDefend;
+				};
+
+				case "active_defend":
+				{
+					_near = [[[_pos, _radius]], ["water", "out"]] call BIS_fnc_randomPos;
+					[_x, _near] call BIS_fnc_taskDefend;
+					_x setBehaviour "AWARE";
+					_x setSpeedMode "FULL";
 				};
 
 				case "patrol": { [_x, _pos, _radius] call BIS_fnc_taskPatrol; };

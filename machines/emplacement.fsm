@@ -4,11 +4,11 @@
 item0[] = {"Initialise_Empla",0,250,300.000000,425.000000,400.000000,475.000000,0.000000,"Initialise" \n "Emplacement"};
 item1[] = {"No_type_given",4,218,425.000000,425.000000,525.000000,475.000000,1.000000,"No type given"};
 item2[] = {"Type_given",8,218,175.000000,425.000000,275.000000,475.000000,0.000000,"Type given"};
-item3[] = {"Check_ammo",2,250,50.000000,725.000000,150.000000,775.000000,0.000000,"Check ammo"};
-item4[] = {"No_ammo_",4,218,175.000000,725.000000,275.000000,775.000000,1.000000,"No ammo!"};
-item5[] = {"Build_emplacement",2,4346,300.000000,500.000000,400.000000,550.000000,0.000000,"Build" \n "emplacement" \n "type"};
-item6[] = {"Time_to_check",4,218,175.000000,650.000000,275.000000,700.000000,0.000000,"Time to check"};
-item7[] = {"Have___awaiting",8,218,175.000000,800.000000,275.000000,850.000000,0.000000,"Have /" \n "awaiting" \n "ammo"};
+item3[] = {"Check_ammo",2,250,175.000000,850.000000,275.000000,900.000000,0.000000,"Check ammo"};
+item4[] = {"No_ammo_",4,218,50.000000,850.000000,150.000000,900.000000,1.000000,"No ammo!"};
+item5[] = {"Build_emplacement",2,250,300.000000,500.000000,400.000000,550.000000,0.000000,"Build" \n "emplacement" \n "type"};
+item6[] = {"Time_to_check",4,218,300.000000,850.000000,400.000000,900.000000,0.000000,"Time to check"};
+item7[] = {"Have___awaiting",8,218,175.000000,725.000000,275.000000,775.000000,0.000000,"Have /" \n "awaiting" \n "ammo"};
 item8[] = {"Wait_for_the_che",8,218,675.000000,725.000000,775.000000,775.000000,0.000000,"Wait for the" \n "checks"};
 item9[] = {"Attack_",4,218,425.000000,725.000000,525.000000,775.000000,1.000000,"Attack!"};
 item10[] = {"Spawn_attacking",2,250,550.000000,725.000000,650.000000,775.000000,0.000000,"Spawn attacking" \n "enemies"};
@@ -21,32 +21,52 @@ item16[] = {"Do_the_checks",4,218,925.000000,725.000000,1025.000000,775.000000,0
 item17[] = {"Check",2,250,1050.000000,725.000000,1150.000000,775.000000,0.000000,"Check"};
 item18[] = {"Nothing_yet",8,218,925.000000,800.000000,1025.000000,850.000000,0.000000,"Nothing yet"};
 item19[] = {"That_s_it__The_End",1,250,1050.000000,875.000000,1150.000000,925.000000,0.000000,"That's it." \n "The End."};
+item20[] = {"Ammo_truck_died",4,218,50.000000,925.000000,150.000000,975.000000,3.000000,"Ammo truck" \n "died!"};
+item21[] = {"Ammo_truck_s_there",4,218,175.000000,925.000000,275.000000,975.000000,2.000000,"Ammo truck's" \n "there!"};
+item22[] = {"",7,210,221.000000,1021.000000,229.000000,1029.000000,0.000000,""};
+item23[] = {"",7,210,-154.000015,1021.000000,-146.000000,1029.000000,0.000000,""};
+item24[] = {"Create_Ammo_Truc",2,4346,-75.000000,850.000000,25.000000,900.000000,0.000000,"Create" \n "Ammo Truck"};
+item25[] = {"",7,210,-29.000000,946.000000,-21.000000,954.000000,0.000000,""};
+item26[] = {"",7,210,-154.000000,671.000000,-146.000000,679.000000,0.000000,""};
+item27[] = {"",7,210,-29.000000,671.000000,-21.000000,679.000000,0.000000,""};
+item28[] = {"Back_to_waiting",8,218,-75.000000,725.000000,25.000000,775.000000,0.000000,"Back to" \n "waiting"};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,5};
 link3[] = {2,5};
 link4[] = {3,4};
 link5[] = {3,7};
-link6[] = {4,14};
-link7[] = {5,13};
-link8[] = {6,3};
-link9[] = {7,14};
-link10[] = {8,15};
-link11[] = {9,10};
-link12[] = {10,8};
-link13[] = {11,19};
-link14[] = {12,14};
-link15[] = {13,14};
-link16[] = {14,6};
-link17[] = {14,9};
-link18[] = {15,16};
-link19[] = {16,17};
-link20[] = {17,11};
-link21[] = {17,12};
-link22[] = {17,18};
-link23[] = {18,15};
-globals[] = {25.000000,1,0,0,0,640,480,1,32,6316128,1,-343.128540,1068.282837,1306.166992,-17.352173,1016,920,1};
-window[] = {2,-1,-1,-1,-1,1136,-1775,-335,376,3,1034};
+link6[] = {3,20};
+link7[] = {3,21};
+link8[] = {4,24};
+link9[] = {5,13};
+link10[] = {6,3};
+link11[] = {7,14};
+link12[] = {8,15};
+link13[] = {9,10};
+link14[] = {10,8};
+link15[] = {11,19};
+link16[] = {12,14};
+link17[] = {13,14};
+link18[] = {14,6};
+link19[] = {14,9};
+link20[] = {15,16};
+link21[] = {16,17};
+link22[] = {17,11};
+link23[] = {17,12};
+link24[] = {17,18};
+link25[] = {18,15};
+link26[] = {20,25};
+link27[] = {21,22};
+link28[] = {22,23};
+link29[] = {23,26};
+link30[] = {24,28};
+link31[] = {25,24};
+link32[] = {26,27};
+link33[] = {27,14};
+link34[] = {28,27};
+globals[] = {25.000000,1,0,0,0,640,480,1,46,6316128,1,-256.999725,1154.413086,1418.688477,95.171661,1016,911,1};
+window[] = {2,-1,-1,-1,-1,985,225,1665,225,3,1034};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -102,23 +122,70 @@ class FSM
     class Check_ammo
     {
       name = "Check_ammo";
-      init = /*%FSM<STATEINIT""">*/"_hasAmmo = true;" \n
+      init = /*%FSM<STATEINIT""">*/"_hasAmmo = false;" \n
        "" \n
        "{" \n
-       "	if (!(someAmmo _x)) exitWith { _hasAmmo = false; };	" \n
+       "	if (someAmmo _x) exitWith { _hasAmmo = true; };" \n
        "} forEach _weapons;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
+        /*%FSM<LINK "Ammo_truck_died">*/
+        class Ammo_truck_died
+        {
+          priority = 3.000000;
+          to="Create_Ammo_Truc";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_awaitingAmmo && !alive _truck"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Ammo_truck_s_there">*/
+        class Ammo_truck_s_there
+        {
+          priority = 2.000000;
+          to="Let_s_wait_here";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_awaitingAmmo && (_truck distance _pos) < 50"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"//The important bit..." \n
+           "{ _x setVehicleAmmo 1; } forEach _weapons;" \n
+           "" \n
+           "[_attachedMarkers] call AW_fnc_deleteMarker;" \n
+           "" \n
+           "[""emplacement"", _marker, _pos, _name] call AW_fnc_createMarker;" \n
+           "[[""type"", ""emplacement_resupplied""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
+           "" \n
+           "//Dish out points to driver, passengers and anyone in vehicles nearby that may've ""escorted"" (but not in the emplacement guns)" \n
+           "{" \n
+           "	if ((_x distance _truck) < 200 && !(_x in _weapons)) then" \n
+           "	{" \n
+           "		{" \n
+           "			[_x, 5, ""Completed an emplacement resupply operation""] call AW_fnc_givePoints;" \n
+           "		} forEach (crew _x);" \n
+           "	};" \n
+           "} forEach vehicles;" \n
+           "" \n
+           "_driver = driver _truck;" \n
+           "if (!(isNull _driver)) then" \n
+           "{" \n
+           "	[_driver, 5, ""Drove a resupply truck to its destination""] call AW_fnc_givePoints;" \n
+           "};" \n
+           "" \n
+           "_awaitingAmmo = false;" \n
+           ""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
         /*%FSM<LINK "No_ammo_">*/
         class No_ammo_
         {
           priority = 1.000000;
-          to="Let_s_wait_here";
+          to="Create_Ammo_Truc";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"!_hasAmmo && !_awaitingAmmo"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"[[""emplacement"", ""ammo""], _marker, _pos, _name] call AW_fnc_createMarker;" \n
-           "[[""type"", ""emplacement_ammo""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</ACTION""">*/;
+           "[[""type"", ""emplacement_ammo""], [""message"", _name], [""detail"", _baseName], [""global"", true]] call AW_fnc_showNotification;" \n
+           "" \n
+           "_awaitingAmmo = true;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
         /*%FSM<LINK "Have___awaiting">*/
@@ -336,10 +403,36 @@ class FSM
     {
       name = "That_s_it__The_End";
       init = /*%FSM<STATEINIT""">*/"[_markers] call AW_fnc_deleteMarker;" \n
-       "[[""type"", ""emplacement_lost""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
+       "[[""type"", ""emplacement_lost""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
+       "" \n
+       "(_weapons + _objs + _attackers) call AW_fnc_collectGarbage;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Create_Ammo_Truc">*/
+    class Create_Ammo_Truc
+    {
+      name = "Create_Ammo_Truc";
+      init = /*%FSM<STATEINIT""">*/"_nearestBase = [_pos] call AW_fnc_findBase;" \n
+       "_baseName = getText (missionConfigFile >> ""AW_base"" >> _nearestBase >> ""name"");" \n
+       "_truck = [_nearestBase, ""HEMTT""] call AW_fnc_baseSpawn;" \n
+       "_attachedMarkers = [_truck, ""misc"", ""ammo_truck""] call AW_fnc_attachMarker;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Back_to_waiting">*/
+        class Back_to_waiting
+        {
+          priority = 0.000000;
+          to="Let_s_wait_here";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
       };
     };
     /*%FSM</STATE>*/

@@ -29,3 +29,19 @@ class emplacement_lost
 	description = "We've lost %1 to OPFOR forces.";
 	duration = 10;
 };
+
+class emplacement_ammo
+{
+	title = "Emplacement - %1";
+	iconPicture = "";
+	description "%1 needs resupplying! An ammo truck's been sent to you at %2.";
+	duration = 15;
+};
+
+class emplacement_resupplied
+{
+	title = "Emplacement - %1";
+	iconPicture = "";
+	description = "We've successfully resupplied %1! Good job, boys!";
+	duration = 10;
+};

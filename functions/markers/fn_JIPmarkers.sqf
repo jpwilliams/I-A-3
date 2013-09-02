@@ -9,5 +9,5 @@ localMarkers = JIPmarkers;
 	_pos	=	_x select 3;
 	_text	=	_x select 4;
 
-	[[_type, _state], _name, _pos, _text, true] call AW_fnc_createMarker;
+	[[_type, _state], _name, _pos, _text, true] call AW_fnc_createJIPstateMarker;
 } forEach localMarkers;

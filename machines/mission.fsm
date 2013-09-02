@@ -327,7 +327,7 @@ class FSM
        "_fuzzyPos = [_pos, 300] call AW_fnc_getFuzzyPos;" \n
        "_fuzzyPos = _pos;" \n
        "" \n
-       "_markers = [_type, _code, _fuzzyPos, _title] call AW_fnc_createMarker;" \n
+       "_markers = [_type, _code, _fuzzyPos, _title] call AW_fnc_createJIPstateMarker;" \n
        "" \n
        "[[""type"", format[""%1_created"", _type]], [""message"", _title]] call AW_fnc_showNotification;" \n
        "[_code, true, [_description, _title, (_markers select 1)], _pos, ""CREATED"", 5, false, true] call BIS_fnc_setTask;"/*%FSM</STATEINIT""">*/;

@@ -269,6 +269,7 @@ class CfgFunctions
 			class updateMission			{ description = "Updates missions!"; };
 			class setFSMVariable		{ description = "Sets FSM variables exclusively on the server."; };
 			class randomPosTrigger		{ description = "Finds a random position within a trigger/marker area."; };
+			class findNearestBase		{ description = "Finds the nearest base to the given position."; };
 		};
 
 		class garbage
@@ -297,9 +298,11 @@ class CfgFunctions
 		class markers
 		{
 			file = "functions\markers";
-			class createMarker			{ description = "Creates a marker using a specific template."; };
+			class createJIPstateMarker	{ description = "Creates a marker using a specific template."; };
+			class createJIPmarker 		{ description = "Creates a JIP-compatible marker using given parameters."; };
 			class deleteMarker			{ description = "Handles JIP-compatible deletion of markers."; };
 			class JIPmarkers			{ description = "Allows JIPPs to create local versions of globally-existing markers."; };
+			class addJIPmarker			{ description = "Adds a marker to the JIP marker array."; };
 		};
 
 		class actions

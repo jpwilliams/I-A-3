@@ -46,12 +46,12 @@ if ((count _hint) > 0) then
 
 if (_marker != "" && (count _pos) > 0) then
 {
-	_marker_marker = [format["%1MarkerUpdate", _type], format["%1_update", _code], _pos] call AW_fnc_createMarker;
-	_marker_icon = [format["%1MarkerUpdateIcon", _type], format["%1_update_icon", _code], _pos, format["%1 Update: %2", _title, _marker]] call AW_fnc_createMarker;
+	_marker_marker = [format["%1MarkerUpdate", _type], format["%1_update", _code], _pos] call AW_fnc_createJIPstateMarker;
+	_marker_icon = [format["%1MarkerUpdateIcon", _type], format["%1_update_icon", _code], _pos, format["%1 Update: %2", _title, _marker]] call AW_fnc_createJIPstateMarker;
 
 	_markers = [_marker_marker, _marker_icon];
 } else {
-	_markers = ["", ""];	
+	_markers = ["", ""];
 };
 
 _markers

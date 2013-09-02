@@ -1,6 +1,6 @@
 if (debugMode) exitWith {};
 
-basesOwned = 0;
+basesOwned = [];
 JIPmarkers = []; publicVariable "JIPmarkers"; localMarkers = [];
 JIPactions = []; publicVariable "JIPactions";
 result = false;
@@ -60,16 +60,27 @@ for [ {_i = 0}, {_i < _paramCount}, {_i = _i + 1} ] do
 
 \*******************************************************************/
 
-{
-	_param = 0;
-	call compile format["_param = PARAMS_%1MissionsEnabled;", _x];
-	if (_param == 1) then
-	{
-		_amount = 1;
-		call compile format["_amount = PARAMS_%1Number;", _x];
-		for "_i" from 1 to _amount do
+
+/*******************************************************************\
+
+	MISSIONS START
+
+	*/
 		{
-			[_x, [], true] execFSM "machines\mission.fsm";
-		};
-	};
-} foreach ["tactical", "ghost", "priority"];
+			_param = 0;
+			call compile format["_param = PARAMS_%1MissionsEnabled;", _x];
+			if (_param == 1) then
+			{
+				_amount = 1;
+				call compile format["_amount = PARAMS_%1Number;", _x];
+				for "_i" from 1 to _amount do
+				{
+					[_x, [], true] execFSM "machines\mission.fsm";
+				};
+			};
+		} foreach ["tactical", "ghost", "priority"];
+	/*
+
+	MISSIONS FINISH
+
+\*******************************************************************/
