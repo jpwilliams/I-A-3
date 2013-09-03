@@ -65,8 +65,8 @@ link31[] = {25,24};
 link32[] = {26,27};
 link33[] = {27,14};
 link34[] = {28,27};
-globals[] = {25.000000,1,0,0,0,640,480,1,46,6316128,1,-256.999725,1154.413086,1418.688477,95.171661,1016,911,1};
-window[] = {2,-1,-1,-1,-1,785,25,1465,25,3,1034};
+globals[] = {25.000000,1,0,0,0,640,480,1,46,6316128,1,-256.999725,1154.413086,1418.688477,95.171661,1016,920,1};
+window[] = {2,-1,-1,-1,-1,1063,-1842,-402,303,3,1034};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -81,6 +81,10 @@ class FSM
        "_marker = """";" \n
        "_pos = [];" \n
        "_type = """";" \n
+       "_truck = objNull;" \n
+       "" \n
+       "//Set attack timer" \n
+       "_attackTimeout = time + (3600 + random(10800));" \n
        "" \n
        "{" \n
        "	switch (_x select 0) do" \n
@@ -136,7 +140,7 @@ class FSM
           priority = 3.000000;
           to="Create_Ammo_Truc";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_awaitingAmmo && !alive _truck"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_awaitingAmmo && !isNull _truck && !alive _truck"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -146,7 +150,7 @@ class FSM
           priority = 2.000000;
           to="Let_s_wait_here";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_awaitingAmmo && (_truck distance _pos) < 50"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_awaitingAmmo && !isNull _truck && (_truck distance _pos) < 50"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"//The important bit..." \n
            "{ _x setVehicleAmmo 1; } forEach _weapons;" \n
            "" \n
@@ -212,26 +216,25 @@ class FSM
        "{" \n
        "	default" \n
        "	{" \n
-       "		_weapon = [""B_Mortar_01_F"", [(_pos select 0) - 2.5, _pos select 1, _pos select 2]] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
-       "		_weapon = [""B_Mortar_01_F"", [(_pos select 0) + 2.5, _pos select 1, _pos select 2]] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
+       "		_weapon = [""B_Mortar_01_F"", [(_pos select 0) - 1, _pos select 1, _pos select 2]] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
+       "		_weapon = [""B_Mortar_01_F"", [(_pos select 0) + 1, _pos select 1, _pos select 2], 180] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
+       "		{ _x setVehicleAmmo 0.1; } forEach _weapons;" \n
        "" \n
-       "		_dir = -45;" \n
+       "		_dir = 45;" \n
        "		for [{_c = 0}, {_c < 4}, {_c = _c + 1}] do" \n
        "		{" \n
-       "			_dir = _dir + 90;" \n
-       "			_relPos = [_pos, 7.5, _dir] call BIS_fnc_relPos;" \n
-       "			_obj = [""Land_BagFence_Round_F"", _relPos] call AW_fnc_createVehicle;" \n
-       "			_obj setDir (_dir - 180);" \n
+       "			" \n
+       "			_relPos = [_pos, 3, _dir] call BIS_fnc_relPos;" \n
+       "			_obj = [""Land_BagFence_Round_F"", _relPos, (_dir - 180)] call AW_fnc_createVehicle;" \n
        "			_objs = _objs + [_obj];" \n
+       "" \n
+       "			_dir = _dir + 90;" \n
        "		};" \n
        "	};" \n
        "};" \n
        "" \n
-       "_markers = [""emplacement"", _marker, _pos, _name] call AW_fnc_createMarker;" \n
-       "[[""type"", ""emplacement_created""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
-       "" \n
-       "//Set attack timer" \n
-       "_attackTimeout = time + (3600 + random(10800));"/*%FSM</STATEINIT""">*/;
+       "_markers = [""emplacement"", _marker, _pos, _name] call AW_fnc_createJIPstateMarker;" \n
+       "[[""type"", ""emplacement_created""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -255,7 +258,7 @@ class FSM
       init = /*%FSM<STATEINIT""">*/"_attackers = [EAST, round(1 + random(2)), _pos, [500, 1500]] call AW_fnc_spawnEnemy;" \n
        "[_attackers, [[""attack"", _pos, 50]]] call AW_fnc_setBehaviour;" \n
        "" \n
-       "[[""emplacement"", ""defending""], _marker, _pos, _name] call AW_fnc_createMarker;" \n
+       "[[""emplacement"", ""defending""], _marker, _pos, _name] call AW_fnc_createJIPstateMarker;" \n
        "[[""type"", ""emplacement_underattack""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -354,7 +357,7 @@ class FSM
           condition=/*%FSM<CONDITION""">*/"_enemiesDead"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"_attackTimeout = time + (3600 + random(10800));" \n
            "" \n
-           "[[""emplacement"", ""friendly""], _marker, _pos, _name] call AW_fnc_createMarker;" \n
+           "[[""emplacement"", ""friendly""], _marker, _pos, _name] call AW_fnc_createJIPstateMarker;" \n
            "[[""type"", ""emplacement_defended""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -416,7 +419,7 @@ class FSM
     class Create_Ammo_Truc
     {
       name = "Create_Ammo_Truc";
-      init = /*%FSM<STATEINIT""">*/"_truck = [""HEMTT"", _pos] call AW_fnc_baseSpawn;" \n
+      init = /*%FSM<STATEINIT""">*/"_truck = [""B_Truck_01_covered_F"", _pos] call AW_fnc_baseVehSpawn;" \n
        "_attachedMarkers = [_truck, [""misc"", ""ammo_truck""]] call AW_fnc_attachMarker;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links

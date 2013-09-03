@@ -7,4 +7,4 @@ _base = "";
 	if (_dist < _min) then { _min = _dist; _base = _x; };
 } forEach basesOwned;
 
-(markerPos _base)
+_base

@@ -16,4 +16,4 @@ if ((count _path) > 0) then
 	JIPmarkers = JIPmarkers + [[_marker, _type, _state, _pos, _text]];
 };
 
-pubicVariable "JIPmarkers";
+publicVariable "JIPmarkers";

@@ -436,6 +436,12 @@ class AW_tactical
 	#include "config\tactical.hpp"
 };
 
+class AW_rewards
+{
+	#include "config\rewards.hpp"
+};
+
 respawn = "BASE";
 respawnDelay = 5;
-respawnTemplates[] = {"Counter", "MenuPosition", "MenuInventory"};
+respawnTemplates[] = {"MenuPosition", "MenuInventory"};
+respawnOnStart = 1;

@@ -34,7 +34,7 @@ class emplacement_ammo
 {
 	title = "Emplacement - %1";
 	iconPicture = "";
-	description "%1 needs resupplying! An ammo truck's been sent to you at %2.";
+	description = "%1 needs resupplying! An ammo truck's been sent to you at %2.";
 	duration = 15;
 };
 

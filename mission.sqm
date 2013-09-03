@@ -43,7 +43,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23990.951,9.756423,15480.494};
+					position[]={23557.498,90.559532,21125.113};
 					id=0;
 					side="WEST";
 					vehicle="B_Soldier_F";
@@ -57,7 +57,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=62;
+		items=67;
 		class Item0
 		{
 			position[]={27019.508,20.544315,23227.646};
@@ -352,9 +352,11 @@ class Mission
 			text="Base Echo";
 			markerType="RECTANGLE";
 			type="Empty";
+			fillName="Border";
 			a=120;
 			b=120;
 			angle=22;
+			drawBorder=1;
 		};
 		class Item39
 		{
@@ -433,9 +435,11 @@ class Mission
 			text="Base Foxtrot";
 			markerType="RECTANGLE";
 			type="Empty";
+			fillName="Border";
 			a=100;
 			b=200;
 			angle=53;
+			drawBorder=1;
 		};
 		class Item50
 		{
@@ -550,9 +554,50 @@ class Mission
 			text="Base Lima";
 			markerType="RECTANGLE";
 			type="Empty";
+			fillName="Border";
 			a=100;
 			b=100;
 			angle=103;
+			drawBorder=1;
+		};
+		class Item62
+		{
+			position[]={23483.768,90.460045,21145.33};
+			name="base_alpha_repair_air";
+			text="Air Repair Pad";
+			type="Empty";
+		};
+		class Item63
+		{
+			position[]={23520.453,90.800568,21160.568};
+			name="base_alpha_spawn_1_land";
+			text="Land Spawn";
+			type="Empty";
+			angle=-128.88602;
+		};
+		class Item64
+		{
+			position[]={23516.152,90.483536,21163.434};
+			name="base_alpha_spawn_2_land";
+			text="Land Spawn";
+			type="Empty";
+			angle=-165.88988;
+		};
+		class Item65
+		{
+			position[]={23511.494,90.228485,21164.953};
+			name="base_alpha_spawn_3_land";
+			text="Land Spawn";
+			type="Empty";
+			angle=-165.89;
+		};
+		class Item66
+		{
+			position[]={23506.932,90.155411,21166.295};
+			name="base_alpha_spawn_4_land";
+			text="Land Spawn";
+			type="Empty";
+			angle=-165.89;
 		};
 	};
 };
