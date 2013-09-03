@@ -66,7 +66,7 @@ link32[] = {26,27};
 link33[] = {27,14};
 link34[] = {28,27};
 globals[] = {25.000000,1,0,0,0,640,480,1,46,6316128,1,-256.999725,1154.413086,1418.688477,95.171661,1016,911,1};
-window[] = {2,-1,-1,-1,-1,985,225,1665,225,3,1034};
+window[] = {2,-1,-1,-1,-1,785,25,1465,25,3,1034};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -416,10 +416,8 @@ class FSM
     class Create_Ammo_Truc
     {
       name = "Create_Ammo_Truc";
-      init = /*%FSM<STATEINIT""">*/"_nearestBase = [_pos] call AW_fnc_findBase;" \n
-       "_baseName = getText (missionConfigFile >> ""AW_base"" >> _nearestBase >> ""name"");" \n
-       "_truck = [_nearestBase, ""HEMTT""] call AW_fnc_baseSpawn;" \n
-       "_attachedMarkers = [_truck, ""misc"", ""ammo_truck""] call AW_fnc_attachMarker;"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_truck = [""HEMTT"", _pos] call AW_fnc_baseSpawn;" \n
+       "_attachedMarkers = [_truck, [""misc"", ""ammo_truck""]] call AW_fnc_attachMarker;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

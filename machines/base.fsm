@@ -6,8 +6,8 @@ item1[] = {"Is_friendly",4,218,150.000000,275.000000,250.000000,325.000000,1.000
 item2[] = {"Is_enemy",4,218,400.000000,275.000000,500.000000,325.000000,0.000000,"Is" \n "enemy"};
 item3[] = {"Add_Respawn_Location",2,250,25.000000,275.000000,125.000000,325.000000,0.000000,"Add Respawn" \n "Location &" \n "Vehicles"};
 item4[] = {"Spawn_defenders",2,250,525.000000,275.000000,625.000000,325.000000,0.000000,"Spawn" \n "defenders & set" \n "marker"};
-item5[] = {"Stop_vehicles_respawning",2,250,400.000000,425.000000,500.000000,475.000000,0.000000,"Stop vehicles" \n "respawning &" \n "remove spawn"};
-item6[] = {"Base_being_captu",2,4346,900.000000,650.000000,1000.000000,700.000000,0.000000,"Base being" \n "captured"};
+item5[] = {"Stop_vehicles_respawning",2,4346,400.000000,425.000000,500.000000,475.000000,0.000000,"Stop vehicles" \n "respawning &" \n "remove spawn"};
+item6[] = {"Base_being_captu",2,250,900.000000,650.000000,1000.000000,700.000000,0.000000,"Base being" \n "captured"};
 item7[] = {"Calculate___Spawn",2,250,775.000000,350.000000,875.000000,400.000000,0.000000,"Calculate &" \n "Spawn" \n "Reinforcements"};
 item8[] = {"Do_the_checks",8,218,525.000000,350.000000,625.000000,400.000000,0.000000,"Do the checks"};
 item9[] = {"Player_within_base",4,218,650.000000,500.000000,750.000000,550.000000,1.000000,"Player" \n "within base" \n "radius"};
@@ -79,7 +79,7 @@ link39[] = {32,34};
 link40[] = {33,28};
 link41[] = {34,7};
 globals[] = {25.000000,1,0,0,0,640,480,1,53,6316128,1,-169.546661,1335.612549,990.682800,-70.425552,1303,911,1};
-window[] = {2,-1,-1,-1,-1,985,225,1665,225,3,1321};
+window[] = {2,-1,-1,-1,-1,835,75,1515,75,3,1321};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -102,6 +102,7 @@ class FSM
        "_respawnTime = 300;" \n
        "_tempVehs = [];" \n
        "_vehicles = [];" \n
+       "_spawns = [];" \n
        "" \n
        "{" \n
        "	switch (_x select 0) do" \n
@@ -127,7 +128,13 @@ class FSM
        "			} forEach _tempVehs;" \n
        "		};" \n
        "	};" \n
-       "} forEach _this;"/*%FSM</STATEINIT""">*/;
+       "} forEach _this;" \n
+       "" \n
+       "//Get special spawn markers" \n
+       "_code = format[""%1_spawn_"", _marker];" \n
+       "{" \n
+       "	if ([_code, _x] call BIS_fnc_inString) then { _spawns = _spawns + [_x]; };" \n
+       "} forEach allMapMarkers;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -186,6 +193,9 @@ class FSM
        "	];" \n
        "	_counter = _counter + 1;" \n
        "} forEach _vehicles;" \n
+       "" \n
+       "//Add in spawn markers" \n
+       "baseSpawns = baseSpawns + _spawns;" \n
        "" \n
        "_timeout = time;" \n
        "//DEBUG - add grace period parameter to time"/*%FSM</STATEINIT""">*/;
@@ -265,6 +275,9 @@ class FSM
        "} forEach vehicles;" \n
        "" \n
        "_respawnID call BIS_fnc_removeRespawnPosition;" \n
+       "" \n
+       "//Remove base spawn points" \n
+       "baseSpawns = baseSpawns - _spawns;" \n
        "" \n
        "[_attackers] spawn" \n
        "{" \n

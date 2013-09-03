@@ -7,10 +7,10 @@ class score_bonus
 	duration = 10;
 };
 
-class ammo_reward
+class vehicle_reward
 {
-	title = "Ordanance Retrieved (wording?)";
+	title = "Vehicle Reward";
 	iconPicture = "images\notificons\reward.paa";
-	description = "New ordanance has been retrieved! Check your nearest weapons cache!";
+	description = "Your team has been rewarded with a %1! Nice work!";
 	duration = 10;
 };

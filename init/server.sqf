@@ -1,6 +1,6 @@
 if (debugMode) exitWith {};
 
-basesOwned = [];
+basesOwned = []; baseSpawns = [];
 JIPmarkers = []; publicVariable "JIPmarkers"; localMarkers = [];
 JIPactions = []; publicVariable "JIPactions";
 result = false;
@@ -34,7 +34,6 @@ for [ {_i = 0}, {_i < _paramCount}, {_i = _i + 1} ] do
 				["name", getText (_x >> "name")],
 				["isOwned", getNumber (_x >> "isOwned")],
 				["marker", configName _x],
-				["radius", getNumber (_x >> "radius")],
 				["groups", getNumber (_x >> "groups")],
 				["respawnGroups", getNumber (_x >> "respawnGroups")],
 				["respawnTime", getNumber (_x >> "respawnTime")],

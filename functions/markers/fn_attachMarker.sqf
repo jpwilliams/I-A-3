@@ -4,8 +4,9 @@
 private ["_this", "_obj", "_type", "_state", "_number", "_name", "_markers"];
 
 _obj = _this select 0;
-_type = _this select 1;
-_state = if ((count _this) > 2) then { _this select 2 } else { "init" };
+_type = _this select 1; _state = "init";
+if (typeName _type == "ARRAY") then { _type = (_this select 1) select 0; _state = (_this select 1) select 1; };
+_condition = if ((count _this) > 2) then { _this select 2 } else { { alive _obj } };
 
 /*
 	1. Create icon marker
@@ -29,12 +30,11 @@ _markers = [_state, _type, _name, (getPos _obj)] call AW_fnc_createJIPstateMarke
 	private ["_icon", "_obj", "_x", "_markers"];
 
 	_markers = _this select 0;
-	_icon = _markers select 1;
 	_obj = _this select 1;
 
-	while { (markerColor _icon) != "" } do
+	while _condition do
 	{
-		sleep 1;
+		sleep 2;
 		{
 			_x setMarkerPos (getPos _obj);
 		} forEach _markers;
