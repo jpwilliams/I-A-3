@@ -269,8 +269,13 @@ class CfgFunctions
 			class updateMission			{ description = "Updates missions!"; };
 			class setFSMVariable		{ description = "Sets FSM variables exclusively on the server."; };
 			class randomPosTrigger		{ description = "Finds a random position within a trigger/marker area."; };
+		};
+
+		class bases
+		{
+			file = "functions\bases";
+			class baseVehSpawn			{ description = "Spawns a random or specified vehicle at a random or specified base."; ext = ".fsm"; };
 			class findNearestBase		{ description = "Finds the nearest base to the given position."; };
-			class baseVehSpawn			{ description = "Spawns a random or specified vehicle at a random or specified base."; };
 		};
 
 		class garbage
