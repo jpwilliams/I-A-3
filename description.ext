@@ -454,4 +454,3 @@ class enemy
 respawn = "BASE";
 respawnDelay = 5;
 respawnTemplates[] = {"MenuPosition", "MenuInventory"};
-respawnOnStart = 1;

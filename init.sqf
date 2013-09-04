@@ -14,8 +14,7 @@
 
 waitUntil {alive player};
 player allowDamage false;
-player setCaptive true;
-onMapSingleClick "player setPos _pos;";
+onMapSingleClick "(vehicle player) setPos _pos;";
 
 onEachFrame
 {
