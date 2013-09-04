@@ -14,15 +14,15 @@
 		|____________________
 */
 
-_unit		=	_this select 0;
-_score		=	_this select 1;
-if ((count _this) > 2) then { _reason = _this select 2; };
+_unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+_score = [_this,1,2,[0]] call BIS_fnc_param;
+_reason = [_this,2,"",[""]] call BIS_fnc_param;
 
 //Give points
 _unit addScore _score;
 
 //Show notification?
-if (!isNil _reason) then
+if (_reason != "") then
 {
 	_params =
 	[

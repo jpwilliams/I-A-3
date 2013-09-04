@@ -11,6 +11,6 @@ class vehicle_reward
 {
 	title = "Vehicle Reward";
 	iconPicture = "images\notificons\reward.paa";
-	description = "Your team has been rewarded with a %1! Nice work!";
+	description = "Your team receives a %1!";
 	duration = 10;
 };

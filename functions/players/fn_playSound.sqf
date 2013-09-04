@@ -1,5 +1,5 @@
-_sound = _this select 0;
-_obj = if ((count _this) > 1) then { _this select 1 } else { objNull };
+_sound = [_this,0,"",[""]] call BIS_fnc_param;
+_obj = [_this,1,objNull,[objNull]] call BIS_fnc_param;
 _radius = 30;
 
 if (isNull _obj) then

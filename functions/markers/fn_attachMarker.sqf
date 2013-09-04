@@ -3,10 +3,10 @@
 
 private ["_this", "_obj", "_type", "_state", "_number", "_name", "_markers"];
 
-_obj = _this select 0;
-_type = _this select 1; _state = "init";
-if (typeName _type == "ARRAY") then { _type = (_this select 1) select 0; _state = (_this select 1) select 1; };
-_condition = if ((count _this) > 2) then { _this select 2 } else { { alive _obj } };
+_obj = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+_type = [_this,1,"",[[],""],[2]] call BIS_fnc_param;
+if (typeName _type == "ARRAY") then { _state = _type select 1; _type = _type select 0; };
+_condition = [_this,2,{alive _obj},[{}]] call BIS_fnc_param; //DEBUG - Check if passing {alive _obj} is possible or whether it'll just pass "true" to the function
 
 /*
 	1. Create icon marker
