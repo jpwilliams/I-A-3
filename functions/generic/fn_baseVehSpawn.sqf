@@ -5,138 +5,97 @@
 //_reward = ["air"] call AW_fnc_rewardSpawn;					// Spawn air vehicle at random base
 //_reward = [] call AW_fnc_rewardSpawn;							// Spawn a random reward at a random base
 
-/* Need to grab types from CfgFile (land, air, sea) here to randomly choose from later */
-/* This also needs re-doing; don't do "case 0, 1, 2" lmfao */
-_types = [];
+_type = [_this,0,"",[""]] call BIS_fnc_param;
+_base = [_this,1,"",["",[]]] call BIS_fnc_param;
+_veh = "";
+_marker = "";
 
-_count = count _this;
-switch (_count) do
+//Get reward types from config file
+_types = []; _allVehs = [];
+_class = (missionConfigFile >> "AW_rewards"); _count = count _class;
+for "_i" from 0 to _count do
 {
-	case 0:
+	_tmp = (_class select _i);
+	_type = (configName _tmp);
+	_types = _types + [_type];
+
+	_vehs = getArray _tmp;
 	{
-		//Spawn a random reward at a random base
-		_spawnMarker = ""; _goodSpot = false;
-		while { !_goodSpot } do
-		{
-			_spawnMarker = baseSpawns call BIS_fnc_selectRandom;
-			//Check if there are vehicles/units within 5m (that could prevent the spawn of the veh)
-			//If not...
-			_goodSpot = true;
-		};
+		_allVehs = _allVehs + [[_type, _x]];
+	} forEach _vehs;
+};
 
-		_type = "";
-		{
-			if ([format["_%1_", _x], _spawnMarker] call BIS_fnc_inString) exitWith
-			{
-				_type = _x;
-			};
-		} forEach _types;
-
-		if (_type == "") exitWith { /* Error! Couldn't find type in marker! */ };
-
-		_vehicles = getArray (missionConfigFile >> "AW_rewards" >> _type);
-		_veh = _vehicles call BIS_fnc_selectRandom;
-
-		[_veh, (markerPos _spawnMarker), (markerDir _spawnMarker)] call AW_fnc_createVehicle;
-		[["type", "vehicle_reward"], ["message", getText (configFile >> "CfgVehicles" >> _veh >> "displayName")]] call AW_fnc_showNotification;
-		//Should we attach a marker?
-	};
-
-	case 1:
+//Get type and vehicle
+if (_type == "") then
+{
+	//Select a random vehicle
+	_tmp = _allVehs call BIS_fnc_selectRandom;
+	_type = _tmp select 0;
+	_veh = _tmp select 1;
+} else {
+	//Is it a class or a type?
+	if (!(_type in _types)) then
 	{
-		_type = _this select 0;
-		if (_type in _types) then
+		//Class
+		_veh = _type;
+		_class = getText (configFile >> "CfgVehicles" >> _veh >> "vehicleClass");
+
+		if (_class == "Armored" || _class == "Car" || _class == "Static") then
 		{
-			//Generic vehicle type
-			_availableMarkers = [];
-			{
-				if ([format["_%1_", _type], _x] call BIS_fnc_inString) then
-				{
-					_availableMarkers = _availableMarkers + [_x];
-				};
-			} forEach baseSpawns;
-
-			_spawnMarker = ""; _goodSpot = false;
-			while { !_goodSpot } do
-			{
-				_spawnMarker = _availableMarkers call BIS_fnc_selectRandom;
-				//Check if there are vehicles/units within 5m (that could prevent the spawn of the veh)
-				//If not...
-				_goodSpot = true;
-			};
-
-			_vehicles = getArray (missionConfigFile >> "AW_rewards" >> _type);
-			_veh = _vehicles call BIS_fnc_selectRandom;
-
-			[_veh, (markerPos _spawnMarker), (markerDir _spawnMarker)] call AW_fnc_createVehicle;
-			[["type", "vehicle_reward"], ["message", getText (configFile >> "CfgVehicles" >> _veh >> "displayName")]] call AW_fnc_showNotification;
-			//Should we attach a marker?
+			_type = "land";
 		} else {
-
-		};
-	};
-
-	case 2:
-	{
-		//Specified or nearest base
-		_type = _this select 0;
-		_param = _this select 1;
-		_veh = "";
-		_base = if (typeName _param == "ARRAY") then
-		{
-			[_param] call AW_fnc_findNearestBase
-		} else {
-			_param
-		};
-
-		if (!(_type in _types)) then
-		{
-			//Specific vehicle
-			_veh = _type;
-			_class = getText (configFile >> "CfgVehicles" >> _veh >> "vehicleClass");
-
-			if (_class == "Armored" || _class == "Car" || _class == "Static") then
+			if (_class == "Air" || _class == "Autonomous") then
 			{
-				_type = "land";
+				_type = "air";
 			} else {
-				if (_class == "Air" || _class == "Autonomous") then
-				{
-					_type = "air";
-				} else {
-					_type = "sea";
-				};
+				_type = "sea";
 			};
-		} else {
-			_vehicles = getArray (missionConfigFile >> "AW_rewards" >> _type);
-			_veh = _vehicles call BIS_fnc_selectRandom;
 		};
-
-		_availableMarkers = [];
-		{
-			if ([format["%1_spawn_", _base, _type], _x] call BIS_fnc_inString) then
-			{
-				if ([format["_%1", _type], _x] call BIS_fnc_inString) then
-				{
-					_availableMarkers = _availableMarkers + [_x];
-				};
-			};
-		} forEach baseSpawns;
-
-		_spawnMarker = ""; _goodSpot = false;
-		while { !_goodSpot } do
-		{
-			_goodSpot = true;
-			_spawnMarker = _availableMarkers call BIS_fnc_selectRandom;
-			_markerPos = markerPos _spawnMarker;
-
-			{ if ((_x distance _markerPos) < 5) exitWith { _goodSpot = false; }; } forEach vehicles;
-			if (_goodSpot) then { { if ((_x distance _markerPos) < 5) exitWith { _goodSpot = false; }; } forEach playableUnits; };
-		};
-
-		[_veh, (markerPos _spawnMarker), (markerDir _spawnMarker)] call AW_fnc_createVehicle;
-		[["type", "vehicle_reward"], ["message", getText (configFile >> "CfgVehicles" >> _veh >> "displayName")]] call AW_fnc_showNotification;
-		//Should we attach a marker?
-
-		hint format["_veh = %1\n_spawnMarker = %2\n_type = %3\n_base = %4", _veh, _spawnMarker, _type, _base];
+	} else {
+		//Type
+		_vehs = getArray (missionConfigFile >> "AW_rewards" >> _type);
+		_veh = _vehs call BIS_fnc_selectRandom;
 	};
 };
+
+//Get type markers
+_markers = []
+{
+	if ([format["_%1", _type], _x] call BIS_fnc_inString) then
+	{
+		_markers = _markers + [_x];
+	};
+} forEach baseSpawns;
+
+//Sort bases
+if (_base == "") then
+{
+	//Use any random marker!
+	_marker = _markers call BIS_fnc_selectRandom;
+} else {
+	//Needs to be a specific base!
+	if (typeName _base == "ARRAY") then
+	{
+		_base = [_base] call AW_fnc_findNearestBase;
+	};
+
+	_tmp = _markers;
+	{
+		if (!([_base, _x] call BIS_fnc_inString)) then
+		{
+			_markers = _markers - [_x];
+		} else {
+			//Check here if there's anything blocking the spawn point
+			//If yes, remove this marker from the available array
+			if (false) then
+			{
+				_markers = _markers - [_x];
+			};
+		};
+	} forEach _tmp;
+
+	_marker = _markers call BIS_fnc_selectRandom;
+};
+
+//Spawn vehicle!
+[_veh, (markerPos _marker), (markerDir _marker)] call AW_fnc_createVehicle;
