@@ -1,7 +1,7 @@
-_type		=	_this select 0;
-_mission	=	_this select 1;
-_code		=	_this select 2;
-_pos		=	_this select 3;
+_type = [_this,0,"",[""]] call BIS_fnc_param;
+_mission = [_this,1,"",[""]] call BIS_fnc_param;
+_code = [_this,2,"",[""]] call BIS_fnc_param;
+_pos = [_this,3,[0,0,0],[[]],[2,3]] call BIS_fnc_param;
 
 _fsmHandle = [_pos, _code] execFSM format["missions\%1\%2\mission.fsm", _type, _mission];
 

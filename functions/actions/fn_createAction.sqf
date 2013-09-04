@@ -1,6 +1,6 @@
-_obj	=	_this select 0; if (isNull _obj) exitWith {};
-_params	=	_this select 1; if ((typeName _params) != "ARRAY") exitWith {};
-_local	=	if ((count _this) > 2) then { _this select 2 } else { false };
+_obj	=	[_this,0,objNull,[objNull]] call BIS_fnc_param;
+_params	=	[_this,1,[],[[]]] call BIS_fnc_param;
+_local	=	[_this,2,false,[true]] call BIS_fnc_param;
 
 _id = 0;
 if (!(isServer && _local)) then { _id = _obj addAction _params; };

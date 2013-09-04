@@ -98,4 +98,6 @@ if (_base == "") then
 };
 
 //Spawn vehicle!
-[_veh, (markerPos _marker), (markerDir _marker)] call AW_fnc_createVehicle;
+_obj = [_veh, (markerPos _marker), (markerDir _marker)] call AW_fnc_createVehicle;
+
+_obj

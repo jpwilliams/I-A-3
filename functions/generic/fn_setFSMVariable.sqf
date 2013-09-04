@@ -1,8 +1,8 @@
 //AW_fnc_setFSMVariable;
 
-_id = _this select 0;
-_var = _this select 1;
-_value = _this select 2;
+_id = [_this,0] call BIS_fnc_param;
+_var = [_this,1,"",[""]] call BIS_fnc_param;
+_value = [_this,2] call BIS_fnc_param;
 
 if (isServer) then
 {

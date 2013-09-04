@@ -47,35 +47,13 @@
 
 private ["_this", "_area", "_gradient", "_radius"];
 
-if ((count _this) < 1) exitWith { diag_log "Find space function not given AREA parameter. Exiting script."; };
+_area = [_this,0,"land",[""]] call BIS_fnc_param;
 
-_area		=	_this select 0;
-_gradient	=	if ((count _this) > 1) then
-{	
-	_x = (_this select 1);
-	_typeName = typeName _x;
-	switch (_typeName) do
-	{
-		case "BOOL": { if (_x) then { 0.3 } else { 2000 }; };
-		case "STRING": { if (_x == "true") then { 0.3 } else { 2000 }; };
-		default { 2000 };
-	};
-} else {
-	2000
-};
+_gradient = [_this,1,2000,[true]] call BIS_fnc_param;
+if (_gradient == true) then { _gradient = 0.3; };
 
-_radius = if ((count _this) > 2) then
-{
-	if ((typeName (_this select 2)) == "OBJECT") then
-	{
-		getPos (_this select 2)
-	} else {
-		(_this select 2)
-	};
-} else {
-	1
-};
-
+_radius = [_this,2,1,[objNull,[]]] call BIS_fnc_param;
+if (typeName _radius == "OBJECT") then { _radius = getPos _radius; };
 
 _pos = [];
 _validPos = false;

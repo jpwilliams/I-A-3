@@ -20,8 +20,8 @@
 
 private["_pos", "_radius", "_double", "_fuzzyPos"];
 
-_pos = _this select 0;
-_radius = _this select 1;
+_pos = [_this,0,[0,0,0],[[]],[2,3]] call BIS_fnc_param;
+_radius = [_this,1,100,[0]] call BIS_fnc_param;
 _double = (_radius * 2);
 
 _fuzzyPos =
