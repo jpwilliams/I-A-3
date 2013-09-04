@@ -6,22 +6,25 @@ item1[] = {"Type_specified",4,218,500.000000,975.000000,600.000000,1025.000000,1
 item2[] = {"Nothing_specifie",4,218,250.000000,975.000000,350.000000,1025.000000,3.000000,"Nothing" \n "specified"};
 item3[] = {"Class_specified",4,218,375.000000,975.000000,475.000000,1025.000000,2.000000,"Class" \n "specified"};
 item4[] = {"Type_Invalid",8,218,250.000000,875.000000,350.000000,925.000000,0.000000,"Type" \n "Invalid"};
-item5[] = {"End_Spawn_Attemp",1,4346,125.000000,875.000000,225.000000,925.000000,0.000000,"End" \n "Spawn" \n "Attempt"};
+item5[] = {"End_Spawn_Attemp",1,250,125.000000,875.000000,225.000000,925.000000,0.000000,"End" \n "Spawn" \n "Attempt"};
 item6[] = {"Get_type_markers",2,250,375.000000,1050.000000,475.000000,1100.000000,0.000000,"Get type" \n "markers"};
 item7[] = {"Is_the_marker_valid",2,250,375.000000,1200.000000,475.000000,1250.000000,0.000000,"Is the marker" \n "valid?"};
 item8[] = {"Nothing_given",4,218,250.000000,1125.000000,350.000000,1175.000000,2.000000,"Nothing" \n "given"};
 item9[] = {"Base_given",8,218,500.000000,1125.000000,600.000000,1175.000000,1.000000,"Base" \n "given"};
 item10[] = {"Here_we_go_",8,218,375.000000,800.000000,475.000000,850.000000,0.000000,"Here" \n "we go!"};
-item11[] = {"Decision_time__",2,250,375.000000,875.000000,475.000000,925.000000,0.000000,"Decision time..."};
+item11[] = {"Blanker",2,250,375.000000,875.000000,475.000000,925.000000,0.000000,"Blanker"};
 item12[] = {"Yes_",8,218,375.000000,1275.000000,475.000000,1325.000000,0.000000,"Yes!"};
 item13[] = {"No_marker_",4,218,500.000000,1275.000000,600.000000,1325.000000,1.000000,"No marker!"};
-item14[] = {"Can_we_select_another",2,250,625.000000,1275.000000,725.000000,1325.000000,0.000000,"Can we" \n "select another" \n "vehicle?"};
+item14[] = {"Can_we_select_another",2,250,625.000000,1200.000000,725.000000,1250.000000,0.000000,"Can we" \n "select another" \n "vehicle?"};
 item15[] = {"",7,210,671.000000,896.000000,679.000000,904.000000,0.000000,""};
-item16[] = {"Yes_",4,218,625.000000,1200.000000,725.000000,1250.000000,1.000000,"Yes!"};
+item16[] = {"Yes_",4,218,625.000000,1125.000000,725.000000,1175.000000,1.000000,"Yes!"};
 item17[] = {"No",8,218,625.000000,1350.000000,725.000000,1400.000000,0.000000,"No"};
 item18[] = {"",7,210,171.000000,1446.000000,179.000000,1454.000000,0.000000,""};
 item19[] = {"Create_Vehicle",1,250,375.000000,1350.000000,475.000000,1400.000000,0.000000,"Create" \n "Vehicle"};
 item20[] = {"",7,210,671.000000,1446.000000,679.000000,1454.000000,0.000000,""};
+item21[] = {"No_markers_left",4,218,500.000000,1200.000000,600.000000,1250.000000,2.000000,"No markers" \n "left"};
+item22[] = {"Exhausted_type_",4,4314,500.000000,1050.000000,600.000000,1100.000000,3.000000,"Exhausted" \n "type?"};
+item23[] = {"",7,210,671.000000,1071.000000,679.000000,1079.000000,0.000000,""};
 link0[] = {0,10};
 link1[] = {1,6};
 link2[] = {2,6};
@@ -29,26 +32,31 @@ link3[] = {3,6};
 link4[] = {4,5};
 link5[] = {6,8};
 link6[] = {6,9};
-link7[] = {7,12};
-link8[] = {7,13};
-link9[] = {8,7};
-link10[] = {9,7};
-link11[] = {10,11};
-link12[] = {11,1};
-link13[] = {11,2};
-link14[] = {11,3};
-link15[] = {11,4};
-link16[] = {12,19};
-link17[] = {13,14};
-link18[] = {14,16};
-link19[] = {14,17};
-link20[] = {15,11};
-link21[] = {16,15};
-link22[] = {17,20};
-link23[] = {18,5};
-link24[] = {20,18};
-globals[] = {25.000000,1,0,0,0,640,480,1,24,6316128,1,-65.220139,799.076538,1604.699219,631.430176,809,911,1};
-window[] = {2,-1,-1,-1,-1,898,444,1884,131,3,827};
+link7[] = {6,22};
+link8[] = {7,12};
+link9[] = {7,13};
+link10[] = {7,21};
+link11[] = {8,7};
+link12[] = {9,7};
+link13[] = {10,11};
+link14[] = {11,1};
+link15[] = {11,2};
+link16[] = {11,3};
+link17[] = {11,4};
+link18[] = {12,19};
+link19[] = {13,7};
+link20[] = {14,16};
+link21[] = {14,17};
+link22[] = {15,11};
+link23[] = {16,23};
+link24[] = {17,20};
+link25[] = {18,5};
+link26[] = {20,18};
+link27[] = {21,14};
+link28[] = {22,23};
+link29[] = {23,15};
+globals[] = {25.000000,1,0,0,0,640,480,1,30,6316128,1,-12.580621,891.245422,1517.843506,717.222290,696,621,1};
+window[] = {0,-1,-1,-1,-1,949,182,1622,182,1,714};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -61,7 +69,7 @@ class FSM
       name = "Initialise_Base";
       init = /*%FSM<STATEINIT""">*/"//Get reward types from config file" \n
        "_types = []; _allVehs = [];" \n
-       "_class = (missionConfigFile >> ""AW_rewards""); _count = count _class;" \n
+       "_class = (missionConfigFile >> ""AW_rewards""); _count = (count _class) - 1;" \n
        "for ""_i"" from 0 to _count do" \n
        "{" \n
        "	_tmp = (_class select _i);" \n
@@ -76,9 +84,12 @@ class FSM
        "" \n
        "//Get parameters" \n
        "_type = [_this,0,"""",[""""]] call BIS_fnc_param;" \n
-       "_base = [_this,1,"""",["""",[]]] call BIS_fnc_param;" \n
+       "_base = [_this,1,"""",["""",[]],[2,3]] call BIS_fnc_param;" \n
        "_veh = """";" \n
-       "_marker = """";"/*%FSM</STATEINIT""">*/;
+       "_marker = """";" \n
+       "" \n
+       "//Extras" \n
+       "_exhausted = [];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -86,7 +97,7 @@ class FSM
         class Here_we_go_
         {
           priority = 0.000000;
-          to="Decision_time__";
+          to="Blanker";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -99,7 +110,8 @@ class FSM
     class End_Spawn_Attemp
     {
       name = "End_Spawn_Attemp";
-      init = /*%FSM<STATEINIT""">*/"diag_log "":::::::::: AW DEBUG :::::::::: AW_fnc_baseVehSpawn attempt failed; no valid positions found for specified vehicle."";"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"diag_log "":::::::::: AW DEBUG :::::::::: AW_fnc_baseVehSpawn attempt failed; no valid positions found for specified vehicle."";" \n
+       "hint format[""Exhausted: %1\n\nSpawn cancelled."", _exhausted];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -110,7 +122,7 @@ class FSM
     class Get_type_markers
     {
       name = "Get_type_markers";
-      init = /*%FSM<STATEINIT""">*/"_markers = []" \n
+      init = /*%FSM<STATEINIT""">*/"_markers = [];" \n
        "{" \n
        "	if ([format[""_%1"", _type], _x] call BIS_fnc_inString) then" \n
        "	{" \n
@@ -120,15 +132,26 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
+        /*%FSM<LINK "Exhausted_type_">*/
+        class Exhausted_type_
+        {
+          priority = 3.000000;
+          to="Blanker";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_type in _exhausted"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"//Get parameters" \n
+           "_type = """";"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
         /*%FSM<LINK "Nothing_given">*/
         class Nothing_given
         {
           priority = 2.000000;
           to="Is_the_marker_valid";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_base == """""/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"//Use any random marker!" \n
-           "_marker = _markers call BIS_fnc_selectRandom;"/*%FSM</ACTION""">*/;
+          condition=/*%FSM<CONDITION""">*/"typeName _base == ""ARRAY"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"//Needs to be a specific base!" \n
+           "_base = [_base] call AW_fnc_findNearestBase;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
         /*%FSM<LINK "Base_given">*/
@@ -138,28 +161,14 @@ class FSM
           to="Is_the_marker_valid";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"//Needs to be a specific base!" \n
-           "if (typeName _base == ""ARRAY"") then" \n
-           "{" \n
-           "	_base = [_base] call AW_fnc_findNearestBase;" \n
-           "};" \n
-           "" \n
-           "_tmp = _markers;" \n
+          action=/*%FSM<ACTION""">*/"_tmp = _markers;" \n
            "{" \n
            "	if (!([_base, _x] call BIS_fnc_inString)) then" \n
            "	{" \n
            "		_markers = _markers - [_x];" \n
-           "	} else {" \n
-           "		//Check here if there's anything blocking the spawn point" \n
-           "		//If yes, remove this marker from the available array" \n
-           "		if (false) then" \n
-           "		{" \n
-           "			_markers = _markers - [_x];" \n
-           "		};" \n
            "	};" \n
            "} forEach _tmp;" \n
-           "" \n
-           "_marker = _markers call BIS_fnc_selectRandom;"/*%FSM</ACTION""">*/;
+           "_markers = _tmp;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -169,17 +178,39 @@ class FSM
     class Is_the_marker_valid
     {
       name = "Is_the_marker_valid";
-      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"if ((count _markers) > 0) then { _marker = _markers call BIS_fnc_selectRandom; };" \n
+       "if (isNil ""_marker"") then { _marker = """"; };" \n
+       "" \n
+       "if (_marker != """") then" \n
+       "{" \n
+       "	//Anything on it, like?" \n
+       "	_markerPos = markerPos _marker;" \n
+       "	{" \n
+       "		if ((_x distance _markerPos) < 5) exitWith { _markers = _markers - [_marker]; _marker = """"; };" \n
+       "	} forEach vehicles;" \n
+       "};" \n
+       "" \n
+       "hint format[""_base = %1\n\n_markers = %2\n\n_marker = %3\n\n_type = %4\n\n_veh = %5\n\n_exhausted = %6\n\n_markers count = %7"", _base, _markers, _marker, _type, _veh, _exhausted, (count _markers)];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
+        /*%FSM<LINK "No_markers_left">*/
+        class No_markers_left
+        {
+          priority = 2.000000;
+          to="Can_we_select_another";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(count _markers) < 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
         /*%FSM<LINK "No_marker_">*/
         class No_marker_
         {
           priority = 1.000000;
-          to="Can_we_select_another";
+          to="Is_the_marker_valid";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_marker = """""/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isNil ""_marker"" || typeName _marker != ""STRING"" || _marker == """""/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -196,10 +227,10 @@ class FSM
       };
     };
     /*%FSM</STATE>*/
-    /*%FSM<STATE "Decision_time__">*/
-    class Decision_time__
+    /*%FSM<STATE "Blanker">*/
+    class Blanker
     {
-      name = "Decision_time__";
+      name = "Blanker";
       init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -259,7 +290,7 @@ class FSM
           priority = 0.000000;
           to="End_Spawn_Attemp";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -270,9 +301,13 @@ class FSM
     class Can_we_select_another
     {
       name = "Can_we_select_another";
-      init = /*%FSM<STATEINIT""">*/"//Get parameters" \n
+      init = /*%FSM<STATEINIT""">*/"_exhausted = _exhausted + [_type];" \n
+       "_exhaustedAll = true;" \n
+       "{ if (!(_x in _exhausted)) exitWith { _exhaustedAll = false; }; } forEach _types;" \n
+       "" \n
+       "//Get parameters" \n
        "_type = [_this,0,"""",[""""]] call BIS_fnc_param;" \n
-       "_base = [_this,1,"""",["""",[]]] call BIS_fnc_param;" \n
+       "_base = [_this,1,"""",["""",[]],[2,3]] call BIS_fnc_param;" \n
        "_veh = """";" \n
        "_marker = """";"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -282,9 +317,9 @@ class FSM
         class Yes_
         {
           priority = 1.000000;
-          to="Decision_time__";
+          to="Blanker";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_type == """""/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_type == """" && !_exhaustedAll"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -306,9 +341,7 @@ class FSM
     {
       name = "Create_Vehicle";
       init = /*%FSM<STATEINIT""">*/"//Spawn vehicle!" \n
-       "_obj = [_veh, (markerPos _marker), (markerDir _marker)] call AW_fnc_createVehicle;" \n
-       "" \n
-       "_obj"/*%FSM</STATEINIT""">*/;
+       "[_veh, (markerPos _marker), (markerDir _marker)] call AW_fnc_createVehicle;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

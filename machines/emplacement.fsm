@@ -65,8 +65,8 @@ link31[] = {25,24};
 link32[] = {26,27};
 link33[] = {27,14};
 link34[] = {28,27};
-globals[] = {25.000000,1,0,0,0,640,480,1,46,6316128,1,-256.999725,1154.413086,1418.688477,95.171661,1016,920,1};
-window[] = {2,-1,-1,-1,-1,1063,-1842,-402,303,3,1034};
+globals[] = {25.000000,1,0,0,0,640,480,1,46,6316128,1,-598.253723,1487.660889,1507.413818,-128.597412,1632,1280,1};
+window[] = {2,-1,-1,-1,-1,942,182,1622,182,3,1650};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -186,8 +186,7 @@ class FSM
           to="Create_Ammo_Truc";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"!_hasAmmo && !_awaitingAmmo"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"[[""emplacement"", ""ammo""], _marker, _pos, _name] call AW_fnc_createMarker;" \n
-           "[[""type"", ""emplacement_ammo""], [""message"", _name], [""detail"", _baseName], [""global"", true]] call AW_fnc_showNotification;" \n
+          action=/*%FSM<ACTION""">*/"[[""emplacement"", ""ammo""], _marker, _pos, _name] call AW_fnc_createJIPstateMarker;" \n
            "" \n
            "_awaitingAmmo = true;"/*%FSM</ACTION""">*/;
         };
@@ -214,6 +213,38 @@ class FSM
        "" \n
        "switch (_type) do" \n
        "{" \n
+       "	case ""scorcher"":" \n
+       "	{" \n
+       "		_weapon = [""B_MBT_01_arty_F"", _pos] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
+       "" \n
+       "		_dir = 45;" \n
+       "		for [{_c = 0}, {_c < 4}, {_c = _c + 1}] do" \n
+       "		{" \n
+       "			" \n
+       "			_relPos = [_pos, 5, _dir] call BIS_fnc_relPos;" \n
+       "			_obj = [""Land_BagFence_Round_F"", _relPos, (_dir - 180)] call AW_fnc_createVehicle;" \n
+       "			_objs = _objs + [_obj];" \n
+       "" \n
+       "			_dir = _dir + 90;" \n
+       "		};" \n
+       "	};" \n
+       "" \n
+       "	case ""mlrs"":" \n
+       "	{" \n
+       "		_weapon = [""B_MBT_01_mlrs_F"", _pos] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
+       "" \n
+       "		_dir = 45;" \n
+       "		for [{_c = 0}, {_c < 4}, {_c = _c + 1}] do" \n
+       "		{" \n
+       "			" \n
+       "			_relPos = [_pos, 5, _dir] call BIS_fnc_relPos;" \n
+       "			_obj = [""Land_BagFence_Round_F"", _relPos, (_dir - 180)] call AW_fnc_createVehicle;" \n
+       "			_objs = _objs + [_obj];" \n
+       "" \n
+       "			_dir = _dir + 90;" \n
+       "		};" \n
+       "	};" \n
+       "" \n
        "	default" \n
        "	{" \n
        "		_weapon = [""B_Mortar_01_F"", [(_pos select 0) - 1, _pos select 1, _pos select 2]] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
@@ -419,8 +450,10 @@ class FSM
     class Create_Ammo_Truc
     {
       name = "Create_Ammo_Truc";
-      init = /*%FSM<STATEINIT""">*/"_truck = [""B_Truck_01_covered_F"", _pos] call AW_fnc_baseVehSpawn;" \n
-       "_attachedMarkers = [_truck, [""misc"", ""ammo_truck""]] call AW_fnc_attachMarker;"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"[""B_Truck_01_covered_F""] call AW_fnc_baseVehSpawn; //DEBUG DEBUG DEBUG!" \n
+       "_attachedMarkers = [_truck, [""misc"", ""ammo_truck""]] call AW_fnc_attachMarker;" \n
+       "" \n
+       "[[""type"", ""emplacement_ammo""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

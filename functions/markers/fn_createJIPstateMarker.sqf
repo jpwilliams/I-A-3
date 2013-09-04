@@ -1,11 +1,11 @@
 private["_this", "_type", "_name", "_pos", "_text", "_marker", "_path", "_element"];
 
 _state	=	"init";
-_type	=	_this select 0;
-_name	=	_this select 1;
-_pos	=	_this select 2;
-_text	=	if ((count _this) > 3) then { _this select 3 } else { "" };
-_local	=	if ((count _this) > 4) then { _this select 4 } else { false };
+_type = [_this,0,"",["", []],[2]] call BIS_fnc_param;
+_name = [_this,1,"",[""]] call BIS_fnc_param;
+_pos = [_this,2,[0,0,0],[[]],[2,3]] call BIS_fnc_param;
+_text = [_this,3,"",[""]] call BIS_fnc_param;
+_local = [_this,4,false,[true]] call BIS_fnc_param;
 _markers = [];
 
 if ((typeName _type) == "ARRAY") then

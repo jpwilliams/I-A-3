@@ -47,8 +47,9 @@ _behaviours = [_this,1,[["patrol", true, 100]],[[]]] call BIS_fnc_param;
 			_behaviour = _behaviours call BIS_fnc_selectRandom;
 			_order = [_behaviour,0,"patrol",[""]] call BIS_fnc_param;
 
-			_pos = [_behaviour,1,getPos _x,[[],""],[2,3]] call BIS_fnc_param;
+			_pos = [_behaviour,1,[0,0,0],[[],""],[2,3]] call BIS_fnc_param;
 			if (_type == "GROUP") then { _pos = getPos (leader _x); };
+			if (_type == "OBJECT") then { _pos = getPos _x; };
 			if (typeName _pos == "STRING") then
 			{
 				_pos = [_x, ((markerSize _x) call BIS_fnc_lowestNum)] call AW_fnc_randomPosTrigger;

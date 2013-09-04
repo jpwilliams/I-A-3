@@ -50,7 +50,7 @@ private ["_this", "_area", "_gradient", "_radius"];
 _area = [_this,0,"land",[""]] call BIS_fnc_param;
 
 _gradient = [_this,1,2000,[true]] call BIS_fnc_param;
-if (_gradient == true) then { _gradient = 0.3; };
+if (typeName _gradient == "BOOL" && _gradient) then { _gradient = 0.3; };
 
 _radius = [_this,2,1,[objNull,[]]] call BIS_fnc_param;
 if (typeName _radius == "OBJECT") then { _radius = getPos _radius; };

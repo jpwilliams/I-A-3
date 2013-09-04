@@ -17,8 +17,8 @@ item12[] = {"Base_taken",8,218,25.000000,200.000000,125.000000,250.000000,0.0000
 item13[] = {"Reinforcements_time",4,218,775.000000,275.000000,875.000000,325.000000,0.000000,"Reinforcements" \n "time?"};
 item14[] = {"Players_no_longer",4,218,900.000000,500.000000,1000.000000,550.000000,0.000000,"Players" \n "no longer" \n "within radius"};
 item15[] = {"Base_taken",8,218,400.000000,350.000000,500.000000,400.000000,0.000000,"Base" \n "taken"};
-item16[] = {"Wait_for_grace_p",4,4314,25.000000,350.000000,125.000000,400.000000,0.000000,"Wait for" \n "grace period"};
-item17[] = {"Set_time_before",2,250,25.000000,425.000000,125.000000,475.000000,0.000000,"Set time" \n "before next" \n "attack"};
+item16[] = {"Wait_for_grace_p",4,218,25.000000,350.000000,125.000000,400.000000,0.000000,"Wait for" \n "grace period"};
+item17[] = {"Set_time_before",2,4346,25.000000,425.000000,125.000000,475.000000,0.000000,"Set time" \n "before next" \n "attack"};
 item18[] = {"Wait_for_the_att",4,218,25.000000,500.000000,125.000000,550.000000,0.000000,"Wait" \n "for the" \n "attack"};
 item19[] = {"Attack_the_base",2,250,25.000000,575.000000,125.000000,625.000000,0.000000,"Attack the" \n "base!"};
 item20[] = {"Enemies_defeated",4,218,150.000000,425.000000,250.000000,475.000000,2.000000,"Enemies" \n "defeated"};
@@ -78,8 +78,8 @@ link38[] = {32,9};
 link39[] = {32,34};
 link40[] = {33,28};
 link41[] = {34,7};
-globals[] = {25.000000,1,0,0,0,640,480,1,53,6316128,1,-169.546661,1335.612549,990.682800,-70.425552,1303,920,1};
-window[] = {2,-1,-1,-1,-1,1037,-1868,-428,277,3,1321};
+globals[] = {25.000000,1,0,0,0,640,480,1,53,6316128,1,-169.546661,1335.612549,990.682800,-70.425552,1303,1280,1};
+window[] = {2,-1,-1,-1,-1,1040,647,2087,280,3,1321};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -446,7 +446,7 @@ class FSM
     class Set_time_before
     {
       name = "Set_time_before";
-      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (random 30)); //DEBUG ~1800"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (random 1800));"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

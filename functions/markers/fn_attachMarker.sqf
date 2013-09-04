@@ -25,12 +25,13 @@ while { true } do
 
 _markers = [_state, _type, _name, (getPos _obj)] call AW_fnc_createJIPstateMarker;
 
-[_markers, _obj] spawn
+[_markers, _obj, _condition] spawn
 {
-	private ["_icon", "_obj", "_x", "_markers"];
+	private ["_icon", "_obj", "_x", "_markers", "_condition"];
 
 	_markers = _this select 0;
 	_obj = _this select 1;
+	_condition = _this select 2;
 
 	while _condition do
 	{

@@ -263,7 +263,6 @@ class CfgFunctions
 			file = "functions\generic";
 			class startMission			{ description = "Starts a mission with 4 given parameters."; };
 			class childrenComplete		{ description = "Returns whether or not a task's child tasks are complete."; };
-			class respawnMenuInventory	{ description = "Edited version of the BIS respawn script."; };
 			class findSpace				{ description = "Finds space using a variety of parameters; designed for Tactical Mission / Priority Target development."; };
 			class getFuzzyPos			{ description = "Gets a random position within a given radius."; };
 			class updateMission			{ description = "Updates missions!"; };
@@ -309,6 +308,7 @@ class CfgFunctions
 			class deleteMarker			{ description = "Handles JIP-compatible deletion of markers."; };
 			class JIPmarkers			{ description = "Allows JIPPs to create local versions of globally-existing markers."; };
 			class addJIPmarker			{ description = "Adds a marker to the JIP marker array."; };
+			class attachMarker			{ description = "Attach a marker to an object until either death or a specified condition."; };
 		};
 
 		class actions

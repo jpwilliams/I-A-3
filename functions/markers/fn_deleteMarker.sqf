@@ -14,7 +14,7 @@
 
 private["_markers", "_local", "_path", "_x"];
 
-_markers = _this select 0;
+_markers = [_this,0,[],["",[]]] call BIS_fnc_param;
 _local = if ((count _this) > 1) then { (_this select 1) } else { false };
 
 if (typeName _markers != "ARRAY") then

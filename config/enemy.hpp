@@ -18,17 +18,24 @@ infantry[] =
 	"O_spotter_F",
 	"O_sniper_F",
 	"O_medic_F",
-	"O_engineer_F"
+	"O_engineer_F",
+	"O_soldier_exp_F",
+	"O_officer_F",
+	"O_soldier_PG_F"
 };
 
 vehicles[] =
 {
+	"O_APC_Tracked_02_cannon_F",
+	"O_APC_Wheeled_02_rcws_F",
+	"O_MBT_02_cannon_F",
+	"O_APC_Tracked_02_AA_F",
+	"O_MBT_02_arty_F",
 	"O_MRAP_02_gmg_F",
-	"O_MRAP_02_hmg_F",
-	"O_APC_Wheeled_02_rcws_F"
+	"O_MRAP_02_hmg_F"
 };
 
 boats[] =
 {
-
+	"O_Boat_Armed_01_hmg_F"
 };
