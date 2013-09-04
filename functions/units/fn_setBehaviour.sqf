@@ -32,8 +32,9 @@
 
 private["_obj", "_behaviours", "_type", "_x", "_behaviour", "_order", "_pos", "_radius", "_near", "_leader", "_group", "_dir", "_retreatPos", "_waypoint"];
 
-_obj = if (typeName (_this select 0) == "ARRAY") then { _this select 0 } else { [_this select 0] };
-_behaviours = _this select 1;
+_obj = [_this,0,objNull,[[],objNull]] call BIS_fnc_param;
+if (typeName _obj == "OBJECT") then { _obj = [_obj]; };
+_behaviours = [_this,1,[["patrol", true, 100]],[[]]] call BIS_fnc_param;
 
 {
 	_type = typeName _x;
@@ -44,29 +45,16 @@ _behaviours = _this select 1;
 		default
 		{
 			_behaviour = _behaviours call BIS_fnc_selectRandom;
-			_order = _behaviour select 0;
-			_pos = [0,0,0];
+			_order = [_behaviour,0,"patrol",[""]] call BIS_fnc_param;
 
-
-
-
-			if (typeName (_behaviour select 1) == "ARRAY") then
+			_pos = [_behaviour,1,getPos _x,[[],""],[2,3]] call BIS_fnc_param;
+			if (_type == "GROUP") then { _pos = getPos (leader _x); };
+			if (typeName _pos == "STRING") then
 			{
-				_pos = _behaviour select 1;
-			} else {
-				if (typeName _x == "GROUP") then
-				{
-					_pos = getPos (leader _x);
-				} else {
-					_pos = getPos _x;
-				};
-
-				if (typeName _x == "STRING") then
-				{
-					_pos = [_x, ((markerSize _x) call BIS_fnc_lowestNum)] call AW_fnc_randomPosTrigger;
-				};
+				_pos = [_x, ((markerSize _x) call BIS_fnc_lowestNum)] call AW_fnc_randomPosTrigger;
 			};
-			_radius = if (count _behaviour > 2) then { _behaviour select 2 } else { 100 };
+
+			_radius = [_behaviour,2,100,[0]] call BIS_fnc_param;
 			switch (_order) do
 			{
 				case "defend":

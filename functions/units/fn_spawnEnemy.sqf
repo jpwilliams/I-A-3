@@ -2,46 +2,15 @@ private ["_spawnedUnits", "_side", "_soldiers", "_vehicles", "_toSpawn", "_type"
 
 // _units = [EAST, 30] call AW_fnc_spawnEnemy;
 
+_side = [_this,0,EAST,[EAST]] call BIS_fnc_param;
+_amount = [_this,1,5,[0]] call BIS_fnc_param;
+_loc = [_this,2,[0,0,0],[[],""],[2,3]] call BIS_fnc_param;
+_radius = [_this,3,100,[[],0],[2]] call BIS_fnc_param;
+
 _spawnedUnits = [];
-_side = _this select 0;
-_amount = _this select 1;
-_loc = _this select 2;
-_radius = if ((count _this) > 3) then { _this select 3 } else { "" };
-
-_soldiers =
-[
-	"O_Soldier_A_F",
-	"O_Soldier_AA_F",
-	"O_Soldier_AAA_F",
-	"O_Soldier_AAR_F",
-	"O_Soldier_AAT_F",
-	"O_Soldier_AR_F",
-	"O_Soldier_AT_F",
-	"O_Soldier_F",
-	"O_Soldier_GL_F",
-	"O_Soldier_LAT_F",
-	"O_Soldier_lite_F",
-	"O_Soldier_M_F",
-	"O_Soldier_repair_F",
-	"O_Soldier_SL_F",
-	"O_Soldier_TL_F",
-	"O_spotter_F",
-	"O_sniper_F",
-	"O_medic_F",
-	"O_engineer_F"
-];
-
-_vehicles =
-[
-	"O_MRAP_02_gmg_F",
-	"O_MRAP_02_hmg_F",
-	"O_APC_Wheeled_02_rcws_F"
-];
-
-_boats =
-[
-
-];
+_soldiers = getArray (missionConfigFile >> "enemy" >> "infantry");
+_vehicles = getArray (missionConfigFile >> "enemy" >> "vehicles");
+_boats = getArray (missionConfigFile >> "enemy" >> "boats");
 
 for [{_i = 0}, {_i < _amount}, {_i = _i + 1}] do
 {

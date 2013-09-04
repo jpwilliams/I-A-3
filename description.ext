@@ -441,6 +441,11 @@ class AW_rewards
 	#include "config\rewards.hpp"
 };
 
+class enemy
+{
+	#include "config\enemy.hpp"
+};
+
 respawn = "BASE";
 respawnDelay = 5;
 respawnTemplates[] = {"MenuPosition", "MenuInventory"};
