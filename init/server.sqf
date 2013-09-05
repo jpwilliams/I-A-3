@@ -2,7 +2,7 @@ if (debugMode) exitWith {};
 /*******************************************************************\
 
 	You may, of course, remove this if you wish.
-	
+
 	*/
 		onPlayerConnected "if (_uid == 76561197979546789) then { cutText [""Rarek, creator of Invade & Annex, has joined the server."", ""PLAIN""]; };";
 	/*
@@ -28,6 +28,15 @@ for [ {_i = 0}, {_i < _paramCount}, {_i = _i + 1} ] do
 		(paramsArray select _i)
 	];
 };
+
+//Grab points of interest
+pointsOfInterest = [];
+{
+	if (["poi_", _x] call BIS_fnc_inString) then
+	{
+		pointsOfInterest = pointsOfInterest + [_x];
+	};
+} forEach allMapMarkers;
 
 
 /*******************************************************************\

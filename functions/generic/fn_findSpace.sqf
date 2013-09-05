@@ -75,6 +75,7 @@ while {!_validPos} do
 			{ if (["main_", _x] call BIS_fnc_inString) exitWith { _mainPos = markerPos _x; }; } forEach allMapMarkers;
 			_pos = [_mainPos, 0, 600, _radius, 0, _gradient, 0] call BIS_fnc_findSafePos;
 		};
+		case "poi":	{ _pos = markerPos (pointsOfInterest call BIS_fnc_selectRandom); };
 		default {};
 	};
 
