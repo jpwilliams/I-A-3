@@ -15,7 +15,7 @@ item10[] = {"Here_we_go_",8,218,375.000000,800.000000,475.000000,850.000000,0.00
 item11[] = {"Blanker",2,250,375.000000,875.000000,475.000000,925.000000,0.000000,"Blanker"};
 item12[] = {"Yes_",8,218,375.000000,1275.000000,475.000000,1325.000000,0.000000,"Yes!"};
 item13[] = {"No_marker_",4,218,500.000000,1275.000000,600.000000,1325.000000,1.000000,"No marker!"};
-item14[] = {"Can_we_select_another",2,250,625.000000,1200.000000,725.000000,1250.000000,0.000000,"Can we" \n "select another" \n "vehicle?"};
+item14[] = {"Can_we_select_another",2,4346,625.000000,1200.000000,725.000000,1250.000000,0.000000,"Can we" \n "select another" \n "vehicle?"};
 item15[] = {"",7,210,671.000000,896.000000,679.000000,904.000000,0.000000,""};
 item16[] = {"Yes_",4,218,625.000000,1125.000000,725.000000,1175.000000,1.000000,"Yes!"};
 item17[] = {"No",8,218,625.000000,1350.000000,725.000000,1400.000000,0.000000,"No"};
@@ -23,7 +23,7 @@ item18[] = {"",7,210,171.000000,1446.000000,179.000000,1454.000000,0.000000,""};
 item19[] = {"Create_Vehicle",1,250,375.000000,1350.000000,475.000000,1400.000000,0.000000,"Create" \n "Vehicle"};
 item20[] = {"",7,210,671.000000,1446.000000,679.000000,1454.000000,0.000000,""};
 item21[] = {"No_markers_left",4,218,500.000000,1200.000000,600.000000,1250.000000,2.000000,"No markers" \n "left"};
-item22[] = {"Exhausted_type_",4,4314,500.000000,1050.000000,600.000000,1100.000000,3.000000,"Exhausted" \n "type?"};
+item22[] = {"Exhausted_type_",4,218,500.000000,1050.000000,600.000000,1100.000000,3.000000,"Exhausted" \n "type?"};
 item23[] = {"",7,210,671.000000,1071.000000,679.000000,1079.000000,0.000000,""};
 link0[] = {0,10};
 link1[] = {1,6};
@@ -55,8 +55,8 @@ link26[] = {20,18};
 link27[] = {21,14};
 link28[] = {22,23};
 link29[] = {23,15};
-globals[] = {25.000000,1,0,0,0,640,480,1,30,6316128,1,-12.580621,891.245422,1517.843506,717.222290,696,621,1};
-window[] = {0,-1,-1,-1,-1,949,182,1622,182,1,714};
+globals[] = {25.000000,1,0,0,0,640,480,1,30,6316128,1,-12.580621,891.245422,1517.843506,717.222290,696,622,1};
+window[] = {0,-1,-1,-1,-1,967,200,1640,200,1,714};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -89,7 +89,8 @@ class FSM
        "_marker = """";" \n
        "" \n
        "//Extras" \n
-       "_exhausted = [];"/*%FSM</STATEINIT""">*/;
+       "_exhausted = [];" \n
+       "_exhaustedBases = [];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -151,7 +152,7 @@ class FSM
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"typeName _base == ""ARRAY"""/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"//Needs to be a specific base!" \n
-           "_base = [_base] call AW_fnc_findNearestBase;"/*%FSM</ACTION""">*/;
+           "_base = [_base, _exhaustedBases] call AW_fnc_findNearestBase;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
         /*%FSM<LINK "Base_given">*/
@@ -190,7 +191,7 @@ class FSM
        "	} forEach vehicles;" \n
        "};" \n
        "" \n
-       "hint format[""_base = %1\n\n_markers = %2\n\n_marker = %3\n\n_type = %4\n\n_veh = %5\n\n_exhausted = %6\n\n_markers count = %7"", _base, _markers, _marker, _type, _veh, _exhausted, (count _markers)];"/*%FSM</STATEINIT""">*/;
+       "hint format[""_base = %1\n\n_markers = %2\n\n_marker = %3\n\n_type = %4\n\n_veh = %5\n\n_exhaustedTypes = %6\n\n_exhaustedBases = %7\n\n_markers count = %8"", _base, _markers, _marker, _type, _veh, _exhausted, _exhaustedBases, (count _markers)];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -301,12 +302,21 @@ class FSM
     class Can_we_select_another
     {
       name = "Can_we_select_another";
-      init = /*%FSM<STATEINIT""">*/"_exhausted = _exhausted + [_type];" \n
-       "_exhaustedAll = true;" \n
-       "{ if (!(_x in _exhausted)) exitWith { _exhaustedAll = false; }; } forEach _types;" \n
+      init = /*%FSM<STATEINIT""">*/"_exhaustedAll = true;" \n
+       "_exhaustedCompletely = true;" \n
+       "" \n
+       "_exhausted = _exhausted + [_type];" \n
+       "" \n
+       "_type = [_this,0,"""",[""""]] call BIS_fnc_param;" \n
+       "if (_type == """") then { { if (!(_x in _exhausted)) exitWith { _exhaustedAll = false; }; } forEach _types; };" \n
+       "" \n
+       "if (_exhaustedAll) then" \n
+       "{" \n
+       "	_exhaustedBases = _exhaustedBases + [_base];" \n
+       "	{ if (!(_x in _exhaustedBases)) exitWith { _exhaustedCompletely = false; }; } forEach basesOwned;	" \n
+       "};" \n
        "" \n
        "//Get parameters" \n
-       "_type = [_this,0,"""",[""""]] call BIS_fnc_param;" \n
        "_base = [_this,1,"""",["""",[]],[2,3]] call BIS_fnc_param;" \n
        "_veh = """";" \n
        "_marker = """";"/*%FSM</STATEINIT""">*/;
@@ -319,7 +329,7 @@ class FSM
           priority = 1.000000;
           to="Blanker";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_type == """" && !_exhaustedAll"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == """" || _base == """") && !_exhaustedCompletely"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
