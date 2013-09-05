@@ -273,7 +273,8 @@ class CfgFunctions
 		class bases
 		{
 			file = "functions\bases";
-			class baseVehSpawn			{ description = "Spawns a random or specified vehicle at a random or specified base."; ext = ".fsm"; };
+			class baseVehSpawn 					{ description = "Acts as a helper for AW_fnc_baseVehSpawnMachine."; };
+			class baseVehSpawnMachine			{ description = "Spawns a random or specified vehicle at a random or specified base."; ext = ".fsm"; };
 			class findNearestBase		{ description = "Finds the nearest base to the given position."; };
 		};
 
@@ -409,6 +410,12 @@ class CfgSounds
 {
 	sounds[] = {};
 	#include "missions\tactical\getDocuments\config\CfgSounds.hpp"
+};
+
+class CfgRadio
+{
+	sounds[] = {};
+	#include "sounds\radio\hq.hpp"
 };
 
 class AW_base

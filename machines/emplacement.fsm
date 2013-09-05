@@ -25,11 +25,13 @@ item20[] = {"Ammo_truck_died",4,218,50.000000,925.000000,150.000000,975.000000,3
 item21[] = {"Ammo_truck_s_there",4,218,175.000000,925.000000,275.000000,975.000000,2.000000,"Ammo truck's" \n "there!"};
 item22[] = {"",7,210,221.000000,1021.000000,229.000000,1029.000000,0.000000,""};
 item23[] = {"",7,210,-154.000015,1021.000000,-146.000000,1029.000000,0.000000,""};
-item24[] = {"Create_Ammo_Truc",2,4346,-75.000000,850.000000,25.000000,900.000000,0.000000,"Create" \n "Ammo Truck"};
+item24[] = {"Create_Ammo_Truc",2,250,-75.000000,850.000000,25.000000,900.000000,0.000000,"Create" \n "Ammo Truck"};
 item25[] = {"",7,210,-29.000000,946.000000,-21.000000,954.000000,0.000000,""};
 item26[] = {"",7,210,-154.000000,671.000000,-146.000000,679.000000,0.000000,""};
 item27[] = {"",7,210,-29.000000,671.000000,-21.000000,679.000000,0.000000,""};
 item28[] = {"Back_to_waiting",8,218,-75.000000,725.000000,25.000000,775.000000,0.000000,"Back to" \n "waiting"};
+item29[] = {"Truck_failed_to",4,218,50.000000,725.000000,150.000000,775.000000,1.000000,"Truck" \n "failed to" \n "spawn"};
+item30[] = {"",7,210,96.000000,671.000000,104.000000,679.000000,0.000000,""};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,5};
@@ -61,12 +63,15 @@ link27[] = {21,22};
 link28[] = {22,23};
 link29[] = {23,26};
 link30[] = {24,28};
-link31[] = {25,24};
-link32[] = {26,27};
-link33[] = {27,14};
-link34[] = {28,27};
-globals[] = {25.000000,1,0,0,0,640,480,1,46,6316128,1,-598.253723,1487.660889,1507.413818,-128.597412,1632,1280,1};
-window[] = {2,-1,-1,-1,-1,942,182,1622,182,3,1650};
+link31[] = {24,29};
+link32[] = {25,24};
+link33[] = {26,27};
+link34[] = {27,30};
+link35[] = {28,27};
+link36[] = {29,30};
+link37[] = {30,14};
+globals[] = {25.000000,1,0,0,0,640,480,1,48,6316128,1,-270.944336,837.595825,1189.329590,427.130920,893,614,1};
+window[] = {0,-1,-1,-1,-1,1087,461,1901,327,1,911};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -153,8 +158,6 @@ class FSM
           condition=/*%FSM<CONDITION""">*/"_awaitingAmmo && !isNull _truck && (_truck distance _pos) < 50"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"//The important bit..." \n
            "{ _x setVehicleAmmo 1; } forEach _weapons;" \n
-           "" \n
-           "[_attachedMarkers] call AW_fnc_deleteMarker;" \n
            "" \n
            "[""emplacement"", _marker, _pos, _name] call AW_fnc_createMarker;" \n
            "[[""type"", ""emplacement_resupplied""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
@@ -450,13 +453,24 @@ class FSM
     class Create_Ammo_Truc
     {
       name = "Create_Ammo_Truc";
-      init = /*%FSM<STATEINIT""">*/"[""B_Truck_01_covered_F""] call AW_fnc_baseVehSpawn; //DEBUG DEBUG DEBUG!" \n
-       "_attachedMarkers = [_truck, [""misc"", ""ammo_truck""]] call AW_fnc_attachMarker;" \n
+      init = /*%FSM<STATEINIT""">*/"_truck = [""B_Truck_01_covered_F"", _pos] call AW_fnc_baseVehSpawn;" \n
+       "" \n
+       "hint format[""_truck = %1"", _truck];" \n
        "" \n
        "[[""type"", ""emplacement_ammo""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
+        /*%FSM<LINK "Truck_failed_to">*/
+        class Truck_failed_to
+        {
+          priority = 1.000000;
+          to="Let_s_wait_here";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"typeName _truck == ""BOOL"" && !_truck"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_truck = objNull;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
         /*%FSM<LINK "Back_to_waiting">*/
         class Back_to_waiting
         {
