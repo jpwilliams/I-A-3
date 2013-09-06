@@ -7,27 +7,27 @@ item2[] = {"Is_enemy",4,218,400.000000,275.000000,500.000000,325.000000,0.000000
 item3[] = {"Add_Respawn_Location",2,250,25.000000,275.000000,125.000000,325.000000,0.000000,"Add Respawn" \n "Location &" \n "Vehicles"};
 item4[] = {"Spawn_defenders",2,250,525.000000,275.000000,625.000000,325.000000,0.000000,"Spawn" \n "defenders & set" \n "marker"};
 item5[] = {"Stop_vehicles_respawning",2,250,400.000000,425.000000,500.000000,475.000000,0.000000,"Stop vehicles" \n "respawning &" \n "remove spawn"};
-item6[] = {"Base_being_captu",2,250,900.000000,650.000000,1000.000000,700.000000,0.000000,"Base being" \n "captured"};
+item6[] = {"Base_being_captu",2,250,900.000000,800.000000,1000.000000,850.000000,0.000000,"Base being" \n "captured"};
 item7[] = {"Calculate___Spawn",2,250,775.000000,350.000000,875.000000,400.000000,0.000000,"Calculate &" \n "Spawn" \n "Reinforcements"};
 item8[] = {"Do_the_checks",8,218,525.000000,350.000000,625.000000,400.000000,0.000000,"Do the checks"};
 item9[] = {"Player_within_base",4,218,650.000000,500.000000,750.000000,550.000000,1.000000,"Player" \n "within base" \n "radius"};
 item10[] = {"No_enemies_left",4,218,1025.000000,500.000000,1125.000000,550.000000,1.000000,"No" \n "enemies" \n "left"};
 item11[] = {"Base_Taken_",2,250,1025.000000,200.000000,1125.000000,250.000000,0.000000,"Base" \n "Taken!"};
 item12[] = {"Base_taken",8,218,25.000000,200.000000,125.000000,250.000000,0.000000,"Base" \n "taken"};
-item13[] = {"Reinforcements_time",4,218,775.000000,275.000000,875.000000,325.000000,0.000000,"Reinforcements" \n "time?"};
+item13[] = {"Reinforcements_time",4,218,775.000000,275.000000,875.000000,325.000000,1.000000,"Reinforcements" \n "time?"};
 item14[] = {"Players_no_longer",4,218,900.000000,500.000000,1000.000000,550.000000,0.000000,"Players" \n "no longer" \n "within radius"};
 item15[] = {"Base_taken",8,218,400.000000,350.000000,500.000000,400.000000,0.000000,"Base" \n "taken"};
 item16[] = {"Wait_for_grace_p",4,218,25.000000,350.000000,125.000000,400.000000,0.000000,"Wait for" \n "grace period"};
-item17[] = {"Set_time_before",2,4346,25.000000,425.000000,125.000000,475.000000,0.000000,"Set time" \n "before next" \n "attack"};
+item17[] = {"Set_time_before",2,250,25.000000,425.000000,125.000000,475.000000,0.000000,"Set time" \n "before next" \n "attack"};
 item18[] = {"Wait_for_the_att",4,218,25.000000,500.000000,125.000000,550.000000,0.000000,"Wait" \n "for the" \n "attack"};
 item19[] = {"Attack_the_base",2,250,25.000000,575.000000,125.000000,625.000000,0.000000,"Attack the" \n "base!"};
 item20[] = {"Enemies_defeated",4,218,150.000000,425.000000,250.000000,475.000000,2.000000,"Enemies" \n "defeated"};
 item21[] = {"No_players_remai",4,218,400.000000,500.000000,500.000000,550.000000,1.000000,"No players" \n "remaining"};
 item22[] = {"Only_1_base_left",4,218,25.000000,650.000000,125.000000,700.000000,2.000000,"Only 1" \n "base left"};
-item23[] = {"Organise_tactical",2,250,-100.000000,650.000000,0.000000,700.000000,0.000000,"Organise" \n "tactical" \n "retreat"};
-item24[] = {"Ready_to_delete",4,218,-100.000000,575.000000,0.000000,625.000000,0.000000,"Ready" \n "to delete"};
-item25[] = {"Clean_up_attacke",2,250,-100.000000,500.000000,0.000000,550.000000,0.000000,"Clean up" \n "attackers"};
-item26[] = {"Wait_for_more_than",4,218,-100.000000,425.000000,0.000000,475.000000,0.000000,"Wait for" \n "more than 1" \n "base"};
+item23[] = {"Organise_tactical",2,250,25.000000,725.000000,125.000000,775.000000,0.000000,"Organise" \n "tactical" \n "retreat"};
+item24[] = {"Ready_to_delete",4,218,-100.000000,575.000000,0.000000,625.000000,1.000000,"Ready" \n "to delete"};
+item25[] = {"Clean_up_attacke",2,250,-225.000000,575.000000,-125.000000,625.000000,0.000000,"Clean up" \n "attackers"};
+item26[] = {"Wait_for_more_than",4,218,-100.000000,425.000000,0.000000,475.000000,1.000000,"Wait for" \n "more than 1" \n "base"};
 item27[] = {"Do_the_checks",4,218,150.000000,575.000000,250.000000,625.000000,0.000000,"Do the checks"};
 item28[] = {"Check",2,250,275.000000,500.000000,375.000000,550.000000,0.000000,"Check"};
 item29[] = {"Nothing_yet",8,218,150.000000,650.000000,250.000000,700.000000,0.000000,"Nothing yet"};
@@ -36,6 +36,20 @@ item31[] = {"Do_the_checks",4,218,775.000000,425.000000,875.000000,475.000000,0.
 item32[] = {"Check_1",2,250,775.000000,500.000000,875.000000,550.000000,0.000000,"Check"};
 item33[] = {"Ready_to_check",4,218,275.000000,575.000000,375.000000,625.000000,0.000000,"Ready to check"};
 item34[] = {"Nothing_yet",8,218,650.000000,425.000000,750.000000,475.000000,0.000000,"Nothing yet"};
+item35[] = {"Let_s_go_",8,218,1025.000000,800.000000,1125.000000,850.000000,0.000000,"Let's go!"};
+item36[] = {"Set_timeout___",2,250,1025.000000,725.000000,1125.000000,775.000000,0.000000,"Set timeout..."};
+item37[] = {"Do_the_checks",4,218,900.000000,650.000000,1000.000000,700.000000,0.000000,"Do the checks"};
+item38[] = {"Check_2",2,250,900.000000,575.000000,1000.000000,625.000000,0.000000,"Check"};
+item39[] = {"Get_ready",8,218,25.000000,800.000000,125.000000,850.000000,0.000000,"Get ready"};
+item40[] = {"Set_timeout____1",2,250,-100.000000,800.000000,0.000000,850.000000,0.000000,"Set timeout..."};
+item41[] = {"Do_the_checks",4,218,-100.000000,725.000000,0.000000,775.000000,0.000000,"Do the checks"};
+item42[] = {"Check_3",2,250,-100.000000,650.000000,0.000000,700.000000,0.000000,"Check"};
+item43[] = {"Not_ready_to_del",8,218,-225.000000,725.000000,-125.000000,775.000000,0.000000,"Not ready" \n "to delete"};
+item44[] = {"Get_ready",8,218,-350.000000,575.000000,-250.000000,625.000000,0.000000,"Get ready"};
+item45[] = {"Set_timeout",2,250,-350.000000,500.000000,-250.000000,550.000000,0.000000,"Set timeout"};
+item46[] = {"Do_the_checks",4,218,-350.000000,425.000000,-250.000000,475.000000,0.000000,"Do the checks"};
+item47[] = {"Check_4",2,250,-225.000000,425.000000,-125.000000,475.000000,0.000000,"Check"};
+item48[] = {"Not_more_than_1",8,218,-225.000000,500.000000,-125.000000,550.000000,0.000000,"Not more" \n "than 1 base"};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,3};
@@ -43,43 +57,59 @@ link3[] = {2,4};
 link4[] = {3,16};
 link5[] = {4,8};
 link6[] = {5,15};
-link7[] = {6,10};
-link8[] = {6,14};
-link9[] = {7,13};
-link10[] = {7,31};
-link11[] = {8,7};
-link12[] = {9,6};
-link13[] = {10,11};
-link14[] = {11,12};
-link15[] = {12,3};
-link16[] = {13,7};
-link17[] = {14,7};
-link18[] = {15,4};
-link19[] = {16,17};
-link20[] = {17,18};
-link21[] = {18,19};
-link22[] = {19,22};
-link23[] = {19,27};
-link24[] = {20,17};
-link25[] = {21,5};
-link26[] = {22,23};
-link27[] = {23,24};
-link28[] = {24,25};
-link29[] = {25,26};
-link30[] = {26,17};
-link31[] = {27,28};
-link32[] = {28,20};
-link33[] = {28,21};
-link34[] = {28,29};
-link35[] = {29,30};
-link36[] = {30,33};
-link37[] = {31,32};
-link38[] = {32,9};
-link39[] = {32,34};
-link40[] = {33,28};
-link41[] = {34,7};
-globals[] = {25.000000,1,0,0,0,640,480,1,53,6316128,1,-169.546661,1335.612549,990.682800,-70.425552,1303,1280,1};
-window[] = {2,-1,-1,-1,-1,1040,647,2087,280,3,1321};
+link7[] = {6,35};
+link8[] = {7,13};
+link9[] = {7,31};
+link10[] = {8,7};
+link11[] = {9,6};
+link12[] = {10,11};
+link13[] = {11,12};
+link14[] = {12,3};
+link15[] = {13,7};
+link16[] = {14,7};
+link17[] = {15,4};
+link18[] = {16,17};
+link19[] = {17,18};
+link20[] = {18,19};
+link21[] = {19,22};
+link22[] = {19,27};
+link23[] = {20,17};
+link24[] = {21,5};
+link25[] = {22,23};
+link26[] = {23,39};
+link27[] = {24,25};
+link28[] = {25,44};
+link29[] = {26,17};
+link30[] = {27,28};
+link31[] = {28,20};
+link32[] = {28,21};
+link33[] = {28,29};
+link34[] = {29,30};
+link35[] = {30,33};
+link36[] = {31,32};
+link37[] = {32,9};
+link38[] = {32,34};
+link39[] = {33,28};
+link40[] = {34,7};
+link41[] = {35,36};
+link42[] = {36,37};
+link43[] = {37,38};
+link44[] = {38,10};
+link45[] = {38,14};
+link46[] = {39,40};
+link47[] = {40,41};
+link48[] = {41,42};
+link49[] = {42,24};
+link50[] = {42,43};
+link51[] = {43,40};
+link52[] = {44,45};
+link53[] = {45,46};
+link54[] = {46,47};
+link55[] = {47,26};
+link56[] = {47,48};
+link57[] = {48,45};
+globals[] = {25.000000,1,0,0,0,640,480,1,68,6316128,1,-521.866211,983.292603,1029.958496,-31.149811,1303,911,1};
+window[] = {2,-1,-1,-32000,-32000,860,100,1540,100,3,1321};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -312,46 +342,14 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "No_enemies_left">*/
-        class No_enemies_left
-        {
-          priority = 1.000000;
-          to="Base_Taken_";
-          precondition = /*%FSM<CONDPRECONDITION""">*/"_unitGroups = [];" \n
-           "_unitsDefending = [];" \n
-           "" \n
-           "{" \n
-           "	if (!isPlayer _x && alive _x && (_x distance _pos) <= _radius) then" \n
-           "	{" \n
-           "		_unitsDefending = _unitsDefending + [_x];" \n
-           "	};" \n
-           "} forEach allUnits;" \n
-           "" \n
-           "{" \n
-           "	_type = typeName _x;" \n
-           "	switch (_type) do" \n
-           "	{" \n
-           "		case ""GROUP"": { if (!(_x in _unitGroups)) then { _unitGroups = _unitGroups + [_x]; }; };" \n
-           "		case ""OBJECT"": { if (!(group _x in _unitGroups)) then { _unitGroups = _unitGroups + [group _x]; }; };" \n
-           "	};" \n
-           "} forEach _unitsDefending;"/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(count _unitGroups) < 1"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-        /*%FSM<LINK "Players_no_longer">*/
-        class Players_no_longer
+        /*%FSM<LINK "Let_s_go_">*/
+        class Let_s_go_
         {
           priority = 0.000000;
-          to="Calculate___Spawn";
-          precondition = /*%FSM<CONDPRECONDITION""">*/"_beingTaken = false;" \n
-           "{" \n
-           "	if ((_x distance _pos) < _radius) exitWith { _beingTaken = true; };" \n
-           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!_beingTaken"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"[[""base"", ""enemy""], _marker, _pos, _markerText] call AW_fnc_createJIPstateMarker;" \n
-           "" \n
-           "[_spawnedUnits, [[""patrol"", _marker, 100]]] call AW_fnc_setBehaviour;"/*%FSM</ACTION""">*/;
+          to="Set_timeout___";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -361,24 +359,14 @@ class FSM
     class Calculate___Spawn
     {
       name = "Calculate___Spawn";
-      init = /*%FSM<STATEINIT""">*/"_timeout = time + (5 + random(10));"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (5 + random(15)));"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "Do_the_checks">*/
-        class Do_the_checks
-        {
-          priority = 0.000000;
-          to="Check_1";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
         /*%FSM<LINK "Reinforcements_time">*/
         class Reinforcements_time
         {
-          priority = 0.000000;
+          priority = 1.000000;
           to="Calculate___Spawn";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"time >= _respawnTimeout"/*%FSM</CONDITION""">*/;
@@ -413,6 +401,16 @@ class FSM
            "};" \n
            "" \n
            "_respawnTimeout = (time + _respawnTime);"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Do_the_checks">*/
+        class Do_the_checks
+        {
+          priority = 0.000000;
+          to="Check_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -456,7 +454,7 @@ class FSM
           priority = 0.000000;
           to="Attack_the_base";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(count basesOwned) > 1 && time >= _timeout"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout && (count basesOwned) > 1"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -510,26 +508,13 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "Ready_to_delete">*/
-        class Ready_to_delete
+        /*%FSM<LINK "Get_ready">*/
+        class Get_ready
         {
           priority = 0.000000;
-          to="Clean_up_attacke";
-          precondition = /*%FSM<CONDPRECONDITION""">*/"//Define distance needed before deletion" \n
-           "_distance = 500;" \n
-           "_farAway = true;" \n
-           "" \n
-           "{" \n
-           "	if (!_farAway) exitWith {};" \n
-           "	if (typeName _x == ""GROUP"") then" \n
-           "	{" \n
-           "		_leader = leader _x;" \n
-           "		{" \n
-           "			if ((_x distance _leader) < _distance) exitWith { _farAway = false; };" \n
-           "		} forEach playableUnits;" \n
-           "	};" \n
-           "} forEach _attackers;"/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_farAway"/*%FSM</CONDITION""">*/;
+          to="Set_timeout____1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -544,13 +529,13 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "Wait_for_more_than">*/
-        class Wait_for_more_than
+        /*%FSM<LINK "Get_ready">*/
+        class Get_ready
         {
           priority = 0.000000;
-          to="Set_time_before";
+          to="Set_timeout";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(count basesOwned) > 1"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -635,7 +620,7 @@ class FSM
     class Wait___
     {
       name = "Wait___";
-      init = /*%FSM<STATEINIT""">*/"_timeout = time + (5 + random(5));"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (5 + random(15)));"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -678,6 +663,197 @@ class FSM
         {
           priority = 0.000000;
           to="Calculate___Spawn";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Set_timeout___">*/
+    class Set_timeout___
+    {
+      name = "Set_timeout___";
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (5 + random(15)));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Do_the_checks">*/
+        class Do_the_checks
+        {
+          priority = 0.000000;
+          to="Check_2";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Check_2">*/
+    class Check_2
+    {
+      name = "Check_2";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "No_enemies_left">*/
+        class No_enemies_left
+        {
+          priority = 1.000000;
+          to="Base_Taken_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_unitGroups = [];" \n
+           "_unitsDefending = [];" \n
+           "" \n
+           "{" \n
+           "	if (!isPlayer _x && alive _x && (_x distance _pos) <= _radius) then" \n
+           "	{" \n
+           "		_unitsDefending = _unitsDefending + [_x];" \n
+           "	};" \n
+           "} forEach allUnits;" \n
+           "" \n
+           "{" \n
+           "	_type = typeName _x;" \n
+           "	switch (_type) do" \n
+           "	{" \n
+           "		case ""GROUP"": { if (!(_x in _unitGroups)) then { _unitGroups = _unitGroups + [_x]; }; };" \n
+           "		case ""OBJECT"": { if (!(group _x in _unitGroups)) then { _unitGroups = _unitGroups + [group _x]; }; };" \n
+           "	};" \n
+           "} forEach _unitsDefending;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(count _unitGroups) < 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Players_no_longer">*/
+        class Players_no_longer
+        {
+          priority = 0.000000;
+          to="Calculate___Spawn";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_beingTaken = false;" \n
+           "{" \n
+           "	if ((_x distance _pos) < _radius) exitWith { _beingTaken = true; };" \n
+           "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_beingTaken"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"[[""base"", ""enemy""], _marker, _pos, _markerText] call AW_fnc_createJIPstateMarker;" \n
+           "" \n
+           "[_spawnedUnits, [[""patrol"", _marker, 100]]] call AW_fnc_setBehaviour;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Set_timeout____1">*/
+    class Set_timeout____1
+    {
+      name = "Set_timeout____1";
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (5 + random(15)));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Do_the_checks">*/
+        class Do_the_checks
+        {
+          priority = 0.000000;
+          to="Check_3";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Check_3">*/
+    class Check_3
+    {
+      name = "Check_3";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Ready_to_delete">*/
+        class Ready_to_delete
+        {
+          priority = 1.000000;
+          to="Clean_up_attacke";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"//Define distance needed before deletion" \n
+           "_distance = 500;" \n
+           "_farAway = true;" \n
+           "" \n
+           "{" \n
+           "	if (!_farAway) exitWith {};" \n
+           "	if (typeName _x == ""GROUP"") then" \n
+           "	{" \n
+           "		_leader = leader _x;" \n
+           "		{" \n
+           "			if ((_x distance _leader) < _distance) exitWith { _farAway = false; };" \n
+           "		} forEach playableUnits;" \n
+           "	};" \n
+           "} forEach _attackers;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_farAway"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Not_ready_to_del">*/
+        class Not_ready_to_del
+        {
+          priority = 0.000000;
+          to="Set_timeout____1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Set_timeout">*/
+    class Set_timeout
+    {
+      name = "Set_timeout";
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (5 + random(15)));"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Do_the_checks">*/
+        class Do_the_checks
+        {
+          priority = 0.000000;
+          to="Check_4";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Check_4">*/
+    class Check_4
+    {
+      name = "Check_4";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Wait_for_more_than">*/
+        class Wait_for_more_than
+        {
+          priority = 1.000000;
+          to="Set_time_before";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(count basesOwned) > 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Not_more_than_1">*/
+        class Not_more_than_1
+        {
+          priority = 0.000000;
+          to="Set_timeout";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;

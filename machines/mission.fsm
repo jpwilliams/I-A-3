@@ -57,7 +57,7 @@ link27[] = {20,22};
 link28[] = {21,3};
 link29[] = {23,24};
 globals[] = {25.000000,1,0,0,0,640,480,1,35,6316128,1,-249.984467,1029.074707,674.179016,-227.696289,1042,911,1};
-window[] = {2,-1,-1,-1,-1,792,25,1465,25,3,1060};
+window[] = {2,-1,-1,-1,-1,867,100,1540,100,3,1060};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -162,7 +162,13 @@ class FSM
            "] call AW_fnc_showNotification;" \n
            "" \n
            "[_code, ""SUCCEEDED"", false] call BIS_fnc_taskSetState;" \n
-           "[] call AW_fnc_baseVehSpawn;"/*%FSM</ACTION""">*/;
+           "" \n
+           "//Give rewards!" \n
+           "switch (_type) do" \n
+           "{" \n
+           "	case ""tactical"": { [] call AW_fnc_baseVehSpawn; };" \n
+           "	case ""ghost"": { [] call AW_fnc_createEmplacement; };" \n
+           "};"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
         /*%FSM<LINK "Failure">*/

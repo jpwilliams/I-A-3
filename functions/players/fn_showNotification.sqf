@@ -34,5 +34,3 @@ if (_type != "") then
 } else {
 	diag_log "::::::::: AW_DEBUG ::::::::: No type given for AW_fnc_showNotification";
 };
-
-

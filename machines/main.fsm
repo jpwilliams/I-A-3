@@ -12,13 +12,13 @@ item7[] = {"Is_coastal_town",4,218,-75.000000,250.000000,25.000000,300.000000,2.
 item8[] = {"Create_Enemy_Boat",2,250,-75.000000,325.000000,25.000000,375.000000,0.000000,"Create" \n "Enemy" \n "Boat Patrols"};
 item9[] = {"Finished_creatin",8,218,-75.000000,400.000000,25.000000,450.000000,0.000000,"Finished" \n "creating"};
 item10[] = {"Finished_creatin",8,218,50.000000,325.000000,150.000000,375.000000,0.000000,"Finished" \n "creating"};
-item11[] = {"Create_Task___Ma",2,4346,50.000000,400.000000,150.000000,450.000000,0.000000,"Create" \n "Task &" \n "Marker"};
+item11[] = {"Create_Task___Ma",2,250,50.000000,400.000000,150.000000,450.000000,0.000000,"Create" \n "Task &" \n "Marker"};
 item12[] = {"Task_sent_to_all",8,218,175.000000,400.000000,275.000000,450.000000,0.000000,"Task" \n "sent to all" \n "players"};
 item13[] = {"Choose_Sub_objec",2,250,300.000000,400.000000,400.000000,450.000000,0.000000,"Choose" \n "Sub-objective"};
 item14[] = {"sub__objective_c",8,218,425.000000,400.000000,525.000000,450.000000,0.000000,"sub-" \n "objective" \n "chosen"};
 item15[] = {"Trigger_clean_up",2,250,425.000000,100.000000,525.000000,150.000000,0.000000,"Trigger" \n "clean-up" \n "scripts"};
 item16[] = {"Wait_random_time",4,218,300.000000,100.000000,400.000000,150.000000,0.000000,"Wait" \n "random" \n "time"};
-item17[] = {"Wait_for_complet",2,250,425.000000,325.000000,525.000000,375.000000,0.000000,"Wait" \n "for" \n "completion"};
+item17[] = {"Wait_for_complet",2,4346,425.000000,325.000000,525.000000,375.000000,0.000000,"Wait" \n "for" \n "completion"};
 item18[] = {"Next_check_",4,218,425.000000,250.000000,525.000000,300.000000,0.000000,"Next" \n "check?"};
 item19[] = {"Do_the_checks",2,250,425.000000,175.000000,525.000000,225.000000,0.000000,"Do" \n "the" \n "checks"};
 item20[] = {"Sub__objective_not",4,218,300.000000,250.000000,400.000000,300.000000,5.000000,"Sub-" \n "objective not" \n "complete?"};
@@ -53,8 +53,8 @@ link24[] = {21,15};
 link25[] = {22,17};
 link26[] = {20,23};
 link27[] = {23,20};
-globals[] = {25.000000,1,0,0,0,640,480,1,57,6316128,1,-148.258179,845.264160,600.734436,9.627154,1365,1280,1};
-window[] = {2,-1,-1,-1,-1,1143,947,2387,383,3,1383};
+globals[] = {25.000000,1,0,0,0,640,480,1,57,6316128,1,-148.258179,845.264160,600.734436,9.627154,1365,911,1};
+window[] = {2,-1,-1,-1,-1,860,100,1540,100,3,1383};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -262,7 +262,7 @@ class FSM
     class Wait_for_complet
     {
       name = "Wait_for_complet";
-      init = /*%FSM<STATEINIT""">*/"_timeout = (time + 15);"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (5 + random(15)));"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

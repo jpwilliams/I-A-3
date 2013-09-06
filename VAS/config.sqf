@@ -58,5 +58,3 @@ vas_r_magazines = [];
 vas_r_items = [];
 //Goggles to remove from VAS
 vas_r_glasses = [];
-
-//Restrict all speciality classnames and then, dependent on role, remove certain ones from the list.
