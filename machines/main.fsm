@@ -18,7 +18,7 @@ item13[] = {"Choose_Sub_objec",2,250,300.000000,400.000000,400.000000,450.000000
 item14[] = {"sub__objective_c",8,218,425.000000,400.000000,525.000000,450.000000,0.000000,"sub-" \n "objective" \n "chosen"};
 item15[] = {"Trigger_clean_up",2,250,425.000000,100.000000,525.000000,150.000000,0.000000,"Trigger" \n "clean-up" \n "scripts"};
 item16[] = {"Wait_random_time",4,218,300.000000,100.000000,400.000000,150.000000,0.000000,"Wait" \n "random" \n "time"};
-item17[] = {"Wait_for_complet",2,4346,425.000000,325.000000,525.000000,375.000000,0.000000,"Wait" \n "for" \n "completion"};
+item17[] = {"Wait_for_complet",2,250,425.000000,325.000000,525.000000,375.000000,0.000000,"Wait" \n "for" \n "completion"};
 item18[] = {"Next_check_",4,218,425.000000,250.000000,525.000000,300.000000,0.000000,"Next" \n "check?"};
 item19[] = {"Do_the_checks",2,250,425.000000,175.000000,525.000000,225.000000,0.000000,"Do" \n "the" \n "checks"};
 item20[] = {"Sub__objective_not",4,218,300.000000,250.000000,400.000000,300.000000,5.000000,"Sub-" \n "objective not" \n "complete?"};
@@ -53,8 +53,8 @@ link24[] = {21,15};
 link25[] = {22,17};
 link26[] = {20,23};
 link27[] = {23,20};
-globals[] = {25.000000,1,0,0,0,640,480,1,57,6316128,1,-148.258179,845.264160,600.734436,9.627154,1365,911,1};
-window[] = {2,-1,-1,-1,-1,860,100,1540,100,3,1383};
+globals[] = {25.000000,1,0,0,0,640,480,1,57,6316128,1,-148.258179,845.264160,600.734436,9.627154,1365,1280,1};
+window[] = {2,-1,-1,-1,-1,861,486,1926,101,3,1383};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -240,7 +240,7 @@ class FSM
     class Trigger_clean_up
     {
       name = "Trigger_clean_up";
-      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (round (random 5)));" \n
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (30 + (round (random 90))));" \n
        "//DEBUG TIME"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -307,7 +307,7 @@ class FSM
           action=/*%FSM<ACTION""">*/"//DEBUG - Don't show taskSetState notification!" \n
            "//[""main"", ""SUCCEEDED"", false] call BIS_fnc_taskSetState;" \n
            "[[""type"", ""main_completed""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
-           "[_markers] call AW_fnc_deleteMarker;" \n
+           "_markers call AW_fnc_deleteMarker;" \n
            "" \n
            "_priority = _priority + 10;"/*%FSM</ACTION""">*/;
         };

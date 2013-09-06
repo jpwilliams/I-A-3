@@ -4,7 +4,7 @@ class none
 	vehicle = "B_Soldier_F";
 	role = "none";
 	show = "true";
-	items[] = {};
+	items[] = {"arifle_MX_ACO_pointer_F"};
 };
 
 class medic
@@ -22,7 +22,7 @@ class sniper
 	vehicle = "B_sniper_F";
 	role = "sniper";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""sniper"" } count playableUnits) < 5";
-	items[] = { /* all snipers */ };
+	items[] = {"arifle_MX_ACO_pointer_F" /* all snipers */ };
 };
 
 class aa

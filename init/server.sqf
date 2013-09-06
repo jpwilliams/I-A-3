@@ -23,7 +23,7 @@ for [ {_i = 0}, {_i < _paramCount}, {_i = _i + 1} ] do
 {
 	call compile format
 	[
-		"PARAMS_%1 = %2",
+		"PARAMS_%1 = %2; publicVariable ""PARAMS_%1"";",
 		(configName ((missionConfigFile >> "Params") select _i)),
 		(paramsArray select _i)
 	];
