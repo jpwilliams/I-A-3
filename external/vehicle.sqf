@@ -50,14 +50,14 @@ Contact & Bugreport: cwadensten@gmail.com
 if (!isServer) exitWith {};
 
 // Define variables
-_unit = _this select 0;
-_delay = if (count _this > 1) then {_this select 1} else {30};
-_deserted = if (count _this > 2) then {_this select 2} else {120};
-_respawns = if (count _this > 3) then {_this select 3} else {0};
-_explode = if (count _this > 4) then {_this select 4} else {false};
-_dynamic = if (count _this > 5) then {_this select 5} else {false};
-_unitinit = if (count _this > 6) then {_this select 6} else {};
-_haveinit = if (count _this > 6) then {true} else {false};
+_unit = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+_delay = [_this,1,30,[0]] call BIS_fnc_param;
+_deserted = [_this,2,120,[0]] call BIS_fnc_param;
+_respawns = [_this,3,0,[0]] call BIS_fnc_param;
+_explode = [_this,4,false,[true]] call BIS_fnc_param;
+_dynamic = [_this,5,false,[true]] call BIS_fnc_param;
+_unitinit = [_this,6];
+_haveinit = if (count _this > 6) then { true } else { false };
 
 _hasname = false;
 _unitname = vehicleVarName _unit;
@@ -112,6 +112,7 @@ while {_run} do
 		_unit = _type createVehicle _position;
 		_unit setPosASL _position;
 		_unit setDir _dir;
+		if (["B_UAV", _type] call BIS_fnc_inString) then { createVehicleCrew _unit; };
 
 		if (_haveinit) then 
 		{

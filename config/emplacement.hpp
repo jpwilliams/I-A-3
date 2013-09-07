@@ -1,6 +1,6 @@
 class emplacement_alpha
 {
-	
+	name "Firebase Haymaker";
 };
 
 class emplacement_bravo

@@ -286,8 +286,6 @@ class CfgFunctions
 		{
 			file = "functions\bases";
 			class baseSpawn 					{ description = "This better work!"; };
-			class baseVehSpawn 					{ description = "Acts as a helper for AW_fnc_baseVehSpawnMachine."; };
-			class baseVehSpawnMachine			{ description = "Spawns a random or specified vehicle at a random or specified base."; ext = ".fsm"; };
 			class findNearestBase		{ description = "Finds the nearest base to the given position."; };
 		};
 
