@@ -112,7 +112,7 @@ class base_lima
 {
 	name = "Base Lima";
 	isOwned = 1;
-	groups = 2;
+	groups = 4;
 	respawnGroups = 1;
 	respawnTime = 300;
 	vehicles[] = {};

@@ -53,3 +53,15 @@ class ammo
 		text = "(Needs Ammo)";
 	};
 };
+
+class truck
+{
+	class marker {};
+	class icon
+	{
+		shape = "ICON";
+		type = "mil_warning";
+		color = "ColorBLUFOR";
+		text = "Repair Truck for";
+	};
+};

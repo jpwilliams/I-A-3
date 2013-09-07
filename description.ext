@@ -376,6 +376,11 @@ class CfgMarkers
 	{
 		#include "config\markers\emplacement.hpp"
 	};
+
+	class misc
+	{
+		#include "config\markers\misc.hpp"
+	};
 };
 
 class CfgHints

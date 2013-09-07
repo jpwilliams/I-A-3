@@ -19,11 +19,11 @@ item14[] = {"Players_no_longer",4,218,900.000000,500.000000,1000.000000,550.0000
 item15[] = {"Base_taken",8,218,400.000000,350.000000,500.000000,400.000000,0.000000,"Base" \n "taken"};
 item16[] = {"Wait_for_grace_p",4,218,25.000000,350.000000,125.000000,400.000000,0.000000,"Wait for" \n "grace period"};
 item17[] = {"Set_time_before",2,250,25.000000,425.000000,125.000000,475.000000,0.000000,"Set time" \n "before next" \n "attack"};
-item18[] = {"Wait_for_the_att",4,218,25.000000,500.000000,125.000000,550.000000,0.000000,"Wait" \n "for the" \n "attack"};
+item18[] = {"Wait_for_the_att",4,4314,25.000000,500.000000,125.000000,550.000000,0.000000,"Wait" \n "for the" \n "attack"};
 item19[] = {"Attack_the_base",2,250,25.000000,575.000000,125.000000,625.000000,0.000000,"Attack the" \n "base!"};
 item20[] = {"Enemies_defeated",4,218,150.000000,425.000000,250.000000,475.000000,2.000000,"Enemies" \n "defeated"};
 item21[] = {"No_players_remai",4,218,400.000000,500.000000,500.000000,550.000000,1.000000,"No players" \n "remaining"};
-item22[] = {"Only_1_base_left",4,218,25.000000,650.000000,125.000000,700.000000,2.000000,"Only 1" \n "base left"};
+item22[] = {"Only_1_base_left",4,218,400.000000,575.000000,500.000000,625.000000,2.000000,"Only 1" \n "base left"};
 item23[] = {"Organise_tactical",2,250,25.000000,725.000000,125.000000,775.000000,0.000000,"Organise" \n "tactical" \n "retreat"};
 item24[] = {"Ready_to_delete",4,218,-100.000000,575.000000,0.000000,625.000000,1.000000,"Ready" \n "to delete"};
 item25[] = {"Clean_up_attacke",2,250,-225.000000,575.000000,-125.000000,625.000000,0.000000,"Clean up" \n "attackers"};
@@ -50,6 +50,7 @@ item45[] = {"Set_timeout",2,250,-350.000000,500.000000,-250.000000,550.000000,0.
 item46[] = {"Do_the_checks",4,218,-350.000000,425.000000,-250.000000,475.000000,0.000000,"Do the checks"};
 item47[] = {"Check_4",2,250,-225.000000,425.000000,-125.000000,475.000000,0.000000,"Check"};
 item48[] = {"Not_more_than_1",8,218,-225.000000,500.000000,-125.000000,550.000000,0.000000,"Not more" \n "than 1 base"};
+item49[] = {"",7,210,446.000000,746.000000,454.000000,754.000000,0.000000,""};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,3};
@@ -71,18 +72,18 @@ link17[] = {15,4};
 link18[] = {16,17};
 link19[] = {17,18};
 link20[] = {18,19};
-link21[] = {19,22};
-link22[] = {19,27};
-link23[] = {20,17};
-link24[] = {21,5};
-link25[] = {22,23};
-link26[] = {23,39};
-link27[] = {24,25};
-link28[] = {25,44};
-link29[] = {26,17};
-link30[] = {27,28};
-link31[] = {28,20};
-link32[] = {28,21};
+link21[] = {19,27};
+link22[] = {20,17};
+link23[] = {21,5};
+link24[] = {22,49};
+link25[] = {23,39};
+link26[] = {24,25};
+link27[] = {25,44};
+link28[] = {26,17};
+link29[] = {27,28};
+link30[] = {28,20};
+link31[] = {28,21};
+link32[] = {28,22};
 link33[] = {28,29};
 link34[] = {29,30};
 link35[] = {30,33};
@@ -108,8 +109,9 @@ link54[] = {46,47};
 link55[] = {47,26};
 link56[] = {47,48};
 link57[] = {48,45};
-globals[] = {25.000000,1,0,0,0,640,480,1,68,6316128,1,-521.866211,983.292603,1029.958496,-31.149811,1303,911,1};
-window[] = {2,-1,-1,-32000,-32000,860,100,1540,100,3,1321};
+link58[] = {49,23};
+globals[] = {25.000000,1,0,0,0,640,480,1,69,6316128,1,-132.861938,576.159180,1376.788818,-50.286423,628,1264,1};
+window[] = {0,-1,-1,-1,-1,1008,421,1861,248,1,646};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -335,7 +337,7 @@ class FSM
     class Base_being_captu
     {
       name = "Base_being_captu";
-      init = /*%FSM<STATEINIT""">*/"[[""base"", ""contested""], _marker, _pos, _markerText] call AW_fnc_createJIPstateMarker;" \n
+      init = /*%FSM<STATEINIT""">*/"[[""base"", ""attacking""], _marker, _pos, _markerText] call AW_fnc_createJIPstateMarker;" \n
        "[[""type"", ""base_attacking""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;" \n
        "" \n
        "[_spawnedUnits, [[""active_defend"", _marker]]] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
@@ -444,7 +446,7 @@ class FSM
     class Set_time_before
     {
       name = "Set_time_before";
-      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (random 1800));"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (random 30)); //DEBUG 1800"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -465,28 +467,18 @@ class FSM
     class Attack_the_base
     {
       name = "Attack_the_base";
-      init = /*%FSM<STATEINIT""">*/"_attackers = [EAST, round ((_groups / 2) + random _groups), _pos, [500, 1500]] call AW_fnc_spawnEnemy;" \n
-       "[_attackers, [[""attack"", _pos, 100]]] call AW_fnc_setBehaviour;" \n
+      init = /*%FSM<STATEINIT""">*/"_attackers = [EAST, round ((_groups / 2) + random _groups), _pos, [500, 1000]] call AW_fnc_spawnEnemy;" \n
+       "[_attackers, [[""attack"", _pos]]] call AW_fnc_setBehaviour;" \n
        "" \n
-       "[[""base"", ""contested""], _marker, _pos, _markerText] call AW_fnc_createJIPstateMarker;" \n
-       "" \n
+       "[[""base"", ""under_attack""], _marker, _pos, _markerText] call AW_fnc_createJIPstateMarker;" \n
        "[[""type"", ""base_underattack""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;" \n
        "" \n
-       "_timeout = time + (5 + random(5));"/*%FSM</STATEINIT""">*/;
+       "_timeout = time + (5 + random(15));" \n
+       "" \n
+       "hint format[""basesOwned = %1"", basesOwned];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "Only_1_base_left">*/
-        class Only_1_base_left
-        {
-          priority = 2.000000;
-          to="Organise_tactical";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(count basesOwned) < 2"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"[[""type"", ""base_defended""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;" \n
-           "[""baseIcon_friendly"", _iconMarker, _pos, _markerText] call AW_fnc_createJIPstateMarker;"/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
         /*%FSM<LINK "Do_the_checks">*/
         class Do_the_checks
         {
@@ -550,6 +542,17 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
+        /*%FSM<LINK "Only_1_base_left">*/
+        class Only_1_base_left
+        {
+          priority = 2.000000;
+          to="Organise_tactical";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(count basesOwned) < 2"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"[[""type"", ""base_defended""], [""message"", _markerText], [""global"", true]] call AW_fnc_showNotification;" \n
+           "[[""base"", ""friendly""], _marker, _pos, _markerText] call AW_fnc_createJIPstateMarker;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
         /*%FSM<LINK "Enemies_defeated">*/
         class Enemies_defeated
         {

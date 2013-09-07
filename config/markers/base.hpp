@@ -19,7 +19,7 @@ class friendly
 	};
 };
 
-class contested
+class under_attack
 {
 	class marker
 	{
@@ -32,6 +32,22 @@ class contested
 		type = "n_unknown";
 		color = "ColorOrange";
 		text[] = {"(Under Attack)", ""};
+	};
+};
+
+class attacking
+{
+	class marker
+	{
+		color = "ColorUnknown";
+	};
+
+	class icon
+	{
+		shape = "ICON";
+		type = "n_unknown";
+		color = "ColorOrange";
+		text[] = {"(Attacking)", ""};
 	};
 };
 
