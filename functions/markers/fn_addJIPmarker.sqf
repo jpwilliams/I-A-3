@@ -1,8 +1,8 @@
-_marker = _this select 0;
-_type = _this select 1;
-_state = _this select 2;
-_pos = _this select 3;
-_text = if ((count _this) > 4) then { _this select 4 } else { "" };
+_marker = [_this,0,"",[""]] call BIS_fnc_param;
+_type = [_this,1,"",[""]] call BIS_fnc_param;
+_state = [_this,2,"init",[""]] call BIS_fnc_param;
+_pos = [_this,3,[0,0,0],[[]],[2,3]] call BIS_fnc_param;
+_text = [_this,4,"",[""]] call BIS_fnc_param;
 
 _path = [JIPmarkers, _marker] call BIS_fnc_findNestedElement;
 if ((count _path) > 0) then
