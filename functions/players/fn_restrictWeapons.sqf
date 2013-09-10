@@ -1,10 +1,9 @@
 private ["_allItems", "_class", "_lastIndex", "_i", "_role", "_items", "_restricted", "_primary", "_secondary", "_base", "_x", "_name"];
 
-role = player getVariable ["role", "none"];
-
 _allItems = [];
 _restricted = [];
-_latestRole = "";
+_lastRole = "";
+_currentRole = "":
 
 _class = missionConfigFile >> "CfgRespawnInventory";
 _lastIndex = ((count _class) - 1);
@@ -13,7 +12,7 @@ for "_i" from 0 to _lastIndex do
 {
 	_role = _class select _i;
 	_items = getArray (_role >> "items");
-	
+
 	{
 		if (!(_x in _allItems)) then
 		{
@@ -26,13 +25,13 @@ while { true } do
 {
 	sleep 1;
 
-	if (_latestRole != role) then
-	{
-		_latestRole = player getVariable ["role", "none"];
+	_currentRole = player getVariable ["role", "none"];
 
-		_safeItems = getArray (missionConfigFile >> "CfgRespawnInventory" >> role >> "items");
-		_toRemove = [_allItems, {_x in _safeItems}] call BIS_fnc_conditionalSelect;
-		_restricted = (_allItems - _toRemove);
+	if (_lastRole != _currentRole) then
+	{
+		_lastRole = _currentRole;
+		_safeItems = getArray (missionConfigFile >> "CfgRespawnInventory" >> _lastRole >> "items");
+		_restricted = (_allItems - _safeItems);
 	};
 
 	_primary = primaryWeapon player;
@@ -54,7 +53,6 @@ while { true } do
 				case "CfgBackpacks": { removeBackpack player; };
 			};
 
-			//Needs alternative command for restricted backpack removal
 			_name = getText (configFile >> _config >> _item >> "displayName");
 			hint parseText format["<t color='#FF0000' size='2.2'>Restricted<br/>Item</t><br/>--------------------<br/>You class you have selected is not qualified to use the %1.<br/><br/>Make sure to play your class!", _name];
 		};
