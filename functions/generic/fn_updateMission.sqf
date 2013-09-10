@@ -1,3 +1,5 @@
+private ["_this", "_type", "_title", "_code", "_notif", "_description", "_hint", "_marker", "_markers", "_pos", "_x", "_cur", "_new", "_marker_marker", "_marker_icon"];
+
 _type = _this select 0;
 _title = switch (_type) do
 {

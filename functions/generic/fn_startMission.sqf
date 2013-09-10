@@ -1,3 +1,5 @@
+private ["_this", "_type", "_mission", "_code", "_pos", "_fsmHandle"];
+
 _type = [_this,0,"",[""]] call BIS_fnc_param;
 _mission = [_this,1,"",[""]] call BIS_fnc_param;
 _code = [_this,2,"",[""]] call BIS_fnc_param;

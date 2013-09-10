@@ -1,21 +1,7 @@
-/*
-	File:	fn_deleteMarker.sqf
-	Author:	Rarek [AW]
-
-	Description
-		|	Delete markers, concious of JIP compatibility
-		|____________________
-
-	Parameters
-		|	0 - STRING: Marker name
-		|	1 - BOOL: Handling local markers? //FALSE
-		|____________________
-*/
-
 private["_markers", "_local", "_path", "_x"];
 
 _markers = [_this,0,[],["",[]]] call BIS_fnc_param;
-_local = if ((count _this) > 1) then { (_this select 1) } else { false };
+_local = [_this,1,false,[true]] call BIS_fnc_param;
 
 if (typeName _markers != "ARRAY") then
 {
