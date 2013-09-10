@@ -11,7 +11,7 @@ _lastIndex = ((count _class) - 1);
 for "_i" from 0 to _lastIndex do
 {
 	_role = _class select _i;
-	_items = getArray (_role >> "items");
+	_items = getArray (_role >> "restrictions");
 
 	{
 		if (!(_x in _allItems)) then
@@ -30,7 +30,7 @@ while { true } do
 	if (_lastRole != _currentRole) then
 	{
 		_lastRole = _currentRole;
-		_safeItems = getArray (missionConfigFile >> "CfgRespawnInventory" >> _lastRole >> "items");
+		_safeItems = getArray (missionConfigFile >> "CfgRespawnInventory" >> _lastRole >> "restrictions");
 		_restricted = (_allItems - _safeItems);
 	};
 
