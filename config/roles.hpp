@@ -1,9 +1,10 @@
 class none
 {
 	displayName = "Rifleman";
+	icon = "\A3\ui_f\data\igui\cfg\weaponicons\arifle_ca.paa";
 	vehicle = "B_Soldier_F";
 	show = "true";
-	restrictions[] = {"arifle_MX_ACO_pointer_F"};
+	restrictions[] = {};
 };
 
 class medic
@@ -17,34 +18,58 @@ class medic
 class sniper
 {
 	displayName = "Marksman";
+	icon = "\A3\ui_f\data\igui\cfg\weaponicons\srifle_ca.paa";
 	vehicle = "B_sniper_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""sniper"" } count playableUnits) < 5";
-	restrictions[] = {"arifle_MX_ACO_pointer_F" /* all snipers */ };
+	restrictions[] =
+	{
+		"U_B_GhillieSuit",
+		"U_I_GhillieSuit",
+		"U_O_GhillieSuit",
+		"srifle_EBR_ACO_F",
+		"srifle_EBR_ARCO_pointer_F",
+		"srifle_EBR_ARCO_pointer_snds_F",
+		"srifle_EBR_F",
+		"srifle_EBR_MRCO_pointer_F",
+		"srifle_EBR_SOS_F",
+		"srifle_GM6_F",
+		"srifle_GM6_SOS_F",
+		"srifle_LRR_F",
+		"srifle_LRR_SOS_F"
+	};
 };
 
 class aa
 {
 	displayName = "AA Specialist";
+	icon = "\A3\ui_f\data\igui\cfg\weaponicons\AA_ca.paa";
 	vehicle = "B_soldier_AA_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""aa"" } count playableUnits) < 5";
 	restrictions[] =
 	{
-		"launch_RPG32_F",
-		"RPG32_AA_F"
+		"launch_B_Titan_F",
+		"launch_I_Titan_F",
+		"launch_O_Titan_F",
+		"launch_Titan_base",
+		"launch_Titan_F"
 	};
 };
 
 class at
 {
 	displayName = "AT Specialist";
+	icon = "\A3\ui_f\data\igui\cfg\weaponicons\AT_ca.paa";
 	vehicle = "B_soldier_AT_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""at"" } count playableUnits) < 10";
 	restrictions[] =
 	{
+		"launch_B_Titan_short_F",
+		"launch_I_Titan_short_F",
 		"launch_NLAW_F",
-		"launch_RPG32_F"
-		"NLAW_F",
-		"RPG32_F"
+		"launch_O_Titan_short_F",
+		"launch_RPG32_F",
+		"launch_Titan_short_base",
+		"launch_Titan_short_F"
 	};
 };
 
@@ -59,56 +84,52 @@ class engineer
 class grenadier
 {
 	displayName = "Grenadier";
+	icon = "\A3\ui_f\data\igui\cfg\weaponicons\GL_ca.paa";
 	vehicle = "B_Soldier_GL_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""grenadier"" } count playableUnits) < 10";
 	restrictions[] =
 	{
-		"arifle_Khaybar_GL_ACO_point_F",
-		"arifle_Khaybar_GL_ACOg_point_F",
-		"arifle_Khaybar_GL_F",
-		"arifle_MX_GL_ACO_point_F",
-		"arifle_MX_GL_ACOg_point_F",
-		"arifle_MX_GL_ARCO_point_F",
+		"arifle_Katiba_GL_ACO_F",
+		"arifle_Katiba_GL_ACO_pointer_F",
+		"arifle_Katiba_GL_ACO_pointer_snds_F",
+		"arifle_Katiba_GL_ARCO_pointer_F",
+		"arifle_Katiba_GL_F",
+		"arifle_Katiba_GL_Nstalker_pointer_F",
+		"arifle_Mk20_GL_ACO_F",
+		"arifle_Mk20_GL_F",
+		"arifle_Mk20_GL_MRCO_pointer_F",
+		"arifle_Mk20_GL_plain_F",
+		"arifle_MX_GL_ACO_F",
+		"arifle_MX_GL_ACO_pointer_F",
 		"arifle_MX_GL_F",
-		"arifle_MX_GL_Hamr_point_F",
-		"arifle_TRG21_GL_ACO_point_F",
-		"arifle_TRG21_GL_ACOg_point_F",
+		"arifle_MX_GL_Hamr_pointer_F",
+		"arifle_MX_GL_Holo_pointer_snds_F",
+		"arifle_TRG21_GL_ACO_pointer_F",
 		"arifle_TRG21_GL_F",
-		"3Rnd_UGL_FlareGreen_F",
-		"3Rnd_UGL_FlareCIR_F",
-		"3Rnd_UGL_FlareRed_F",
-		"3Rnd_UGL_FlareWhite_F",
-		"3Rnd_UGL_FlareYellow_F",
-		"3Rnd_SmokeBlue_Grenade_shell",
-		"3Rnd_SmokeGreen_Grenade_shell",
-		"3Rnd_SmokeOrange_Grenade_shell",
-		"3Rnd_SmokePurple_Grenade_shell",
-		"3Rnd_SmokeRed_Grenade_shell",
-		"3Rnd_Smoke_Grenade_shell",
-		"3Rnd_SmokeYellow_Grenade_shell",
-		"3Rnd_HE_Grenade_shell",
-		"1Rnd_HE_Grenade_shell",
-		"UGL_FlareGreen_F",
-		"UGL_FlareCIR_F",
-		"UGL_FlareRed_F",
-		"UGL_FlareWhite_F",
-		"UGL_FlareYellow_F"
-		"1Rnd_SmokeBlue_Grenade_shell",
-		"1Rnd_SmokeGreen_Grenade_shell",
-		"1Rnd_SmokeOrange_Grenade_shell",
-		"1Rnd_SmokePurple_Grenade_shell",
-		"1Rnd_SmokeRed_Grenade_shell",
-		"1Rnd_Smoke_Grenade_shell",
-		"1Rnd_SmokeYellow_Grenade_shell"
+		"arifle_TRG21_GL_MRCO_F",
+		"GrenadeLauncher",
+		"UGL_F"
 	};
 };
 
 class autorifleman
 {
 	displayName = "Automatic Rifleman";
+	icon = "\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa";
 	vehicle = "B_soldier_AR_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""autorifleman"" } count playableUnits) < 10";
-	restrictions[] = { /* Access to all LMGs! */ };
+	restrictions[] =
+	{
+		"LMG_M200",
+		"LMG_Minigun",
+		"LMG_Minigun2",
+		"LMG_Mk200_F",
+		"LMG_Mk200_MRCO_F",
+		"LMG_Mk200_pointer_F",
+		"LMG_RCWS",
+		"LMG_Zafir_F",
+		"LMG_Zafir_pointer_F"
+	};
 };
 
 class ammo
@@ -116,7 +137,14 @@ class ammo
 	displayName = "Ammo Bearer";
 	vehicle = "B_Soldier_A_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""ammo"" } count playableUnits) < 5";
-	restrictions[] = { /* give ammo guys access to the massive backpack */ };
+	restrictions[] =
+	{
+		"V_BandollierB_blk",
+		"V_BandollierB_cbr",
+		"V_BandollierB_khk",
+		"V_BandollierB_oli",
+		"V_BandollierB_rgr"
+	};
 };
 
 class uav
@@ -124,7 +152,13 @@ class uav
 	displayName = "UAV Operator";
 	vehicle = "B_soldier_UAV_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""uav"" } count playableUnits) < 2";
-	restrictions[] = { /* Access to UAV backpack */ };
+	restrictions[] =
+	{
+		"B_UavTerminal",
+		"I_UavTerminal",
+		"UavTerminal_base",
+
+	};
 };
 
 class pilot
@@ -134,8 +168,21 @@ class pilot
 	show = "({ (_x getVariable [""role"", ""none""]) == ""pilot"" } count playableUnits) < 4";
 	restrictions[] =
 	{
+		"H_CrewHelmetHeli_B",
+		"H_CrewHelmetHeli_I",
+		"H_CrewHelmetHeli_O",
+		"H_PilotHelmetFighter_B",
+		"H_PilotHelmetFighter_I",
+		"H_PilotHelmetFighter_O",
 		"H_PilotHelmetHeli_B",
-		"U_B_HeliPilotCoveralls"
+		"H_PilotHelmetHeli_I",
+		"H_PilotHelmetHeli_O",
+		"U_B_HeliPilotCoveralls",
+		"U_B_PilotCoveralls",
+		"U_I_HeliPilotCoveralls",
+		"U_I_pilotCoveralls",
+		"U_O_PilotCoveralls",
+
 	};
 };
 

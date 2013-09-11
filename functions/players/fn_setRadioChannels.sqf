@@ -8,7 +8,7 @@ if (!isServer) then
 		waitUntil { alive player };
 
 		{
-			_canShow = call compile format["%1", _x select 1];
+			_canShow = call compile format["%1", (_x select 1)];
 
 			if (_canShow) then
 			{
@@ -32,7 +32,7 @@ else
 			getArray (_radio >> "colour"),
 			getText (_radio >> "name"),
 			getText (_radio >> "prefix"),
-			[player]
+			[]
 		];
 
 		radioChannels = radioChannels + [_ret, getText (_radio >> "condition")];

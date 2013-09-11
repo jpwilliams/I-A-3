@@ -10,7 +10,7 @@ _cfg = _this select 0;
 
 if(VAS_preload) then
 {
-	if(!isNil {VAS_pre_weapons} && !isNil {VAS_pre_magazines} && !isNil {VAS_pre_items} && !isNil {VAS_pre_backpacks} && !isNil {VAS_pre_glasses}) exitWith {}; //Exit since preload is completed and shouldn't be called again.
+	if(!isNil {VAS_pre_weapons} && !isNil {VAS_pre_magazines} && !isNil {VAS_pre_items} && !isNil {VAS_pre_backpacks} && !isNil {VAS_pre_glasses}) exitWith { hint "Ended."; }; //Exit since preload is completed and shouldn't be called again.
 	//If it is called again then why is that? Are you not happy with what I supplied you? I supplied you with wonderful candy! Y U NO LIKE MY CANDY?!?!?
 };
 

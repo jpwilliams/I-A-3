@@ -310,8 +310,8 @@ class CfgFunctions
 			class givePoints			{ description = "Gives points to a player with an optional notification"; };
 			class showNotification		{ description = "Shows the desired notification"; };
 			class playSound				{ description = "Plays sounds globally."; };
-			class restrictWeapons		{ description = "Restricts weapons client-side, yo."; };
 			class setRadioChannels		{ description = "Sets up radio channels on servers/clients."; };
+			class getRoleItems			{ description = "Gets all role-exclusive items."; };
 		};
 
 		class units

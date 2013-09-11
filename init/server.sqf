@@ -44,6 +44,25 @@ pointsOfInterest = [];
 //Set up radio channels
 [] call AW_fnc_setRadioChannels;
 
+/*******************************************************************\
+
+	RESPAWN INVENTORIES START
+
+	*/
+		_inventories = missionConfigFile >> "CfgRespawnInventory";
+		_lastIndex = ((count _inventories) - 1);
+
+		for "_i" from 0 to _lastIndex do
+		{
+			_x = configName (_inventories select _i);
+			[WEST, _x] call BIS_fnc_addRespawnInventory;
+		};
+	/*
+
+	RESPAWN INVENTORIES FINISH
+
+\*******************************************************************/
+
 
 /*******************************************************************\
 
@@ -110,3 +129,6 @@ pointsOfInterest = [];
 	MISSIONS FINISH
 
 \*******************************************************************/
+
+serverInitComplete = true;
+publicVariable "serverInitComplete";
