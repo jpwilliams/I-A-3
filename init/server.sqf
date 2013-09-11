@@ -23,11 +23,14 @@ for [ {_i = 0}, {_i < _paramCount}, {_i = _i + 1} ] do
 {
 	call compile format
 	[
-		"PARAMS_%1 = %2; publicVariable ""PARAMS_%1"";",
+		"PARAMS_%1 = %2;",
 		(configName ((missionConfigFile >> "Params") select _i)),
 		(paramsArray select _i)
 	];
 };
+
+//PV the vars we need players to see
+publicVariable "PARAMS_restrictWeapons";
 
 //Grab points of interest
 pointsOfInterest = [];
@@ -37,6 +40,9 @@ pointsOfInterest = [];
 		pointsOfInterest = pointsOfInterest + [_x];
 	};
 } forEach allMapMarkers;
+
+//Set up radio channels
+[] call AW_fnc_setRadioChannels;
 
 
 /*******************************************************************\

@@ -23,7 +23,7 @@ for "_i" from 0 to _lastIndex do
 
 while { true } do
 {
-	sleep 1;
+	sleep 2;
 
 	_currentRole = player getVariable ["role", "none"];
 
