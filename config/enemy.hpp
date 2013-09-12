@@ -30,7 +30,6 @@ vehicles[] =
 	"O_APC_Wheeled_02_rcws_F",
 	"O_MBT_02_cannon_F",
 	"O_APC_Tracked_02_AA_F",
-	"O_MBT_02_arty_F",
 	"O_MRAP_02_gmg_F",
 	"O_MRAP_02_hmg_F"
 };
@@ -38,4 +37,11 @@ vehicles[] =
 boats[] =
 {
 	"O_Boat_Armed_01_hmg_F"
+};
+
+air[] =
+{
+	"O_Heli_Light_02_F",
+	"O_Heli_Attack_02_black_F",
+	"O_Heli_Attack_02_F"
 };

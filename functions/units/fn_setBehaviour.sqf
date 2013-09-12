@@ -33,8 +33,11 @@
 private["_obj", "_behaviours", "_type", "_x", "_behaviour", "_order", "_pos", "_radius", "_near", "_leader", "_group", "_dir", "_retreatPos", "_waypoint"];
 
 _obj = [_this,0,[],[[],objNull,grpNull]] call BIS_fnc_param;
-if (typeName _obj == "OBJECT" || typeName _obj == "GROUP") then { _obj = [_obj]; };
+if (typeName _obj == "OBJECT") then { _obj = [group _obj]; };
+if (typeName _obj == "GROUP") then { _obj = [_obj]; };
 _behaviours = [_this,1,[["patrol", true, 100]],[[]]] call BIS_fnc_param;
+
+diag_log format["::::AW:::: _obj = %1 :::: _behaviours = %2", _obj, _behaviours];
 
 {
 	_type = typeName _x;
@@ -46,7 +49,7 @@ _behaviours = [_this,1,[["patrol", true, 100]],[[]]] call BIS_fnc_param;
 		{
 			_behaviour = _behaviours call BIS_fnc_selectRandom;
 			_order = [_behaviour,0,"patrol",[""]] call BIS_fnc_param;
-			_pos = [_behaviour,1,[0,0,0],[[],""],[2,3]] call BIS_fnc_param;
+			_pos = [_behaviour,1,[0,0,0],[[],"",true],[2,3]] call BIS_fnc_param;
 
 			if (typeName _pos == "BOOL") then
 			{
@@ -77,7 +80,7 @@ _behaviours = [_this,1,[["patrol", true, 100]],[[]]] call BIS_fnc_param;
 					_x setSpeedMode "FULL";
 				};
 
-				case "patrol": { [_x, _pos, _radius] call BIS_fnc_taskPatrol; };
+				case "patrol": { [_x, _pos, _radius] call BIS_fnc_taskPatrol; diag_log format["::::AW:::: _x = %1 :::: _pos = %2 :::: _radius = %3", _x, _pos, _radius]; };
 
 				case "attack": { [_x, _pos] call BIS_fnc_taskAttack; };
 

@@ -7,7 +7,7 @@ item2[] = {"Find_Random_Loca",2,250,175.000000,175.000000,275.000000,225.000000,
 item3[] = {"In_last_5_targets",4,218,300.000000,175.000000,400.000000,225.000000,3.000000,"In last 5" \n "targets?"};
 item4[] = {"Players_within_1km",4,218,175.000000,250.000000,275.000000,300.000000,2.000000,"Players within" \n "1km?"};
 item5[] = {"Location_found",8,218,50.000000,175.000000,150.000000,225.000000,1.000000,"Location" \n "found"};
-item6[] = {"Create_Enemies",2,250,50.000000,250.000000,150.000000,300.000000,0.000000,"Create" \n "Enemies"};
+item6[] = {"Create_Enemies",2,4346,50.000000,250.000000,150.000000,300.000000,0.000000,"Create" \n "Enemies"};
 item7[] = {"Is_coastal_town",4,218,-75.000000,250.000000,25.000000,300.000000,2.000000,"Is" \n "coastal" \n "town?"};
 item8[] = {"Create_Enemy_Boat",2,250,-75.000000,325.000000,25.000000,375.000000,0.000000,"Create" \n "Enemy" \n "Boat Patrols"};
 item9[] = {"Finished_creatin",8,218,-75.000000,400.000000,25.000000,450.000000,0.000000,"Finished" \n "creating"};
@@ -53,8 +53,8 @@ link24[] = {21,15};
 link25[] = {22,17};
 link26[] = {20,23};
 link27[] = {23,20};
-globals[] = {25.000000,1,0,0,0,640,480,1,57,6316128,1,-148.258179,845.264160,600.734436,9.627154,1365,1280,1};
-window[] = {2,-1,-1,-1,-1,861,486,1926,101,3,1383};
+globals[] = {25.000000,1,0,0,0,640,480,1,57,6316128,1,-148.258179,845.264160,600.734436,9.627154,1003,614,1};
+window[] = {0,-1,-1,-1,-1,1034,796,2236,274,1,1021};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -139,7 +139,7 @@ class FSM
     class Create_Enemies
     {
       name = "Create_Enemies";
-      init = /*%FSM<STATEINIT""">*/"_spawnedUnits = [EAST, 15, _pos, 600] call AW_fnc_spawnEnemy;" \n
+      init = /*%FSM<STATEINIT""">*/"_spawnedUnits = [EAST, 25, _pos, 600] call AW_fnc_spawnEnemy;" \n
        "[_spawnedUnits, [[""patrol"", true, 200]]] call AW_fnc_setBehaviour;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
