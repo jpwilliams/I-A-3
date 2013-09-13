@@ -12,7 +12,7 @@ if (debugMode) exitWith {};
 
 \*******************************************************************/
 
-basesOwned = []; baseSpawns = [];
+allBases = []; basesOwned = []; baseSpawns = [];
 JIPmarkers = []; publicVariable "JIPmarkers"; localMarkers = [];
 JIPactions = []; publicVariable "JIPactions";
 result = false;
