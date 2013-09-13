@@ -8,7 +8,25 @@ _base = "";
 
 {
 	_dist = ((markerPos _x) distance _pos);
-	if (_dist < _min && !(_x in _blacklist)) then { _min = _dist; _base = _x; };
-} forEach basesOwned;
+	if (_dist < _min && !(_x in _blacklist)) then
+	{
+		if (typeName _side != "STRING") then
+		{
+			if (_side == WEST && _x in basesOwned) then
+			{
+				_min = _dist;
+				_base = _x;
+			}
+			else if (!(_x in basesOwned)) then
+			{
+				_min = _dist;
+				_base = _x;
+			};
+		} else {
+			_min = _dist;
+			_base = _x;
+		};
+	};
+} forEach allBases;
 
 _base
