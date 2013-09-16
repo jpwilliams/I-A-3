@@ -1,8 +1,6 @@
 infantry[] =
 {
 	"O_Soldier_A_F",
-	"O_Soldier_AA_F",
-	"O_Soldier_AAA_F",
 	"O_Soldier_AAR_F",
 	"O_Soldier_AAT_F",
 	"O_Soldier_AR_F",
@@ -44,4 +42,14 @@ air[] =
 	"O_Heli_Light_02_F",
 	"O_Heli_Attack_02_black_F",
 	"O_Heli_Attack_02_F"
+};
+
+static[] =
+{
+	"O_HMG_01_F",
+	"O_HMG_01_A_F",
+	"O_GMG_01_F",
+	"O_GMG_01_A_F",
+	"O_static_AA_F",
+	"O_static_AT_F"
 };

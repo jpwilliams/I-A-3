@@ -80,7 +80,11 @@ diag_log format["::::AW:::: _obj = %1 :::: _behaviours = %2", _obj, _behaviours]
 					_x setSpeedMode "FULL";
 				};
 
-				case "patrol": { [_x, _pos, _radius] call BIS_fnc_taskPatrol; diag_log format["::::AW:::: _x = %1 :::: _pos = %2 :::: _radius = %3", _x, _pos, _radius]; };
+				case "patrol":
+				{
+					_didWork = [_x, _pos, _radius] call BIS_fnc_taskPatrol;
+					diag_log format["::::AW:::: _x = %1 :::: _pos = %2 :::: _radius = %3 :::: _didWork = %4", _x, _pos, _radius, _didWork];
+				};
 
 				case "attack": { [_x, _pos] call BIS_fnc_taskAttack; };
 
