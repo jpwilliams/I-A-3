@@ -1,7 +1,7 @@
 class none
 {
 	displayName = "Rifleman";
-	icon = "\A3\ui_f\data\igui\cfg\weaponicons\arifle_ca.paa";
+	icon = "\A3\ui_f\data\igui\cfg\mptable\infantry_ca.paa";
 	vehicle = "B_Soldier_F";
 	show = "true";
 	restrictions[] = {};
@@ -10,6 +10,7 @@ class none
 class medic
 {
 	displayName = "Medic";
+	icon = "\A3\ui_f\data\igui\cfg\mptable\infantry_ca.paa";
 	vehicle = "B_medic_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""medic"" } count playableUnits) < 10";
 	restrictions[] = { /* these guys get medic bag, of course */ };
@@ -76,9 +77,13 @@ class at
 class engineer
 {
 	displayName = "Engineer";
+	icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 	vehicle = "B_engineer_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""engineer"" } count playableUnits) < 10";
-	restrictions[] = { /* these fellas get the engineer backpack */ };
+	restrictions[] =
+	{
+		"ToolKit"
+	};
 };
 
 class grenadier
@@ -135,6 +140,7 @@ class autorifleman
 class ammo
 {
 	displayName = "Ammo Bearer";
+	icon = "\A3\ui_f\data\igui\cfg\actions\reammo_ca.paa";
 	vehicle = "B_Soldier_A_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""ammo"" } count playableUnits) < 5";
 	restrictions[] =
@@ -150,20 +156,21 @@ class ammo
 class uav
 {
 	displayName = "UAV Operator";
+	icon = "\A3\ui_f\data\gui\cfg\hints\icon_text\b_uav_ca.paa";
 	vehicle = "B_soldier_UAV_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""uav"" } count playableUnits) < 2";
 	restrictions[] =
 	{
 		"B_UavTerminal",
 		"I_UavTerminal",
-		"UavTerminal_base",
-
+		"UavTerminal_base"
 	};
 };
 
 class pilot
 {
 	displayName = "Pilot";
+	icon = "\A3\ui_f\data\gui\cfg\CommunicationMenu\transport_ca.paa";
 	vehicle = "B_pilot_F";
 	show = "({ (_x getVariable [""role"", ""none""]) == ""pilot"" } count playableUnits) < 4";
 	restrictions[] =
@@ -181,16 +188,16 @@ class pilot
 		"U_B_PilotCoveralls",
 		"U_I_HeliPilotCoveralls",
 		"U_I_pilotCoveralls",
-		"U_O_PilotCoveralls",
-
+		"U_O_PilotCoveralls"
 	};
 };
 
 class explosives
 {
 	displayName = "Explosives Specialist";
-	vehicle = "";
-	show = "";
+	icon = "\A3\ui_f\data\igui\cfg\cursors\explosive_ca.paa";
+	vehicle = "B_soldier_exp_F";
+	show = "({ (_x getVariable [""role"", ""none""]) == ""explosives"" } count playableUnits) < 8";
 	restrictions[] =
 	{
 		"MineDetector",

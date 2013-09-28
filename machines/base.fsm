@@ -7,14 +7,14 @@ item2[] = {"Is_enemy",4,218,400.000000,275.000000,500.000000,325.000000,0.000000
 item3[] = {"Add_Respawn_Location",2,250,25.000000,275.000000,125.000000,325.000000,0.000000,"Add Respawn" \n "Location &" \n "Vehicles"};
 item4[] = {"Spawn_defenders",2,250,525.000000,275.000000,625.000000,325.000000,0.000000,"Spawn" \n "defenders & set" \n "marker"};
 item5[] = {"Stop_vehicles_respawning",2,250,400.000000,425.000000,500.000000,475.000000,0.000000,"Stop vehicles" \n "respawning &" \n "remove spawn"};
-item6[] = {"Base_being_captu",2,250,900.000000,800.000000,1000.000000,850.000000,0.000000,"Base being" \n "captured"};
+item6[] = {"Base_being_captu",2,250,650.000000,575.000000,750.000000,625.000000,0.000000,"Base being" \n "captured"};
 item7[] = {"Calculate___Spawn",2,250,775.000000,350.000000,875.000000,400.000000,0.000000,"Calculate &" \n "Spawn" \n "Reinforcements"};
 item8[] = {"Do_the_checks",8,218,525.000000,350.000000,625.000000,400.000000,0.000000,"Do the checks"};
 item9[] = {"Player_within_base",4,218,650.000000,500.000000,750.000000,550.000000,1.000000,"Player" \n "within base" \n "radius"};
-item10[] = {"No_enemies_left",4,218,1025.000000,500.000000,1125.000000,550.000000,1.000000,"No" \n "enemies" \n "left"};
+item10[] = {"No_enemies_left",4,218,1025.000000,575.000000,1125.000000,625.000000,1.000000,"No" \n "enemies" \n "left"};
 item11[] = {"Base_Taken_",2,250,1025.000000,200.000000,1125.000000,250.000000,0.000000,"Base" \n "Taken!"};
 item12[] = {"Base_taken",8,218,25.000000,200.000000,125.000000,250.000000,0.000000,"Base" \n "taken"};
-item13[] = {"Reinforcements_time",4,4314,775.000000,275.000000,875.000000,325.000000,1.000000,"Reinforcements" \n "time?"};
+item13[] = {"Reinforcements_time",4,218,775.000000,275.000000,875.000000,325.000000,1.000000,"Reinforcements" \n "time?"};
 item14[] = {"Players_no_longer",4,218,900.000000,500.000000,1000.000000,550.000000,0.000000,"Players" \n "no longer" \n "within radius"};
 item15[] = {"Base_taken",8,218,400.000000,350.000000,500.000000,400.000000,0.000000,"Base" \n "taken"};
 item16[] = {"Wait_for_grace_p",4,218,25.000000,350.000000,125.000000,400.000000,0.000000,"Wait for" \n "grace period"};
@@ -36,8 +36,8 @@ item31[] = {"Do_the_checks",4,218,775.000000,425.000000,875.000000,475.000000,0.
 item32[] = {"Check_1",2,250,775.000000,500.000000,875.000000,550.000000,0.000000,"Check"};
 item33[] = {"Ready_to_check",4,218,275.000000,575.000000,375.000000,625.000000,0.000000,"Ready to check"};
 item34[] = {"Nothing_yet",8,218,650.000000,425.000000,750.000000,475.000000,0.000000,"Nothing yet"};
-item35[] = {"Let_s_go_",8,218,1025.000000,800.000000,1125.000000,850.000000,0.000000,"Let's go!"};
-item36[] = {"Set_timeout___",2,250,1025.000000,725.000000,1125.000000,775.000000,0.000000,"Set timeout..."};
+item35[] = {"Let_s_go_",8,218,650.000000,650.000000,750.000000,700.000000,0.000000,"Let's go!"};
+item36[] = {"Set_timeout___",2,250,775.000000,650.000000,875.000000,700.000000,0.000000,"Set timeout..."};
 item37[] = {"Do_the_checks",4,218,900.000000,650.000000,1000.000000,700.000000,0.000000,"Do the checks"};
 item38[] = {"Check_2",2,250,900.000000,575.000000,1000.000000,625.000000,0.000000,"Check"};
 item39[] = {"Get_ready",8,218,25.000000,800.000000,125.000000,850.000000,0.000000,"Get ready"};
@@ -51,6 +51,7 @@ item46[] = {"Do_the_checks",4,218,-350.000000,425.000000,-250.000000,475.000000,
 item47[] = {"Check_4",2,250,-225.000000,425.000000,-125.000000,475.000000,0.000000,"Check"};
 item48[] = {"Not_more_than_1",8,218,-225.000000,500.000000,-125.000000,550.000000,0.000000,"Not more" \n "than 1 base"};
 item49[] = {"",7,210,446.000000,746.000000,454.000000,754.000000,0.000000,""};
+item50[] = {"",7,210,946.000000,371.000000,954.000000,379.000000,0.000000,""};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,3};
@@ -67,7 +68,7 @@ link12[] = {10,11};
 link13[] = {11,12};
 link14[] = {12,3};
 link15[] = {13,7};
-link16[] = {14,7};
+link16[] = {14,50};
 link17[] = {15,4};
 link18[] = {16,17};
 link19[] = {17,18};
@@ -110,8 +111,9 @@ link55[] = {47,26};
 link56[] = {47,48};
 link57[] = {48,45};
 link58[] = {49,23};
-globals[] = {25.000000,1,0,0,0,640,480,1,69,6316128,1,315.243622,1024.264893,1540.792236,113.716927,856,1280,1};
-window[] = {2,-1,-1,-1,-1,1034,796,2236,274,3,874};
+link59[] = {50,7};
+globals[] = {25.000000,1,0,0,0,640,480,1,70,6316128,1,-547.227600,1338.265137,1255.025146,-236.588272,1618,1280,1};
+window[] = {2,-1,-1,-1,-1,877,121,1561,117,3,1636};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -446,7 +448,12 @@ class FSM
     class Set_time_before
     {
       name = "Set_time_before";
-      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (random 30)); //DEBUG 1800"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_timeout = if (PARAMS_base_minTimeBeforeAttack > PARAMS_base_maxTimeBeforeAttack) then" \n
+       "{" \n
+       "	(time + PARAMS_base_maxTimeBeforeAttack + (random (PARAMS_base_minTimeBeforeAttack - PARAMS_base_maxTimeBeforeAttack)))" \n
+       "} else {" \n
+       "	(time + PARAMS_base_minTimeBeforeAttack + (random (PARAMS_base_maxTimeBeforeAttack - PARAMS_base_minTimeBeforeAttack)))" \n
+       "};"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

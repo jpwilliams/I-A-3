@@ -7,7 +7,7 @@ _message = "";
 _detail = "";
 _details = [];
 _hint = [];
-_target = false;
+_target = true;
 
 {
 	switch (_x select 0) do
