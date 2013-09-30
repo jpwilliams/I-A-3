@@ -1,4 +1,5 @@
 //Tweaked by Rarek [AW] to enable role assignment
+//TO-DO: Make selected value check show status before assigning role
 
 disableserialization;
 
