@@ -304,31 +304,6 @@ OnLoadMission = "Conceived and developed by the Ahoy World community, Invade &am
 loadScreen = "images\loadingScreen.jpg";
 overviewPicture = "images\loadingScreen.jpg";
 
-class CfgWorlds
-{
-	class Altis: CAWorld
-	{
-		loadingTexts[] =
-		{
-			"Make sure to spawn in bases under attack to defend the team's resources!",
-			"Tactical Missions should be researched and approached with care.",
-			"Priority Targets pose a threat to the entire team; take them down as fast as you can.",
-			"Ghost Missions rely on you and your teammates remaining entirely undetected; bring a silencer.",
-			"Completing Ghost Missions rewards your team with Emplacements.",
-			"If an Emplacement runs out of ammunition, a mission will be created to re-supply it.",
-			"Each AO and Mission is entirely dynamic, so don't rely on your favourite fire position to be available.",
-			"Roles and limited team-wide, so there can only be a certain number of a certain role at any one time.",
-			"Pilots are, by default, the only players who can fly; make sure they're good ones.",
-			"This mission was inspired by the Ahoy World community and developed by Rarek [AW].",
-			"Make sure to play the role you've selected and, often, you'll receive bonus points for doing so.",
-			"Medics are the only players who can revive other friendly soldiers; make sure you've got a good spread of them.",
-			"Once you've selected a role, you'll be limited to the weapons you're trained in.",
-			"Tactical Missions reward attack vehicles, Ghost Missions reward Emplacements and Priority Targets reward safety.",
-			"Capturing bases brings you extra respawn points and extra transport vehicles."
-		};
-	};	
-};
-
 disabledAI = 1;
 #include "VAS\menu.hpp"
 
