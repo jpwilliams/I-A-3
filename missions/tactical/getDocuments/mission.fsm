@@ -81,10 +81,10 @@ item76[] = {"",7,210,-854.000000,821.000000,-846.000000,829.000000,0.000000,""};
 item77[] = {"",7,210,-854.000000,746.000000,-846.000000,754.000000,0.000000,""};
 item78[] = {"",7,210,-854.000000,521.000061,-846.000000,529.000000,0.000000,""};
 item79[] = {"And_to_the_actio",8,218,-350.000000,0.000000,-250.000000,50.000000,0.000000,"And to" \n "the actions"};
-item80[] = {"Add_action",2,4346,-225.000000,0.000000,-125.000000,50.000000,0.000000,"Add" \n "action"};
+item80[] = {"Add_action",2,250,-225.000000,0.000000,-125.000000,50.000000,0.000000,"Add" \n "action"};
 item81[] = {"Add_dead_marker",2,250,500.000000,-75.000000,600.000000,-25.000000,0.000000,"Add dead marker"};
 item82[] = {"And_to_the_actions",8,218,500.000000,0.000000,600.000000,50.000000,0.000000,"And to" \n "the actions!"};
-item83[] = {"Add_action_1",2,250,375.000000,0.000000,475.000000,50.000000,0.000000,"Add action"};
+item83[] = {"Add_action_1",2,4346,375.000000,0.000000,475.000000,50.000000,0.000000,"Add action"};
 item84[] = {"Wait_for_action",4,218,375.000000,75.000000,475.000000,125.000000,0.000000,"Wait for" \n "action trigger"};
 item85[] = {"Damaged__JUMP_",4,218,950.000000,800.000000,1050.000000,850.000000,0.000000,"Damaged?" \n "JUMP!"};
 item86[] = {"Wait_for_it___",2,250,1000.000000,875.000000,1100.000000,925.000000,0.000000,"Wait for it..."};
@@ -203,8 +203,8 @@ link106[] = {87,26};
 link107[] = {88,89};
 link108[] = {90,91};
 link109[] = {91,81};
-globals[] = {25.000000,1,0,0,0,640,480,1,132,6316128,1,-1081.694214,1559.880493,949.978210,-699.885132,1473,920,1};
-window[] = {2,-1,-1,-1,-1,864,2024,3531,104,3,1491};
+globals[] = {25.000000,1,0,0,0,640,480,1,132,6316128,1,-278.187256,1043.500610,848.030090,-300.483276,1473,1280,1};
+window[] = {2,-1,-1,-1,-1,890,130,1637,130,3,1491};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -1059,7 +1059,7 @@ class FSM
       name = "Add_action_1";
       init = /*%FSM<STATEINIT""">*/"_searched = false;" \n
        "_veh = if (typeOf (vehicle _officer) != ""NonSteerable_Parachute_F"") then { vehicle _officer } else { _officer };" \n
-       "call compile format[""[_veh, [""""Search for Papers"""", { [_this] call AW_fnc_deleteAction; %1 setFSMVariable [""""_searched"""", true]; }]] call AW_fnc_createAction;"", _thisFSM];"/*%FSM</STATEINIT""">*/;
+       "call compile format[""[_veh, [""""Search for Papers"""", { [_this] call AW_fnc_deleteAction; [%1, """"_searched"""", true] call AW_fnc_setFSMVariable; }]] call AW_fnc_createAction;"", _thisFSM];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

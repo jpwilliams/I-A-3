@@ -10,41 +10,19 @@ _radius = [_this,3,100,[[],0],[2]] call BIS_fnc_param;
 _spawnedUnits = [];
 _soldiers = getArray (missionConfigFile >> "enemy" >> "infantry");
 _vehicles = getArray (missionConfigFile >> "enemy" >> "vehicles");
+_static = getArray (missionConfigFile >> "enemy" >> "static");
 _boats = getArray (missionConfigFile >> "enemy" >> "boats");
 _air = getArray (missionConfigFile >> "enemy" >> "air");
+_unitTypes = ["infantry", "vehicle", "air", "static"];
+_chances = [0.55, 0.2, 0.1, 0.15];
 
 // Creation loop
 for [{_i = 0}, {_i < _amount}, {_i = _i + 1}] do
 {
 	_toSpawn = [];
-	_chance = random 1;
-	_type = "infantry";
-
-	if (_chance < 0.1) then
-	{
-		_type = "air";
-	}
-	else
-	{
-		if (_chance < 0.2) then
-		{
-			_type = "vehicle";
-		};
-	};
-
-	/*
-	 *	Would this achieve the same effect as above in a more semantic manner?
-	 *
-	 *	_type = switch (true) do
-	 *	{
-	 *		case (_chance < 0.1): { "air" };
-	 *		case (_chance < 0.2): { "vehicle" };
-	 *		default: { "infantry" };
-	 *	};
-	 */
-
-	_lName = typeName _loc;
 	_ret = [];
+	_lName = typeName _loc;
+	_type = [_unitTypes, _chances] call BIS_fnc_selectRandomWeighted;
 
 	_pos = switch (_lName) do
 	{
@@ -113,6 +91,20 @@ for [{_i = 0}, {_i < _amount}, {_i = _i + 1}] do
 		case "air": // Needs splitting into "plane" and "helicopter"
 		{
 			_randomUnit = _air call BIS_fnc_selectRandom;
+			_group = [_pos, random 360, _randomUnit, _side] call BIS_fnc_spawnVehicle;
+			{
+				{
+					_x addEventHandler ["killed", { (_this select 0) call AW_fnc_addDead; }];
+				} foreach _x;
+			} foreach [[(_group select 0)], (_group select 1)];
+
+			_spawnedUnits = _spawnedUnits + [_group select 2];
+			_spawnedUnits = _spawnedUnits + [_group select 0];
+		};
+
+		case "static":
+		{
+			_randomUnit = _static call BIS_fnc_selectRandom;
 			_group = [_pos, random 360, _randomUnit, _side] call BIS_fnc_spawnVehicle;
 			{
 				{

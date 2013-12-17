@@ -12,7 +12,7 @@ if (debugMode) exitWith {};
 
 \*******************************************************************/
 
-basesOwned = []; baseSpawns = [];
+allBases = []; basesOwned = []; baseSpawns = [];
 JIPmarkers = []; publicVariable "JIPmarkers"; localMarkers = [];
 JIPactions = []; publicVariable "JIPactions";
 result = false;
@@ -31,6 +31,10 @@ for [ {_i = 0}, {_i < _paramCount}, {_i = _i + 1} ] do
 
 //PV the vars we need players to see
 publicVariable "PARAMS_restrictWeapons";
+publicVariable "PARAMS_pilotRestrictions";
+
+//Set time
+skipTime (PARAMS_startTimeHour + PARAMS_startTimeMinutes);
 
 //Grab points of interest
 pointsOfInterest = [];

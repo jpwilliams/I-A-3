@@ -35,8 +35,13 @@ else
 			[]
 		];
 
-		radioChannels = radioChannels + [_ret, getText (_radio >> "condition")];
+		radioChannels = radioChannels + [[_ret, getText (_radio >> "condition")]];
 	};
 
 	publicVariable "radioChannels";
+};
+
+if (!isServer) then
+{
+	"Function ended unexpectedly! Report this to an administrator!" call BIS_fnc_log;
 };
