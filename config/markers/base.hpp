@@ -62,6 +62,6 @@ class enemy
 	{
 		shape = "ICON";
 		type = "o_unknown";
-		color = "ColorOPFOR";
+		color = "Color1_FD_F";
 	};
 };
