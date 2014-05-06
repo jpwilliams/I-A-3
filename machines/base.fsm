@@ -19,7 +19,7 @@ item14[] = {"Players_no_longer",4,218,900.000000,500.000000,1000.000000,550.0000
 item15[] = {"Base_taken",8,218,400.000000,350.000000,500.000000,400.000000,0.000000,"Base" \n "taken"};
 item16[] = {"Wait_for_grace_p",4,218,25.000000,350.000000,125.000000,400.000000,0.000000,"Wait for" \n "grace period"};
 item17[] = {"Set_time_before",2,250,25.000000,425.000000,125.000000,475.000000,0.000000,"Set time" \n "before next" \n "attack"};
-item18[] = {"Wait_for_the_att",4,218,25.000000,500.000000,125.000000,550.000000,0.000000,"Wait" \n "for the" \n "attack"};
+item18[] = {"Wait_for_the_att",4,218,25.000000,500.000000,125.000000,550.000000,1.000000,"Wait" \n "for the" \n "attack"};
 item19[] = {"Attack_the_base",2,250,25.000000,575.000000,125.000000,625.000000,0.000000,"Attack the" \n "base!"};
 item20[] = {"Enemies_defeated",4,218,150.000000,425.000000,250.000000,475.000000,2.000000,"Enemies" \n "defeated"};
 item21[] = {"No_players_remai",4,218,400.000000,500.000000,500.000000,550.000000,1.000000,"No players" \n "remaining"};
@@ -52,6 +52,9 @@ item47[] = {"Check_4",2,250,-225.000000,425.000000,-125.000000,475.000000,0.0000
 item48[] = {"Not_more_than_1",8,218,-225.000000,500.000000,-125.000000,550.000000,0.000000,"Not more" \n "than 1 base"};
 item49[] = {"",7,210,446.000000,746.000000,454.000000,754.000000,0.000000,""};
 item50[] = {"",7,210,946.000000,371.000000,954.000000,379.000000,0.000000,""};
+item51[] = {"Time_up_and_back",4,218,-225.000000,350.000000,-125.000000,400.000000,0.000000,"Time up" \n "and back to one" \n "base?"};
+item52[] = {"Set_grace_period",2,250,-225.000000,275.000000,-125.000000,325.000000,0.000000,"Set grace period" \n "timer again!"};
+item53[] = {"Wait_for_grace_p",4,4314,-100.000000,350.000000,0.000000,400.000000,0.000000,"Wait for" \n "grace period"};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,3};
@@ -72,48 +75,52 @@ link16[] = {14,50};
 link17[] = {15,4};
 link18[] = {16,17};
 link19[] = {17,18};
-link20[] = {18,19};
-link21[] = {19,27};
-link22[] = {20,17};
-link23[] = {21,5};
-link24[] = {22,49};
-link25[] = {23,39};
-link26[] = {24,25};
-link27[] = {25,44};
-link28[] = {26,17};
-link29[] = {27,28};
-link30[] = {28,20};
-link31[] = {28,21};
-link32[] = {28,22};
-link33[] = {28,29};
-link34[] = {29,30};
-link35[] = {30,33};
-link36[] = {31,32};
-link37[] = {32,9};
-link38[] = {32,34};
-link39[] = {33,28};
-link40[] = {34,7};
-link41[] = {35,36};
-link42[] = {36,37};
-link43[] = {37,38};
-link44[] = {38,10};
-link45[] = {38,14};
-link46[] = {39,40};
-link47[] = {40,41};
-link48[] = {41,42};
-link49[] = {42,24};
-link50[] = {42,43};
-link51[] = {43,40};
-link52[] = {44,45};
-link53[] = {45,46};
-link54[] = {46,47};
-link55[] = {47,26};
-link56[] = {47,48};
-link57[] = {48,45};
-link58[] = {49,23};
-link59[] = {50,7};
-globals[] = {25.000000,1,0,0,0,640,480,1,70,6316128,1,-547.227600,1338.265137,1255.025146,-236.588272,1618,1280,1};
-window[] = {2,-1,-1,-1,-1,877,121,1561,117,3,1636};
+link20[] = {17,51};
+link21[] = {18,19};
+link22[] = {19,27};
+link23[] = {20,17};
+link24[] = {21,5};
+link25[] = {22,49};
+link26[] = {23,39};
+link27[] = {24,25};
+link28[] = {25,44};
+link29[] = {26,17};
+link30[] = {27,28};
+link31[] = {28,20};
+link32[] = {28,21};
+link33[] = {28,22};
+link34[] = {28,29};
+link35[] = {29,30};
+link36[] = {30,33};
+link37[] = {31,32};
+link38[] = {32,9};
+link39[] = {32,34};
+link40[] = {33,28};
+link41[] = {34,7};
+link42[] = {35,36};
+link43[] = {36,37};
+link44[] = {37,38};
+link45[] = {38,10};
+link46[] = {38,14};
+link47[] = {39,40};
+link48[] = {40,41};
+link49[] = {41,42};
+link50[] = {42,24};
+link51[] = {42,43};
+link52[] = {43,40};
+link53[] = {44,45};
+link54[] = {45,46};
+link55[] = {46,47};
+link56[] = {47,26};
+link57[] = {47,48};
+link58[] = {48,45};
+link59[] = {49,23};
+link60[] = {50,7};
+link61[] = {51,52};
+link62[] = {52,53};
+link63[] = {53,17};
+globals[] = {25.000000,1,0,0,0,640,480,1,73,6316128,1,-547.227600,1338.265137,1255.025146,-236.588272,1618,1280,1};
+window[] = {2,-1,-1,-1,-1,968,208,1648,208,3,1636};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -460,10 +467,20 @@ class FSM
         /*%FSM<LINK "Wait_for_the_att">*/
         class Wait_for_the_att
         {
-          priority = 0.000000;
+          priority = 1.000000;
           to="Attack_the_base";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"time >= _timeout && (count basesOwned) > 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Time_up_and_back">*/
+        class Time_up_and_back
+        {
+          priority = 0.000000;
+          to="Set_grace_period";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time >= _timeout && (count basesOwned) < 2"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -866,6 +883,30 @@ class FSM
           to="Set_timeout";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Set_grace_period">*/
+    class Set_grace_period
+    {
+      name = "Set_grace_period";
+      init = /*%FSM<STATEINIT""">*/"//Set timeout again and wait for >1 base to be present before planning another attack" \n
+       "" \n
+       "_timeout = time;" \n
+       "//DEBUG - add grace period parameter to time"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Wait_for_grace_p">*/
+        class Wait_for_grace_p
+        {
+          priority = 0.000000;
+          to="Set_time_before";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(count basesOwned) > 1 && time >= _timeout"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
