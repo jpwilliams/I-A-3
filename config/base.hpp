@@ -1,3 +1,18 @@
+class base_camp
+{
+	name = "Base Camp";
+	isOwned = 1;
+	groups = 2;
+	respawnGroups = 1;
+	respawnTime = 300;
+	vehicles[] = 
+	{
+		{"B_Truck_01_transport_F", "base_camp_respawn_1"},
+		{"B_Truck_01_transport_F", "base_camp_respawn_2"},
+		{"B_Truck_01_transport_F", "base_camp_respawn_3"}
+	};
+};
+
 class base_alpha
 {
 	name = "Base Alpha";
@@ -5,7 +20,10 @@ class base_alpha
 	groups = 3;
 	respawnGroups = 1;
 	respawnTime = 300;
-	vehicles[] = {};
+	vehicles[] = 
+	{
+		{"B_UAV_01_F", "base_alpha_respawn_1"}
+	};
 };
 
 class base_bravo
@@ -75,7 +93,14 @@ class base_hotel
 	groups = 3;
 	respawnGroups = 1;
 	respawnTime = 300;
-	vehicles[] = {};
+	vehicles[] = 
+	{
+		{"B_Heli_Light_01_F", "base_hotel_respawn_1"},
+		{"B_Truck_01_transport_F", "base_hotel_respawn_2"},
+		{"B_Truck_01_covered_F", "base_hotel_respawn_3"},
+		{"B_G_Offroad_01_armed_F", "base_hotel_respawn_4"},
+		{"B_G_Offroad_01_armed_F", "base_hotel_respawn_5"}
+	};
 };
 
 class base_india

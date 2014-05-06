@@ -3,12 +3,14 @@ class Mission
 {
 	addOns[]=
 	{
-		"A3_Characters_F_BLUFOR",
-		"a3_map_altis"
+		"a3_map_altis",
+		"A3_Characters_F_Gamma",
+		"a3_uav_f_characters_f_gamma"
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_BLUFOR",
+		"A3_Characters_F_Gamma",
+		"a3_uav_f_characters_f_gamma",
 		"a3_map_altis"
 	};
 	randomSeed=10403695;
@@ -46,7 +48,7 @@ class Mission
 					position[]={23557.498,90.559532,21125.113};
 					id=0;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_soldier_UAV_F";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
@@ -57,7 +59,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=67;
+		items=77;
 		class Item0
 		{
 			position[]={27019.508,20.544315,23227.646};
@@ -79,10 +81,8 @@ class Mission
 			text="Base Alpha";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Solid";
 			a=200;
 			b=200;
-			drawBorder=1;
 		};
 		class Item3
 		{
@@ -210,10 +210,8 @@ class Mission
 			text="Base Bravo";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Solid";
 			a=220;
 			b=220;
-			drawBorder=1;
 		};
 		class Item21
 		{
@@ -222,11 +220,9 @@ class Mission
 			text="Base Charlie";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Solid";
 			a=380;
 			b=1200;
 			angle=45;
-			drawBorder=1;
 		};
 		class Item22
 		{
@@ -277,10 +273,8 @@ class Mission
 			text="Base Delta";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Solid";
 			a=500;
 			b=500;
-			drawBorder=1;
 		};
 		class Item29
 		{
@@ -352,11 +346,9 @@ class Mission
 			text="Base Echo";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Solid";
 			a=120;
 			b=120;
 			angle=22;
-			drawBorder=1;
 		};
 		class Item39
 		{
@@ -435,11 +427,9 @@ class Mission
 			text="Base Foxtrot";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Solid";
 			a=100;
 			b=200;
 			angle=53;
-			drawBorder=1;
 		};
 		class Item50
 		{
@@ -448,11 +438,9 @@ class Mission
 			text="Base Golf";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Solid";
 			a=160;
 			b=400;
 			angle=33;
-			drawBorder=1;
 		};
 		class Item51
 		{
@@ -489,11 +477,9 @@ class Mission
 			text="Base Hotel";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Solid";
 			a=150;
 			b=300;
 			angle=41;
-			drawBorder=1;
 		};
 		class Item56
 		{
@@ -509,11 +495,9 @@ class Mission
 			text="Base India";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Solid";
 			a=80;
 			b=110;
 			angle=-43;
-			drawBorder=1;
 		};
 		class Item58
 		{
@@ -522,10 +506,8 @@ class Mission
 			text="Base Juliet";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Solid";
 			a=200;
 			b=200;
-			drawBorder=1;
 		};
 		class Item59
 		{
@@ -534,11 +516,9 @@ class Mission
 			text="Base Kilo";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Solid";
 			a=230;
 			b=380;
 			angle=45;
-			drawBorder=1;
 		};
 		class Item60
 		{
@@ -554,11 +534,9 @@ class Mission
 			text="Base Lima";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Solid";
 			a=100;
 			b=100;
 			angle=103;
-			drawBorder=1;
 		};
 		class Item62
 		{
@@ -598,6 +576,85 @@ class Mission
 			text="Land Spawn";
 			type="Empty";
 			angle=-165.89;
+		};
+		class Item67
+		{
+			position[]={23441.5,93.771553,21167.334};
+			name="base_alpha_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=159.90636;
+		};
+		class Item68
+		{
+			position[]={28319.797,14.63513,25777.438};
+			name="base_camp";
+			text="Base Camp";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=85;
+			b=85;
+		};
+		class Item69
+		{
+			position[]={28329.576,14.562332,25769.217};
+			name="base_camp_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+		};
+		class Item70
+		{
+			position[]={28337.543,14.512207,25769.621};
+			name="base_camp_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+		};
+		class Item71
+		{
+			position[]={28344.883,14.458676,25770.025};
+			name="base_camp_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+		};
+		class Item72
+		{
+			position[]={26785.732,21.793093,24631.045};
+			name="base_hotel_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=126.78996;
+		};
+		class Item73
+		{
+			position[]={26732.211,20.273254,24647.281};
+			name="base_hotel_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=129.037;
+		};
+		class Item74
+		{
+			position[]={26729.162,19.852665,24643.137};
+			name="base_hotel_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+			angle=129.037;
+		};
+		class Item75
+		{
+			position[]={26697.047,19.560408,24638.416};
+			name="base_hotel_respawn_4";
+			text="Respawn 4";
+			type="Empty";
+			angle=125.38614;
+		};
+		class Item76
+		{
+			position[]={26700.762,19.77,24642.76};
+			name="base_hotel_respawn_5";
+			text="Respawn 5";
+			type="Empty";
+			angle=125.386;
 		};
 	};
 };
