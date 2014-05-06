@@ -114,16 +114,16 @@ class Params
 		class base_minTimeBeforeAttack
 		{
 			title = "Minimum time between base attacks";
-			values[] = {900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
-			texts[] = {"15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			values[] = {5, 900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"5 seconds (DEV)", "15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
 			default = 1800;
 		};
 
 		class base_maxTimeBeforeAttack
 		{
 			title = "Maximum time between base attacks (must be larger than minimum time)";
-			values[] = {900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
-			texts[] = {"15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			values[] = {5, 900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"5 seconds (DEV)", "15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
 			default = 5400;
 		};
 
