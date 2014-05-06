@@ -1,10 +1,11 @@
 if (debugMode) exitWith {};
+
 /*******************************************************************\
 
 	You may, of course, remove this if you wish.
 
 	*/
-		onPlayerConnected "if (_uid == 76561197979546789) then { cutText [""Rarek, creator of Invade & Annex, has joined the server."", ""PLAIN""]; };";
+		//onPlayerConnected "if (_uid == 76561197979546789) then { cutText [""Rarek, creator of Invade & Annex, has joined the server."", ""PLAIN""]; };";
 	/*
 
 	I just thought it'd be a humorous touch seeing as I put a lot
