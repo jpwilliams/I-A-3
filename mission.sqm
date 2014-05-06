@@ -79,7 +79,7 @@ class Mission
 			text="Base Alpha";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=200;
 			b=200;
 			drawBorder=1;
@@ -210,7 +210,7 @@ class Mission
 			text="Base Bravo";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=220;
 			b=220;
 			drawBorder=1;
@@ -222,7 +222,7 @@ class Mission
 			text="Base Charlie";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=380;
 			b=1200;
 			angle=45;
@@ -277,7 +277,7 @@ class Mission
 			text="Base Delta";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=500;
 			b=500;
 			drawBorder=1;
@@ -352,7 +352,7 @@ class Mission
 			text="Base Echo";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=120;
 			b=120;
 			angle=22;
@@ -435,7 +435,7 @@ class Mission
 			text="Base Foxtrot";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=100;
 			b=200;
 			angle=53;
@@ -448,7 +448,7 @@ class Mission
 			text="Base Golf";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=160;
 			b=400;
 			angle=33;
@@ -489,7 +489,7 @@ class Mission
 			text="Base Hotel";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=150;
 			b=300;
 			angle=41;
@@ -509,7 +509,7 @@ class Mission
 			text="Base India";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=80;
 			b=110;
 			angle=-43;
@@ -522,7 +522,7 @@ class Mission
 			text="Base Juliet";
 			markerType="ELLIPSE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=200;
 			b=200;
 			drawBorder=1;
@@ -534,7 +534,7 @@ class Mission
 			text="Base Kilo";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=230;
 			b=380;
 			angle=45;
@@ -554,7 +554,7 @@ class Mission
 			text="Base Lima";
 			markerType="RECTANGLE";
 			type="Empty";
-			fillName="Border";
+			fillName="Solid";
 			a=100;
 			b=100;
 			angle=103;
