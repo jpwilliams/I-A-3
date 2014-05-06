@@ -20,7 +20,6 @@ class CfgRespawnTemplates
 respawn = "BASE";
 respawnDelay = 5;
 respawnTemplates[] = {"Counter", "MenuPosition", "AW_MenuInventory"};
-respawnOnStart = 1;
 
 class Params
 {
@@ -45,6 +44,7 @@ class Params
 			title = "How many minutes past the hour should the mission start?";
 			values[] = {0, 0.08, 0.17, 0.25, 0.33, 0.42, 0.5, 0.58, 0.67, 0.75, 0.83, 0.92};
 			texts[] = {"None", "5 minutes", "10 minutes", "15 minutes", "20 minutes", "25 minutes", "30 minutes", "35 minutes", "40 minutes", "45 minutes", "50 minutes", "55 minutes"};
+			default = 0;
 		};
 
 		class pilotRestrictions
