@@ -59,14 +59,14 @@ pointsOfInterest = [];
 
 		for "_i" from 0 to _lastIndex do
 		{
-			_x = configName (_inventories select _i);
-			[WEST, _x] call BIS_fnc_addRespawnInventory;
+			//_x = configName (_inventories select _i);
+			[WEST, 'none'] call BIS_fnc_addRespawnInventory;
 		};
 	/*
 
 	RESPAWN INVENTORIES FINISH
 
-\*******************************************************************/
+\*******************************************************************/ 
 
 
 /*******************************************************************\
