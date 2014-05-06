@@ -1,5 +1,6 @@
 enableDebugConsole = 1;
 allowFunctionsLog = 1;
+joinUnassigned = 0;
 
 class Header
 {
@@ -302,6 +303,7 @@ OnLoadName = "AW Invade & Annex 3";
 OnLoadMission = "Conceived and developed by the Ahoy World community, Invade &amp; Annex is an ever-popular co-operative game-mode allowing players to unite to overcome an increasingly-large OPFOR force. See www.AhoyWorld.co.uk for more information.";
 loadScreen = "images\loadingScreen.jpg";
 overviewPicture = "images\loadingScreen.jpg";
+
 disabledAI = 1;
 #include "VAS\menu.hpp"
 

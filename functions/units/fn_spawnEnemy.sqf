@@ -1,12 +1,12 @@
 private ["_spawnedUnits", "_side", "_soldiers", "_vehicles", "_toSpawn", "_type", "_pos", "_randomUnit", "_i", "_c", "_group", "_amount", "_loc", "_radius"];
 
-// _units = [EAST, 30] call AW_fnc_spawnEnemy;
-
+// Set defaults
 _side = [_this,0,EAST,[EAST]] call BIS_fnc_param;
 _amount = [_this,1,5,[0]] call BIS_fnc_param;
 _loc = [_this,2,[0,0,0],[[],""],[2,3]] call BIS_fnc_param;
 _radius = [_this,3,100,[[],0],[2]] call BIS_fnc_param;
 
+// Grab enemy units
 _spawnedUnits = [];
 _soldiers = getArray (missionConfigFile >> "enemy" >> "infantry");
 _vehicles = getArray (missionConfigFile >> "enemy" >> "vehicles");
@@ -16,13 +16,13 @@ _air = getArray (missionConfigFile >> "enemy" >> "air");
 _unitTypes = ["infantry", "vehicle", "air", "static"];
 _chances = [0.55, 0.2, 0.1, 0.15];
 
+// Creation loop
 for [{_i = 0}, {_i < _amount}, {_i = _i + 1}] do
 {
 	_toSpawn = [];
-	_type = [_unitTypes, _chances] call BIS_fnc_selectRandomWeighted;
-
-	_lName = typeName _loc;
 	_ret = [];
+	_lName = typeName _loc;
+	_type = [_unitTypes, _chances] call BIS_fnc_selectRandomWeighted;
 
 	_pos = switch (_lName) do
 	{
@@ -88,7 +88,7 @@ for [{_i = 0}, {_i < _amount}, {_i = _i + 1}] do
 			_spawnedUnits = _spawnedUnits + [_group select 0];
 		};
 
-		case "air":
+		case "air": // Needs splitting into "plane" and "helicopter"
 		{
 			_randomUnit = _air call BIS_fnc_selectRandom;
 			_group = [_pos, random 360, _randomUnit, _side] call BIS_fnc_spawnVehicle;
