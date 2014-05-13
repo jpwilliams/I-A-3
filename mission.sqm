@@ -45,7 +45,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23557.498,90.559532,21125.113};
+					position[]={14765.502,17.89187,16581.203};
 					id=0;
 					side="WEST";
 					vehicle="B_soldier_UAV_F";
@@ -59,7 +59,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=77;
+		items=114;
 		class Item0
 		{
 			position[]={27019.508,20.544315,23227.646};
@@ -76,13 +76,14 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={23587.377,92.573936,21105.799};
+			position[]={23594.486,91.112656,21116.473};
 			name="base_alpha";
 			text="Base Alpha";
-			markerType="ELLIPSE";
+			markerType="RECTANGLE";
 			type="Empty";
-			a=200;
-			b=200;
+			a=180;
+			b=80;
+			angle=201.62601;
 		};
 		class Item3
 		{
@@ -341,7 +342,7 @@ class Mission
 		};
 		class Item38
 		{
-			position[]={20968.617,16.624365,19249.48};
+			position[]={20966.234,16.443018,19248.051};
 			name="base_echo";
 			text="Base Echo";
 			markerType="RECTANGLE";
@@ -540,20 +541,13 @@ class Mission
 		};
 		class Item62
 		{
-			position[]={23483.768,90.460045,21145.33};
-			name="base_alpha_repair_air";
-			text="Air Repair Pad";
-			type="Empty";
-		};
-		class Item63
-		{
 			position[]={23520.453,90.800568,21160.568};
 			name="base_alpha_spawn_1_land";
 			text="Land Spawn";
 			type="Empty";
 			angle=-128.88602;
 		};
-		class Item64
+		class Item63
 		{
 			position[]={23516.152,90.483536,21163.434};
 			name="base_alpha_spawn_2_land";
@@ -561,7 +555,7 @@ class Mission
 			type="Empty";
 			angle=-165.88988;
 		};
-		class Item65
+		class Item64
 		{
 			position[]={23511.494,90.228485,21164.953};
 			name="base_alpha_spawn_3_land";
@@ -569,7 +563,7 @@ class Mission
 			type="Empty";
 			angle=-165.89;
 		};
-		class Item66
+		class Item65
 		{
 			position[]={23506.932,90.155411,21166.295};
 			name="base_alpha_spawn_4_land";
@@ -577,15 +571,15 @@ class Mission
 			type="Empty";
 			angle=-165.89;
 		};
-		class Item67
+		class Item66
 		{
-			position[]={23441.5,93.771553,21167.334};
+			position[]={23524.889,94.131065,21081.65};
 			name="base_alpha_respawn_1";
 			text="Respawn 1";
 			type="Empty";
-			angle=159.90636;
+			angle=50.146099;
 		};
-		class Item68
+		class Item67
 		{
 			position[]={28319.797,14.63513,25777.438};
 			name="base_camp";
@@ -595,28 +589,28 @@ class Mission
 			a=85;
 			b=85;
 		};
-		class Item69
+		class Item68
 		{
 			position[]={28329.576,14.562332,25769.217};
 			name="base_camp_respawn_1";
 			text="Respawn 1";
 			type="Empty";
 		};
-		class Item70
+		class Item69
 		{
 			position[]={28337.543,14.512207,25769.621};
 			name="base_camp_respawn_2";
 			text="Respawn 2";
 			type="Empty";
 		};
-		class Item71
+		class Item70
 		{
 			position[]={28344.883,14.458676,25770.025};
 			name="base_camp_respawn_3";
 			text="Respawn 3";
 			type="Empty";
 		};
-		class Item72
+		class Item71
 		{
 			position[]={26785.732,21.793093,24631.045};
 			name="base_hotel_respawn_1";
@@ -624,23 +618,23 @@ class Mission
 			type="Empty";
 			angle=126.78996;
 		};
-		class Item73
+		class Item72
 		{
-			position[]={26732.211,20.273254,24647.281};
+			position[]={26701.424,19.77,24642.943};
 			name="base_hotel_respawn_3";
 			text="Respawn 3";
 			type="Empty";
 			angle=129.037;
 		};
-		class Item74
+		class Item73
 		{
-			position[]={26729.162,19.852665,24643.137};
+			position[]={26732.6,20.215353,24645.98};
 			name="base_hotel_respawn_2";
 			text="Respawn 2";
 			type="Empty";
 			angle=129.037;
 		};
-		class Item75
+		class Item74
 		{
 			position[]={26697.047,19.560408,24638.416};
 			name="base_hotel_respawn_4";
@@ -648,13 +642,313 @@ class Mission
 			type="Empty";
 			angle=125.38614;
 		};
+		class Item75
+		{
+			position[]={23621.83,103.03086,21078.256};
+			name="ASDFASDF";
+			text="AMMO";
+			type="Empty";
+		};
 		class Item76
 		{
-			position[]={26700.762,19.77,24642.76};
-			name="base_hotel_respawn_5";
+			position[]={23532.793,93.873863,21077.42};
+			name="base_alpha_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+			angle=356.254;
+		};
+		class Item77
+		{
+			position[]={23542.258,93.630035,21077.193};
+			name="base_alpha_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=1.86377;
+		};
+		class Item78
+		{
+			position[]={20914.6,15.729578,19314.418};
+			name="base_echo_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=114.24341;
+		};
+		class Item79
+		{
+			position[]={20912.18,15.606023,19308.186};
+			name="base_echo_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+			angle=117.9201;
+		};
+		class Item80
+		{
+			position[]={20909.035,15.453979,19299.883};
+			name="base_echo_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=481.51013;
+		};
+		class Item81
+		{
+			position[]={20910.053,10.952253,19266.846};
+			name="base_echo_respawn_4";
+			text="Respawn 4";
+			type="Empty";
+			angle=560.33301;
+		};
+		class Item82
+		{
+			position[]={20904.508,10.837434,19269.158};
+			name="base_echo_respawn_5";
 			text="Respawn 5";
 			type="Empty";
-			angle=125.386;
+			angle=560.33301;
+		};
+		class Item83
+		{
+			position[]={20780.117,30.184628,7186.7852};
+			name="base_kilo_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=26.601223;
+		};
+		class Item84
+		{
+			position[]={20823.457,28.983835,7208.7358};
+			name="base_kilo_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+			angle=-26.997553;
+		};
+		class Item85
+		{
+			position[]={20818.277,28.992821,7204.9419};
+			name="base_kilo_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=-26.997601;
+		};
+		class Item86
+		{
+			position[]={20797.436,29.13908,7226.6265};
+			name="base_kilo_respawn_4";
+			text="Respawn 4";
+			type="Empty";
+			angle=-37.537132;
+		};
+		class Item87
+		{
+			position[]={17490.545,14.515969,13125.017};
+			name="base_india_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=-53.700432;
+		};
+		class Item88
+		{
+			position[]={17383.391,14.80651,13162.108};
+			name="base_india_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+			angle=47.668781;
+		};
+		class Item89
+		{
+			position[]={17392.508,14.743237,13151.49};
+			name="base_india_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=48.395302;
+		};
+		class Item90
+		{
+			position[]={16656.213,0,13725.232};
+			name="base_juliet_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=-34.123558;
+		};
+		class Item91
+		{
+			position[]={16644.973,-1.2572424,13719.463};
+			name="base_juliet_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+		};
+		class Item92
+		{
+			position[]={16632.287,0,13715.382};
+			name="base_juliet_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=-39.631374;
+		};
+		class Item93
+		{
+			position[]={16624.477,0,13707.384};
+			name="base_juliet_respawn_4";
+			text="Respawn 4";
+			type="Empty";
+			angle=-53.316319;
+		};
+		class Item94
+		{
+			position[]={11595.888,23.677742,11949.576};
+			name="base_golf_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=119.14277;
+		};
+		class Item95
+		{
+			position[]={11574.648,23.62553,11993.703};
+			name="base_golf_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+			angle=124.05444;
+		};
+		class Item96
+		{
+			position[]={11577.788,23.614311,11998.979};
+			name="base_golf_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=124.054;
+		};
+		class Item97
+		{
+			position[]={11580.994,23.585598,12004.077};
+			name="base_golf_respawn_4";
+			text="Respawn 4";
+			type="Empty";
+			angle=124.054;
+		};
+		class Item98
+		{
+			position[]={11584.03,23.538738,12009.392};
+			name="base_golf_respawn_5";
+			text="Respawn 5";
+			type="Empty";
+			angle=124.054;
+		};
+		class Item99
+		{
+			position[]={7141.5557,4.9114237,11040.936};
+			name="base_lima_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=12.37215;
+		};
+		class Item100
+		{
+			position[]={7148.2983,4.719449,11039.812};
+			name="base_lima_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+			angle=12.3722;
+		};
+		class Item101
+		{
+			position[]={7241.7041,4.4708638,11039.466};
+			name="base_lima_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=194.02603;
+		};
+		class Item102
+		{
+			position[]={9138.8115,15.159057,21608.469};
+			name="base_foxtrot_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=-122.507;
+		};
+		class Item103
+		{
+			position[]={9183.8867,14.344661,21676.902};
+			name="base_foxtrot_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+			angle=142.27103;
+		};
+		class Item104
+		{
+			position[]={9162.4238,14.398754,21660.934};
+			name="base_foxtrot_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=142.271;
+		};
+		class Item105
+		{
+			position[]={9165.7959,14.4,21662.846};
+			name="base_foxtrot_respawn_4";
+			text="Respawn 4";
+			type="Empty";
+			angle=142.271;
+		};
+		class Item106
+		{
+			position[]={12864.969,85.251404,16738.715};
+			name="base_delta_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=185.92871;
+		};
+		class Item107
+		{
+			position[]={16058.013,13.55398,16851.367};
+			name="base_bravo_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+		};
+		class Item108
+		{
+			position[]={16071.061,19.726025,16850.848};
+			name="base_bravo_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+		};
+		class Item109
+		{
+			position[]={14417.034,18.721088,16242.146};
+			name="base_charlie_respawn_1";
+			text="Respawn 1";
+			type="Empty";
+			angle=35.686455;
+		};
+		class Item110
+		{
+			position[]={14403.943,19.272423,16316.574};
+			name="base_charlie_respawn_2";
+			text="Respawn 2";
+			type="Empty";
+			angle=-155.7836;
+		};
+		class Item111
+		{
+			position[]={14345.729,18.648499,16332.74};
+			name="base_charlie_respawn_3";
+			text="Respawn 3";
+			type="Empty";
+			angle=-170.3461;
+		};
+		class Item112
+		{
+			position[]={14458.068,18.775393,16299.809};
+			name="base_charlie_respawn_4";
+			text="Respawn 4";
+			type="Empty";
+			angle=-132.88815;
+		};
+		class Item113
+		{
+			position[]={14451.816,18.820084,16306.548};
+			name="base_charlie_respawn_5";
+			text="Respawn 5";
+			type="Empty";
+			angle=-132.888;
 		};
 	};
 };
