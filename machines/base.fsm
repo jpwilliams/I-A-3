@@ -4,7 +4,7 @@
 item0[] = {"Initialise_Base",0,250,275.000000,275.000000,375.000000,325.000000,0.000000,"Initialise" \n "Base"};
 item1[] = {"Is_friendly",4,218,150.000000,275.000000,250.000000,325.000000,1.000000,"Is" \n "friendly"};
 item2[] = {"Is_enemy",4,218,400.000000,275.000000,500.000000,325.000000,0.000000,"Is" \n "enemy"};
-item3[] = {"Add_Respawn_Location",2,250,25.000000,275.000000,125.000000,325.000000,0.000000,"Add Respawn" \n "Location &" \n "Vehicles"};
+item3[] = {"Add_Respawn_Location",2,4346,25.000000,275.000000,125.000000,325.000000,0.000000,"Add Respawn" \n "Location &" \n "Vehicles"};
 item4[] = {"Spawn_defenders",2,250,525.000000,275.000000,625.000000,325.000000,0.000000,"Spawn" \n "defenders & set" \n "marker"};
 item5[] = {"Stop_vehicles_respawning",2,250,400.000000,425.000000,500.000000,475.000000,0.000000,"Stop vehicles" \n "respawning &" \n "remove spawn"};
 item6[] = {"Base_being_captu",2,250,650.000000,575.000000,750.000000,625.000000,0.000000,"Base being" \n "captured"};
@@ -54,7 +54,7 @@ item49[] = {"",7,210,446.000000,746.000000,454.000000,754.000000,0.000000,""};
 item50[] = {"",7,210,946.000000,371.000000,954.000000,379.000000,0.000000,""};
 item51[] = {"Time_up_and_back",4,218,-225.000000,350.000000,-125.000000,400.000000,0.000000,"Time up" \n "and back to one" \n "base?"};
 item52[] = {"Set_grace_period",2,250,-225.000000,275.000000,-125.000000,325.000000,0.000000,"Set grace period" \n "timer again!"};
-item53[] = {"Wait_for_grace_p",4,4314,-100.000000,350.000000,0.000000,400.000000,0.000000,"Wait for" \n "grace period"};
+item53[] = {"Wait_for_grace_p",4,218,-100.000000,350.000000,0.000000,400.000000,0.000000,"Wait for" \n "grace period"};
 link0[] = {0,1};
 link1[] = {0,2};
 link2[] = {1,3};
@@ -119,8 +119,8 @@ link60[] = {50,7};
 link61[] = {51,52};
 link62[] = {52,53};
 link63[] = {53,17};
-globals[] = {25.000000,1,0,0,0,640,480,1,73,6316128,1,-547.227600,1338.265137,1255.025146,-236.588272,1618,1280,1};
-window[] = {2,-1,-1,-1,-1,968,208,1648,208,3,1636};
+globals[] = {25.000000,1,0,0,0,640,480,1,73,6316128,1,-679.242554,1512.305664,1123.302246,-170.004135,1824,1280,1};
+window[] = {2,-1,-1,-1,-1,935,182,1622,175,3,1842};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -216,22 +216,19 @@ class FSM
        "_counter = 1;" \n
        "" \n
        "{" \n
-       "	_obj = _x select 0;" \n
-       "	_vehLoc = getMarkerPos (_x select 1);" \n
-       "	_vehDir = markerDir (_x select 1);" \n
-       "" \n
-       "	_veh = _obj createVehicle _vehLoc;" \n
-       "	_veh setDir _vehDir;" \n
+       "	_unit_class = _x select 0;" \n
+       "	_unit_marker = _x select 1;" \n
        "" \n
        "	call compile format" \n
        "	[" \n
        "		""" \n
-       "			_%1_veh_%2 = [_veh] execVM """"external\vehicle.sqf"""";" \n
+       "			_%1_veh_%2 = [_unit_class, _unit_marker, _marker] execVM """"functions\units\fn_respawnVehicle.sqf"""";" \n
        "			_respawningHandles = _respawningHandles + [_%1_veh_%2];" \n
        "		""," \n
        "		_marker," \n
        "		_counter" \n
        "	];" \n
+       "" \n
        "	_counter = _counter + 1;" \n
        "} forEach _vehicles;" \n
        "" \n
