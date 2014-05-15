@@ -37,8 +37,6 @@ if (typeName _obj == "OBJECT") then { _obj = [group _obj]; };
 if (typeName _obj == "GROUP") then { _obj = [_obj]; };
 _behaviours = [_this,1,[["patrol", true, 100]],[[]]] call BIS_fnc_param;
 
-diag_log format["::::AW:::: _obj = %1 :::: _behaviours = %2", _obj, _behaviours];
-
 {
 	_type = typeName _x;
 	switch (_type) do
