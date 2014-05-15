@@ -357,6 +357,7 @@ class CfgFunctions
 			class spawnEnemy			{ description = "Spawns the required amount of enemies"; };
 			class setBehaviour			{ description = "Sets behaviour of given troops."; };
 			class createVehicle			{ description = "Creates a vehicle and adds a KILLED EH, passing the object to AW_fnc_addDead."; };
+			class respawnVehicle		{ description = "Handles the respawning of vehicles in friendly bases alongside their relevant markers."; };
 		};
 
 		class markers
