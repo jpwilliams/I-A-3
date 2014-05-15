@@ -428,6 +428,11 @@ class CfgMarkers
 	{
 		#include "config\markers\misc.hpp"
 	};
+
+	class veh_respawn
+	{
+		#include "config\markers\veh_respawn.hpp"
+	};
 };
 
 class CfgHints
