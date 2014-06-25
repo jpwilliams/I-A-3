@@ -297,12 +297,7 @@ class FSM
       name = "Stop_vehicles_respawning";
       init = /*%FSM<STATEINIT""">*/"basesOwned = basesOwned - [_marker];" \n
        "" \n
-       "if ((count _respawningHandles) > 0) then" \n
-       "{" \n
-       "	{" \n
-       "		terminate _x;" \n
-       "	} forEach _respawningHandles;" \n
-       "};" \n
+       "//Respawn handles will kill themselves..." \n
        "" \n
        "{" \n
        "	if ((_x distance _pos) <= _radius && ({alive _x} count (crew _x)) < 1) then" \n
