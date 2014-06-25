@@ -66,22 +66,41 @@ _behaviours = [_this,1,[["patrol", true, 100]],[[]]] call BIS_fnc_param;
 			{
 				case "defend":
 				{
+					_group = if (_type == "GROUP") then { _x } else { group _x };
+
 					_near = [[[_pos, _radius]], ["water", "out"]] call BIS_fnc_randomPos;
-					[_x, _near] call BIS_fnc_taskDefend;
+					[_group, _near] call BIS_fnc_taskDefend;
 				};
 
 				case "active_defend":
 				{
+					_group = if (_type == "GROUP") then { _x } else { group _x };
+
 					_near = [[[_pos, _radius]], ["water", "out"]] call BIS_fnc_randomPos;
-					[_x, _near] call BIS_fnc_taskDefend;
+					[_group, _near] call BIS_fnc_taskDefend;
 					_x setBehaviour "AWARE";
 					_x setSpeedMode "FULL";
 				};
 
 				case "patrol":
 				{
-					_didWork = [_x, _pos, _radius] call BIS_fnc_taskPatrol;
-					diag_log format["::::AW:::: _x = %1 :::: _pos = %2 :::: _radius = %3 :::: _didWork = %4", _x, _pos, _radius, _didWork];
+					_group = if (_type == "GROUP") then { _x } else { group _x };
+
+					_didWork = false;
+					_attempt_limit = 10;
+					_attempts = 0;
+
+					while { !_didWork && _attempts < _attempt_limit } do
+					{
+						_attempts = _attempts + 1;
+						_didWork = [_group, _pos, _radius] call BIS_fnc_taskPatrol;
+						diag_log format["::::AW:::: _x = %1 :::: _pos = %2 :::: _radius = %3 :::: _didWork = %4", _x, _pos, _radius, _didWork];
+					};
+
+					if (!_didWork) then
+					{
+						_x setFormation "DIAMOND";
+					};
 				};
 
 				case "attack": { [_x, _pos] call BIS_fnc_taskAttack; };
