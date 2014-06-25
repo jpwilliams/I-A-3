@@ -6,7 +6,7 @@ item1[] = {"No_type_given",4,218,425.000000,425.000000,525.000000,475.000000,1.0
 item2[] = {"Type_given",8,218,175.000000,425.000000,275.000000,475.000000,0.000000,"Type given"};
 item3[] = {"Check_ammo",2,250,175.000000,850.000000,275.000000,900.000000,0.000000,"Check ammo"};
 item4[] = {"No_ammo_",4,218,50.000000,850.000000,150.000000,900.000000,1.000000,"No ammo!"};
-item5[] = {"Build_emplacement",2,250,300.000000,500.000000,400.000000,550.000000,0.000000,"Build" \n "emplacement" \n "type"};
+item5[] = {"Build_emplacement",2,4346,300.000000,500.000000,400.000000,550.000000,0.000000,"Build" \n "emplacement" \n "type"};
 item6[] = {"Time_to_check",4,218,300.000000,850.000000,400.000000,900.000000,0.000000,"Time to check"};
 item7[] = {"Have___awaiting",8,218,175.000000,725.000000,275.000000,775.000000,0.000000,"Have /" \n "awaiting" \n "ammo"};
 item8[] = {"Wait_for_the_che",8,218,675.000000,725.000000,775.000000,775.000000,0.000000,"Wait for the" \n "checks"};
@@ -79,8 +79,8 @@ link39[] = {31,32};
 link40[] = {32,33};
 link41[] = {33,14};
 link42[] = {34,14};
-globals[] = {25.000000,1,0,0,0,640,480,1,52,6316128,1,-265.963379,1261.556152,1543.094727,121.673866,979,911,1};
-window[] = {2,-1,-1,-1,-1,848,100,1540,88,3,997};
+globals[] = {25.000000,1,0,0,0,640,480,1,52,6316128,1,-57.666420,839.645508,1264.746216,421.511383,979,920,1};
+window[] = {2,-1,-1,-1,-1,995,-1842,-402,235,3,997};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -255,6 +255,8 @@ class FSM
        "	{" \n
        "		_weapon = [""B_MBT_01_arty_F"", _pos] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
        "" \n
+       "		_weapon lockDriver true;" \n
+       "" \n
        "		_dir = 45;" \n
        "		for [{_c = 0}, {_c < 4}, {_c = _c + 1}] do" \n
        "		{" \n
@@ -270,6 +272,8 @@ class FSM
        "	case ""mlrs"":" \n
        "	{" \n
        "		_weapon = [""B_MBT_01_mlrs_F"", _pos] call AW_fnc_createVehicle; _weapons = _weapons + [_weapon];" \n
+       "" \n
+       "		_weapon lockDriver true;" \n
        "" \n
        "		_dir = 45;" \n
        "		for [{_c = 0}, {_c < 4}, {_c = _c + 1}] do" \n
@@ -334,8 +338,6 @@ class FSM
        "" \n
        "	_counter = _counter + 1;" \n
        "} forEach _tmp;" \n
-       "" \n
-       "hint format[""_weapons = %1"", _weapons];" \n
        "" \n
        "_markers = [""emplacement"", _marker, _pos, _name] call AW_fnc_createJIPstateMarker;" \n
        "[[""type"", ""emplacement_created""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;"/*%FSM</STATEINIT""">*/;
