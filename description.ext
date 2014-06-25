@@ -372,7 +372,7 @@ class Params
 author = "Rarek [AW]";
 overviewText = "Invade &amp; Annex is the ever-popular co-operative game-mode allowing players to unite to overcome an increasingly-large OPFOR force. I&amp;A 3 hails in tonnes of new content in an all-new, perfectly co-operative experience. Go on; give it a go.";
 OnLoadName = "AW Invade & Annex 3";
-OnLoadMission = "Conceived and developed by the Ahoy World community, Invade &amp; Annex is an ever-popular co-operative game-mode allowing players to unite to overcome an increasingly-large OPFOR force. See www.AhoyWorld.co.uk for more information.";
+OnLoadMission = "Invade &amp; Annex is an ever-popular co-operative game-mode allowing players to unite to overcome an increasingly-large OPFOR force. See www.AhoyWorld.co.uk for more information.";
 loadScreen = "images\loadingScreen.jpg";
 overviewPicture = "images\loadingScreen.jpg";
 
