@@ -189,7 +189,7 @@ class Params
 			title = "Amount of Tactical Missions being created at random";
 			values[] = {1, 2, 3, 4, 5};
 			texts[] = {"1", "2", "3", "4", "5"};
-			default = 3;
+			default = 2;
 		};
 
 		class tacticalUnique
@@ -253,7 +253,7 @@ class Params
 			title = "Amount of Priority Targets being created at random";
 			values[] = {1, 2, 3, 4, 5};
 			texts[] = {"1", "2", "3", "4", "5"};
-			default = 1;
+			default = 2;
 		};
 
 		class priorityUnique
@@ -341,7 +341,7 @@ class Params
 			title = "Amount of Ghost Missions being created at random";
 			values[] = {1, 2, 3, 4, 5};
 			texts[] = {"1", "2", "3", "4", "5"};
-			default = 1;
+			default = 2;
 		};
 
 		class ghostUnique
