@@ -1,4 +1,4 @@
-class none
+class standard
 {
 	displayName = "Rifleman";
 	icon = "\A3\ui_f\data\igui\cfg\mptable\infantry_ca.paa";
@@ -12,7 +12,7 @@ class medic
 	displayName = "Medic";
 	icon = "\A3\ui_f\data\igui\cfg\mptable\infantry_ca.paa";
 	vehicle = "B_medic_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""medic"" } count playableUnits) < 10";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""medic"" } count playableUnits) < 10";
 	restrictions[] = { /* these guys get medic bag, of course */ };
 };
 
@@ -21,7 +21,7 @@ class sniper
 	displayName = "Marksman";
 	icon = "\A3\ui_f\data\igui\cfg\weaponicons\srifle_ca.paa";
 	vehicle = "B_sniper_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""sniper"" } count playableUnits) < 5";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""sniper"" } count playableUnits) < 5";
 	restrictions[] =
 	{
 		"U_B_GhillieSuit",
@@ -45,7 +45,7 @@ class aa
 	displayName = "AA Specialist";
 	icon = "\A3\ui_f\data\igui\cfg\weaponicons\AA_ca.paa";
 	vehicle = "B_soldier_AA_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""aa"" } count playableUnits) < 5";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""aa"" } count playableUnits) < 5";
 	restrictions[] =
 	{
 		"launch_B_Titan_F",
@@ -61,7 +61,7 @@ class at
 	displayName = "AT Specialist";
 	icon = "\A3\ui_f\data\igui\cfg\weaponicons\AT_ca.paa";
 	vehicle = "B_soldier_AT_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""at"" } count playableUnits) < 10";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""at"" } count playableUnits) < 10";
 	restrictions[] =
 	{
 		"launch_B_Titan_short_F",
@@ -79,7 +79,7 @@ class engineer
 	displayName = "Engineer";
 	icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 	vehicle = "B_engineer_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""engineer"" } count playableUnits) < 10";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""engineer"" } count playableUnits) < 10";
 	restrictions[] =
 	{
 		"ToolKit"
@@ -91,7 +91,7 @@ class grenadier
 	displayName = "Grenadier";
 	icon = "\A3\ui_f\data\igui\cfg\weaponicons\GL_ca.paa";
 	vehicle = "B_Soldier_GL_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""grenadier"" } count playableUnits) < 10";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""grenadier"" } count playableUnits) < 10";
 	restrictions[] =
 	{
 		"arifle_Katiba_GL_ACO_F",
@@ -122,7 +122,7 @@ class autorifleman
 	displayName = "Automatic Rifleman";
 	icon = "\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa";
 	vehicle = "B_soldier_AR_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""autorifleman"" } count playableUnits) < 10";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""autorifleman"" } count playableUnits) < 10";
 	restrictions[] =
 	{
 		"LMG_M200",
@@ -142,7 +142,7 @@ class ammo
 	displayName = "Ammo Bearer";
 	icon = "\A3\ui_f\data\igui\cfg\actions\reammo_ca.paa";
 	vehicle = "B_Soldier_A_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""ammo"" } count playableUnits) < 5";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""ammo"" } count playableUnits) < 5";
 	restrictions[] =
 	{
 		"V_BandollierB_blk",
@@ -158,7 +158,7 @@ class uav
 	displayName = "UAV Operator";
 	icon = "\A3\ui_f\data\gui\cfg\hints\icon_text\b_uav_ca.paa";
 	vehicle = "B_soldier_UAV_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""uav"" } count playableUnits) < 2";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""uav"" } count playableUnits) < 2";
 	restrictions[] =
 	{
 		"B_UavTerminal",
@@ -172,7 +172,7 @@ class pilot
 	displayName = "Pilot";
 	icon = "\A3\ui_f\data\gui\cfg\CommunicationMenu\transport_ca.paa";
 	vehicle = "B_pilot_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""pilot"" } count playableUnits) < 4";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""pilot"" } count playableUnits) < 4";
 	restrictions[] =
 	{
 		"H_CrewHelmetHeli_B",
@@ -197,7 +197,7 @@ class explosives
 	displayName = "Explosives Specialist";
 	icon = "\A3\ui_f\data\igui\cfg\cursors\explosive_ca.paa";
 	vehicle = "B_soldier_exp_F";
-	show = "({ (_x getVariable [""role"", ""none""]) == ""explosives"" } count playableUnits) < 8";
+	show = "({ (_x getVariable [""role"", ""standard""]) == ""explosives"" } count playableUnits) < 8";
 	restrictions[] =
 	{
 		"MineDetector",
