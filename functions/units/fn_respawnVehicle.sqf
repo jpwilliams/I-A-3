@@ -201,7 +201,7 @@ while {_run} do
 	else //If we're not dead or deserted, set our marker up!
 	{
 		//Is the vehicle at its spawn?
-		if ((_unit distance _pos) < 20) then
+		if ((_unit distance _pos) < 30) then
 		{
 			_respawn_marker_tag = [["veh_respawn", "at_base"], _respawn_marker, _pos, _unit_name] call AW_fnc_createJIPstateMarker;
 		}
