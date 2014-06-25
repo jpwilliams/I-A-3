@@ -96,15 +96,15 @@ class Params
 		default = 0;
 	};
 
-		class gracePeriod
+		class base_gracePeriod
 		{
 			title = "Grace period given to new bases before they're vulnerable to attack";
 			values[] = {0, 300, 600, 900};
-			texts[] = {"None", "5 minutes", "10 minutes", "15 minutes"};
+			texts[] = {"None (counter-attacks are fun, right?)", "5 minutes", "10 minutes", "15 minutes"};
 			default = 0;
 		};
 
-		class ownedBeforeAttacks
+		class base_basesOwnedBeforeAttacks
 		{
 			title = "Number of bases that must be owned before bases are vulnerable to attack";
 			values[] = {2, 3, 4, 5, 6, 7, 8, 9, 10};
