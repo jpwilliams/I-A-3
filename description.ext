@@ -280,6 +280,30 @@ class Params
 			default = 7200;
 		};
 
+		class priorityWarnBeforeAttack
+		{
+			title = "Should players be warned before a Priority Target engages?";
+			values[] = {0, 1};
+			texts[] = {"No", "Yes"};
+			default = 1;
+		};
+
+		class priorityMinTimeBeforeAttack
+		{
+			title = "Minimum time bewteen Priority Target fire (if applicable)";
+			values[] = {30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300};
+			texts[] = {"30 seconds", "45 seconds", "1 minute", "1 minute 15 seconds", "1 minute 30 seconds", "1 minute 45 seconds", "2 minutes", "2 minutes 15 seconds", "2 minutes 30 seconds", "2 minutes 45 seconds", "3 minutes", "3 minutes 15 seconds", "3 minutes 30 seconds", "3 minutes 45 seconds", "4 minutes", "4 minutes 15 seconds", "4 minutes 30 seconds", "4 minutes 45 seconds", "5 minutes"};
+			default = 60;
+		};
+
+		class priorityMaxTimeBeforeAttack
+		{
+			title = "Maximum time bewteen Priority Target fire (if applicable)";
+			values[] = {30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300};
+			texts[] = {"30 seconds", "45 seconds", "1 minute", "1 minute 15 seconds", "1 minute 30 seconds", "1 minute 45 seconds", "2 minutes", "2 minutes 15 seconds", "2 minutes 30 seconds", "2 minutes 45 seconds", "3 minutes", "3 minutes 15 seconds", "3 minutes 30 seconds", "3 minutes 45 seconds", "4 minutes", "4 minutes 15 seconds", "4 minutes 30 seconds", "4 minutes 45 seconds", "5 minutes"};
+			default = 180;
+		};
+
 	class gap9
 	{
 		title = "";
