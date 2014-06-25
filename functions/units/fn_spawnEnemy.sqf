@@ -14,7 +14,7 @@ _static = getArray (missionConfigFile >> "enemy" >> "static");
 _boats = getArray (missionConfigFile >> "enemy" >> "boats");
 _air = getArray (missionConfigFile >> "enemy" >> "air");
 _unitTypes = ["infantry", "vehicle", "air", "static"];
-_chances = [0.55, 0.2, 0.1, 0.15];
+_chances = [0.75, 0.15, 0.03, 0.07];
 
 // Creation loop
 for [{_i = 0}, {_i < _amount}, {_i = _i + 1}] do
