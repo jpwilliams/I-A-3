@@ -53,18 +53,35 @@ pointsOfInterest = [];
 
 	RESPAWN INVENTORIES START
 
-	*/
 		_inventories = missionConfigFile >> "CfgRespawnInventory";
 		_lastIndex = ((count _inventories) - 1);
 
 		for "_i" from 0 to _lastIndex do
 		{
-			//_x = configName (_inventories select _i);
-			[WEST, 'none'] call BIS_fnc_addRespawnInventory;
+			_x = _inventories select _i;
+			_name = configName _x;
+			[WEST, format["%1", _name]] call BIS_fnc_addRespawnInventory;
 		};
-	/*
 
 	RESPAWN INVENTORIES FINISH
+
+	*/
+
+	//Horrendous work-around for weird cfg issue
+	[WEST, "standard"] call BIS_fnc_addRespawnInventory;
+	[WEST, "medic"] call BIS_fnc_addRespawnInventory;
+	[WEST, "sniper"] call BIS_fnc_addRespawnInventory;
+	[WEST, "aa"] call BIS_fnc_addRespawnInventory;
+	[WEST, "at"] call BIS_fnc_addRespawnInventory;
+	[WEST, "engineer"] call BIS_fnc_addRespawnInventory;
+	[WEST, "grenadier"] call BIS_fnc_addRespawnInventory;
+	[WEST, "autorifleman"] call BIS_fnc_addRespawnInventory;
+	[WEST, "ammo"] call BIS_fnc_addRespawnInventory;
+	[WEST, "uav"] call BIS_fnc_addRespawnInventory;
+	[WEST, "pilot"] call BIS_fnc_addRespawnInventory;
+	[WEST, "explosives"] call BIS_fnc_addRespawnInventory;
+
+	/*
 
 \*******************************************************************/ 
 
