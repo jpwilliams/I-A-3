@@ -1,7 +1,7 @@
 /*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Bases">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"Initialise_Base",0,250,275.000000,275.000000,375.000000,325.000000,0.000000,"Initialise" \n "Base"};
+item0[] = {"Initialise_Base",0,4346,275.000000,275.000000,375.000000,325.000000,0.000000,"Initialise" \n "Base"};
 item1[] = {"Is_friendly",4,218,150.000000,275.000000,250.000000,325.000000,1.000000,"Is" \n "friendly"};
 item2[] = {"Is_enemy",4,218,400.000000,275.000000,500.000000,325.000000,0.000000,"Is" \n "enemy"};
 item3[] = {"Add_Respawn_Location",2,250,25.000000,275.000000,125.000000,325.000000,0.000000,"Add Respawn" \n "Location &" \n "Vehicles"};
@@ -21,7 +21,7 @@ item16[] = {"Wait_for_grace_p",4,218,25.000000,350.000000,125.000000,400.000000,
 item17[] = {"Set_time_before",2,250,25.000000,425.000000,125.000000,475.000000,0.000000,"Set time" \n "before next" \n "attack"};
 item18[] = {"Wait_for_the_att",4,218,25.000000,500.000000,125.000000,550.000000,1.000000,"Wait" \n "for the" \n "attack"};
 item19[] = {"Attack_the_base",2,250,25.000000,575.000000,125.000000,625.000000,0.000000,"Attack the" \n "base!"};
-item20[] = {"Enemies_defeated",4,4314,150.000000,425.000000,250.000000,475.000000,2.000000,"Enemies" \n "defeated"};
+item20[] = {"Enemies_defeated",4,218,150.000000,425.000000,250.000000,475.000000,2.000000,"Enemies" \n "defeated"};
 item21[] = {"No_players_remai",4,218,400.000000,500.000000,500.000000,550.000000,1.000000,"No players" \n "remaining"};
 item22[] = {"Only_1_base_left",4,218,400.000000,575.000000,500.000000,625.000000,2.000000,"Only 1" \n "base left"};
 item23[] = {"Organise_tactical",2,250,25.000000,725.000000,125.000000,775.000000,0.000000,"Organise" \n "tactical" \n "retreat"};
@@ -119,8 +119,8 @@ link60[] = {50,7};
 link61[] = {51,52};
 link62[] = {52,53};
 link63[] = {53,17};
-globals[] = {25.000000,1,0,0,0,640,480,1,73,6316128,1,-435.992279,694.094482,895.269348,136.379303,1529,1280,1};
-window[] = {2,-1,-1,-1,-1,935,182,1622,175,3,1547};
+globals[] = {25.000000,1,0,0,0,640,480,1,73,6316128,1,-486.994934,819.723877,1115.528809,21.610889,1529,1280,1};
+window[] = {2,-1,-1,-1,-1,968,208,1648,208,3,1547};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -138,6 +138,7 @@ class FSM
        "_markerText = """";" \n
        "_iconMarker = """";" \n
        "_radius = 100;" \n
+       "_area = [];" \n
        "_groups = 5;" \n
        "_respawnGroups = 0;" \n
        "_respawnTime = 300;" \n
@@ -157,6 +158,18 @@ class FSM
        "			_markerText = markerText _marker;" \n
        "			_iconMarker = format[""%1_icon"", _marker];" \n
        "			_radius = (getMarkerSize _marker) call BIS_fnc_greatestNum;" \n
+       "			" \n
+       "			_area = getMarkerSize _marker;" \n
+       "			_area = _area + [markerDir _marker];" \n
+       "			" \n
+       "			_is_rectangle = if (markerShape _marker == ""RECTANGLE"") then { true } else { false };" \n
+       "" \n
+       "			_area = _area + [_is_rectangle];" \n
+       "" \n
+       "			_area = [markerPos _marker, _area];" \n
+       "" \n
+       "			diag_log _area;" \n
+       "			" \n
        "		};" \n
        "		case ""groups"": { _groups = _x select 1; };" \n
        "		case ""respawnGroups"": { _respawnGroups = _x select 1; };" \n
@@ -598,7 +611,7 @@ class FSM
           precondition = /*%FSM<CONDPRECONDITION""">*/"_friendliesAbsent = true;" \n
            "_baseTaken = false;" \n
            "{" \n
-           "	if (alive _x && (_x distance _pos) < _radius) exitWith { _friendliesAbsent = false; };" \n
+           "	if (alive _x && [_area, _x, false] call BIS_fnc_inTrigger) exitWith { _friendliesAbsent = false; };" \n
            "} forEach playableUnits;" \n
            "" \n
            "if (_friendliesAbsent) then" \n
@@ -608,7 +621,7 @@ class FSM
            "		if (typeName _x == ""GROUP"") then" \n
            "		{" \n
            "			{" \n
-           "				if (alive _x && (_x distance _pos) < _tighterRad) exitWith { _baseTaken = true; };" \n
+           "				if (alive _x && [_area, _x, false] call BIS_fnc_inTrigger) exitWith { _baseTaken = true; };" \n
            "			} forEach (units _x);" \n
            "		};" \n
            "" \n
@@ -667,8 +680,9 @@ class FSM
           priority = 1.000000;
           to="Base_being_captu";
           precondition = /*%FSM<CONDPRECONDITION""">*/"_beingTaken = false;" \n
+           "" \n
            "{" \n
-           "	if ((_x distance _pos) < _radius) exitWith { _beingTaken = true; };" \n
+           "	if ([_area, _x, false] call BIS_fnc_inTrigger) exitWith { _beingTaken = true; };" \n
            "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"_beingTaken"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -749,8 +763,9 @@ class FSM
           priority = 0.000000;
           to="Calculate___Spawn";
           precondition = /*%FSM<CONDPRECONDITION""">*/"_beingTaken = false;" \n
+           "" \n
            "{" \n
-           "	if ((_x distance _pos) < _radius) exitWith { _beingTaken = true; };" \n
+           "	if ([_area, _x, false] call BIS_fnc_inTrigger) exitWith { _beingTaken = true; };" \n
            "} forEach playableUnits;"/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"!_beingTaken"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"[[""base"", ""enemy""], _marker, _pos, _markerText] call AW_fnc_createJIPstateMarker;" \n
