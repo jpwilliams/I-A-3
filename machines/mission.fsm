@@ -4,12 +4,12 @@
 item0[] = {"Universal_Mission",0,250,350.000000,-75.000000,450.000000,-25.000000,0.000000,"Universal" \n "Mission" \n "Machine"};
 item1[] = {"Not_looping",8,218,350.000000,0.000000,450.000000,50.000000,0.000000,"Not looping"};
 item2[] = {"Set_to_loop",5,218,475.000000,-75.000000,575.000000,-25.000000,1.000000,"Set to" \n "loop"};
-item3[] = {"Wait___",2,250,475.000000,0.000000,575.000000,50.000000,0.000000,"Wait..."};
+item3[] = {"Wait___",2,4346,475.000000,0.000000,575.000000,50.000000,0.000000,"Wait..."};
 item4[] = {"Ready_to_spawn",4,218,475.000000,75.000000,575.000000,125.000000,0.000000,"Ready to" \n "spawn"};
 item5[] = {"Wait_for_complet",4,218,475.000000,375.000000,575.000000,425.000000,0.000000,"Wait for" \n "completion"};
 item6[] = {"Get_result_from",2,250,600.000000,375.000000,700.000000,425.000000,0.000000,"Get result from" \n "FSM & delete" \n "markers"};
 item7[] = {"Let_s_choose_a_m",2,250,350.000000,75.000000,450.000000,125.000000,0.000000,"Let's choose" \n "a mission"};
-item8[] = {"Success",4,4314,525.000000,300.000000,625.000000,350.000000,1.000000,"Success"};
+item8[] = {"Success",4,218,525.000000,300.000000,625.000000,350.000000,1.000000,"Success"};
 item9[] = {"Failure",8,218,675.000000,300.000000,775.000000,350.000000,0.000000,"Failure"};
 item10[] = {"What_do__FSM_",2,250,600.000000,225.000000,700.000000,275.000000,0.000000,"What do," \n "FSM?"};
 item11[] = {"Already_exists_",4,218,225.000000,75.000000,325.000000,125.000000,1.000000,"Already" \n "exists?"};
@@ -56,8 +56,8 @@ link26[] = {19,5};
 link27[] = {20,22};
 link28[] = {21,3};
 link29[] = {23,24};
-globals[] = {25.000000,1,0,0,0,640,480,1,35,6316128,1,-149.673950,978.571289,747.325317,-248.822693,1042,1280,1};
-window[] = {2,-1,-1,-1,-1,793,26,1466,26,3,1060};
+globals[] = {25.000000,1,0,0,0,640,480,1,35,6316128,1,-149.673950,978.571289,747.325317,-248.822693,1042,920,1};
+window[] = {2,-1,-1,-1,-1,1028,-1816,-376,261,3,1060};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -124,7 +124,14 @@ class FSM
     class Wait___
     {
       name = "Wait___";
-      init = /*%FSM<STATEINIT""">*/"_timeout = (time + (random 30));"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_reverse = call compile format[""PARAMS_%1MinTimeBeforeNext > PARAMS_%1MaxTimeBeforeNext"", _type];" \n
+       "" \n
+       "_timeout = if (_reverse) then" \n
+       "{" \n
+       "	call compile format[""(time + PARAMS_%1MaxTimeBeforeNext + (random (PARAMS_%1MinTimeBeforeNext - PARAMS_%1MaxTimeBeforeNext)))"", _type]" \n
+       "} else {" \n
+       "	call compile format[""(time + PARAMS_%1MinTimeBeforeNext + (random (PARAMS_%1MaxTimeBeforeNext - PARAMS_%1MinTimeBeforeNext)))"", _type]" \n
+       "};"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -333,7 +340,6 @@ class FSM
        "_fsmHandle setFSMVariable [""_thisFSM"", _fsmHandle];" \n
        "" \n
        "_fuzzyPos = [_pos, 300] call AW_fnc_getFuzzyPos;" \n
-       "_fuzzyPos = _pos;" \n
        "" \n
        "_markers = [_type, _code, _fuzzyPos, _title] call AW_fnc_createJIPstateMarker;" \n
        "" \n

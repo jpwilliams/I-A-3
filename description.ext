@@ -200,6 +200,22 @@ class Params
 			default = 0;
 		};
 
+		class tacticalMinTimeBeforeNext
+		{
+			title = "Minimum time between Tactical Missions spawning";
+			values[] = {900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			default = 900;
+		};
+
+		class tacticalMaxTimeBeforeNext
+		{
+			title = "Maximum time between Tactical Missions spawning";
+			values[] = {900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			default = 3600;
+		};
+
 	class gap7
 	{
 		title = "";
@@ -248,6 +264,22 @@ class Params
 			default = 0;
 		};
 
+		class priorityMinTimeBeforeNext
+		{
+			title = "Minimum time between Priority Targets spawning";
+			values[] = {1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			default = 1800;
+		};
+
+		class priorityMaxTimeBeforeNext
+		{
+			title = "Maximum time between Priority Targets spawning";
+			values[] = {1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			default = 7200;
+		};
+
 	class gap9
 	{
 		title = "";
@@ -294,6 +326,22 @@ class Params
 			values[] = {0, 1};
 			texts[] = {"No", "Yes"};
 			default = 0;
+		};
+
+		class ghostMinTimeBeforeNext
+		{
+			title = "Minimum time between Ghost Missions spawning";
+			values[] = {900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			default = 900;
+		};
+
+		class ghostMaxTimeBeforeNext
+		{
+			title = "Maximum time between Ghost Missions spawning";
+			values[] = {900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			default = 3600;
 		};
 };
 
