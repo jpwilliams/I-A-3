@@ -4,38 +4,45 @@
 item0[] = {"Enemy_Artillery",0,250,200.000000,-50.000000,300.000000,0.000000,0.000000,"Enemy Artillery"};
 item1[] = {"Here_we_go_",8,218,200.000000,25.000000,300.000000,75.000000,0.000000,"Here we go!"};
 item2[] = {"Create_artillery",2,250,200.000000,100.000000,300.000000,150.000000,0.000000,"Create artillery" \n "piece / PROCESS"};
-item3[] = {"Ready_to_attack",4,218,325.000000,100.000000,425.000000,150.000000,0.000000,"Ready to attack?"};
-item4[] = {"Dead_",4,4314,75.000000,100.000000,175.000000,150.000000,1.000000,"Dead?"};
-item5[] = {"FIRE_",2,250,325.000000,175.000000,425.000000,225.000000,0.000000,"FIRE!"};
-item6[] = {"Loop_back_to_the",8,218,325.000000,250.000000,425.000000,300.000000,0.000000,"Loop back to" \n "the timer..."};
-item7[] = {"Success__Tactical",2,250,75.000000,175.000000,175.000000,225.000000,0.000000,"Success!" \n "Tactical retreat!"};
-item8[] = {"Time_to_run___",8,218,75.000000,250.000000,175.000000,300.000000,0.000000,"Time to run..."};
-item9[] = {"Set_distance_tim",2,250,75.000000,325.000000,175.000000,375.000000,0.000000,"Set distance" \n "timer"};
-item10[] = {"Ready_to_check_",4,218,200.000000,325.000000,300.000000,375.000000,0.000000,"Ready to check?"};
-item11[] = {"So____are_they_far",2,250,200.000000,400.000000,300.000000,450.000000,0.000000,"So... are they" \n "far away?"};
-item12[] = {"Not_yet_",8,218,75.000000,400.000000,175.000000,450.000000,0.000000,"Not yet!"};
-item13[] = {"Yep_",4,218,325.000000,400.000000,425.000000,450.000000,1.000000,"Yep!"};
-item14[] = {"",7,210,246.000000,271.000000,254.000000,279.000000,0.000000,""};
-item15[] = {"Clean_up_and_qui",1,250,325.000000,475.000000,425.000000,525.000000,0.000000,"Clean up" \n "and quit"};
+item3[] = {"Ready_to_attack",4,4314,325.000000,100.000000,425.000000,150.000000,0.000000,"Ready to attack?"};
+item4[] = {"Dead_",4,218,75.000000,100.000000,175.000000,150.000000,1.000000,"Dead?"};
+item5[] = {"Finding_a_target",2,250,450.000000,100.000000,550.000000,150.000000,0.000000,"Finding a" \n "target..."};
+item6[] = {"Loop_back_to_the",8,218,450.000000,325.000000,550.000000,375.000000,0.000000,"Loop back to" \n "the timer..."};
+item7[] = {"Success__Tactical",2,250,-50.000000,100.000000,50.000000,150.000000,0.000000,"Success!" \n "Tactical retreat!"};
+item8[] = {"Time_to_run___",8,218,-50.000000,175.000000,50.000000,225.000000,0.000000,"Time to run..."};
+item9[] = {"Set_distance_tim",2,250,-50.000000,250.000000,50.000000,300.000000,0.000000,"Set distance" \n "timer"};
+item10[] = {"Ready_to_check_",4,218,-50.000000,325.000000,50.000000,375.000000,0.000000,"Ready to check?"};
+item11[] = {"So____are_they_far",2,250,-175.000000,325.000000,-75.000000,375.000000,0.000000,"So... are they" \n "far away?"};
+item12[] = {"Not_yet_",8,218,-175.000000,250.000000,-75.000000,300.000000,0.000000,"Not yet!"};
+item13[] = {"Yep_",4,218,-175.000000,400.000000,-75.000000,450.000000,1.000000,"Yep!"};
+item14[] = {"",7,210,245.999985,346.000000,254.000000,354.000000,0.000000,""};
+item15[] = {"Clean_up_and_qui",1,250,-175.000000,475.000000,-75.000000,525.000000,0.000000,"Clean up" \n "and quit"};
+item16[] = {"Ready_to_fire_",4,218,450.000000,175.000000,550.000000,225.000000,0.000000,"Ready to fire!"};
+item17[] = {"FIRE_",2,250,450.000000,250.000000,550.000000,300.000000,0.000000,"FIRE!"};
+item18[] = {"Find_another_tar",4,218,450.000000,25.000000,550.000000,75.000000,1.000000,"Find" \n "another" \n "target"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
 link3[] = {2,4};
 link4[] = {3,5};
 link5[] = {4,7};
-link6[] = {5,6};
-link7[] = {6,14};
-link8[] = {7,8};
-link9[] = {8,9};
-link10[] = {9,10};
-link11[] = {10,11};
-link12[] = {11,12};
-link13[] = {11,13};
-link14[] = {12,9};
-link15[] = {13,15};
-link16[] = {14,2};
-globals[] = {25.000000,1,0,0,0,640,480,1,18,6316128,1,-340.654388,726.736389,800.166504,-207.014465,974,920,1};
-window[] = {2,-1,-1,-1,-1,1053,2690,4130,286,3,992};
+link6[] = {5,16};
+link7[] = {5,18};
+link8[] = {6,14};
+link9[] = {7,8};
+link10[] = {8,9};
+link11[] = {9,10};
+link12[] = {10,11};
+link13[] = {11,12};
+link14[] = {11,13};
+link15[] = {12,9};
+link16[] = {13,15};
+link17[] = {14,2};
+link18[] = {16,17};
+link19[] = {17,6};
+link20[] = {18,5};
+globals[] = {25.000000,1,0,0,0,640,480,1,21,6316128,1,-310.133392,664.945313,897.038208,-459.170135,701,975,1};
+window[] = {0,-1,-1,-1,-1,1277,284,2164,156,1,719};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -51,7 +58,12 @@ class FSM
        "" \n
        "_first_run = true;" \n
        "_items_to_delete = [];" \n
-       "_artillery = objNull;"/*%FSM</STATEINIT""">*/;
+       "_artillery = objNull;" \n
+       "_found_target = false;" \n
+       "_target = objNull;" \n
+       "_target_pos = [0,0,0];" \n
+       "" \n
+       "_ammo = ""32Rnd_155mm_Mo_shells"";"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -78,6 +90,7 @@ class FSM
        "	_artillery = ""O_MBT_02_arty_F"" createVehicle _pos;" \n
        "	_artillery setFuel 0;" \n
        "	_artillery setDir (random 360);" \n
+       "	_artillery addEventHandler[""Fired"", { _artillery setVehicleAmmo 1; }];" \n
        "" \n
        "	//Put a crew inside" \n
        "	createVehicleCrew _artillery;" \n
@@ -113,7 +126,10 @@ class FSM
        "	(time + PARAMS_priorityMaxTimeBeforeAttack + (random (PARAMS_priorityMinTimeBeforeAttack + PARAMS_priorityMaxTimeBeforeAttack)))" \n
        "} else {" \n
        "	(time + PARAMS_priorityMinTimeBeforeAttack + (random (PARAMS_priorityMaxTimeBeforeAttack - PARAMS_priorityMinTimeBeforeAttack)))" \n
-       "};"/*%FSM</STATEINIT""">*/;
+       "};" \n
+       "" \n
+       "//Set found target to FALSE" \n
+       "_found_target = false;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -131,52 +147,52 @@ class FSM
         class Ready_to_attack
         {
           priority = 0.000000;
-          to="FIRE_";
+          to="Finding_a_target";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"time > _timeout && alive _artillery"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+          action=/*%FSM<ACTION""">*/"_found_target = false;" \n
+           "_target = objNull;" \n
+           "_target_pos = [0,0,0];" \n
+           "" \n
+           "//Get our primary ammo" \n
+           "_shots_to_fire = (3 + (ceil (random 3)));"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
     };
     /*%FSM</STATE>*/
-    /*%FSM<STATE "FIRE_">*/
-    class FIRE_
+    /*%FSM<STATE "Finding_a_target">*/
+    class Finding_a_target
     {
-      name = "FIRE_";
-      init = /*%FSM<STATEINIT""">*/"_found_target = false;" \n
-       "_target = objNull;" \n
-       "_target_pos = [0,0,0];" \n
-       "" \n
-       "//Get our primary ammo" \n
-       "_ammo = (getArtilleryAmmo [_artillery]) select 0;" \n
-       "" \n
-       "while { !_found_target } do" \n
-       "{" \n
-       "	_target = (playableUnits select (floor (random (count playableUnits))));" \n
-       "	_target_pos = getPos _target;" \n
-       "	" \n
-       "	//If the unit is not in a vehicle and is an enemy AND is in range of our guns" \n
-       "	if (vehicle _target == _target && side _target == WEST && (_target distance _artillery) > 1000 && _target_pos inRangeOfArtillery [[_artillery], _ammo]) exitWith" \n
-       "	{" \n
-       "		_found_target = true;" \n
-       "	};" \n
-       "};" \n
-       "" \n
-       "//Use PARAMS_priorityWarnBeforeAttack to warn here?" \n
-       "" \n
-       "//Fire" \n
-       "_artillery doArtilleryFire [_target_pos, _ammo, (3 + ceil (random 3))];"/*%FSM</STATEINIT""">*/;
+      name = "Finding_a_target";
+      init = /*%FSM<STATEINIT""">*/"_timeout = (time + 1);"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "Loop_back_to_the">*/
-        class Loop_back_to_the
+        /*%FSM<LINK "Find_another_tar">*/
+        class Find_another_tar
+        {
+          priority = 1.000000;
+          to="Finding_a_target";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_found_target && time > _timeout"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_target = (playableUnits select (floor (random (count playableUnits))));" \n
+           "_target_pos = getPos _target;" \n
+           "" \n
+           "//If the unit is not in a vehicle and is an enemy AND is in range of our guns" \n
+           "if (vehicle _target == _target && side _target == WEST && (_target distance _artillery) > 1000 && _target_pos inRangeOfArtillery [[_artillery], (_ammo_choices select 0)]) exitWith" \n
+           "{" \n
+           "	_found_target = true;" \n
+           "};"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Ready_to_fire_">*/
+        class Ready_to_fire_
         {
           priority = 0.000000;
-          to="Create_artillery";
+          to="FIRE_";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_found_target"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -283,6 +299,27 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "FIRE_">*/
+    class FIRE_
+    {
+      name = "FIRE_";
+      init = /*%FSM<STATEINIT""">*/"_artillery doArtilleryFire [_target_pos, _ammo, _shots_to_fire];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Loop_back_to_the">*/
+        class Loop_back_to_the
+        {
+          priority = 0.000000;
+          to="Create_artillery";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
       };
     };
     /*%FSM</STATE>*/

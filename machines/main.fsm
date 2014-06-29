@@ -7,7 +7,7 @@ item2[] = {"Find_Random_Loca",2,250,175.000000,175.000000,275.000000,225.000000,
 item3[] = {"In_last_5_targets",4,218,300.000000,175.000000,400.000000,225.000000,3.000000,"In last 5" \n "targets?"};
 item4[] = {"Players_within_1km",4,218,175.000000,250.000000,275.000000,300.000000,2.000000,"Players within" \n "1km?"};
 item5[] = {"Location_found",8,218,50.000000,175.000000,150.000000,225.000000,1.000000,"Location" \n "found"};
-item6[] = {"Create_Enemies",2,4346,50.000000,250.000000,150.000000,300.000000,0.000000,"Create" \n "Enemies"};
+item6[] = {"Create_Enemies",2,250,50.000000,250.000000,150.000000,300.000000,0.000000,"Create" \n "Enemies"};
 item7[] = {"Is_coastal_town",4,218,-75.000000,250.000000,25.000000,300.000000,2.000000,"Is" \n "coastal" \n "town?"};
 item8[] = {"Create_Enemy_Boat",2,250,-75.000000,325.000000,25.000000,375.000000,0.000000,"Create" \n "Enemy" \n "Boat Patrols"};
 item9[] = {"Finished_creatin",8,218,-75.000000,400.000000,25.000000,450.000000,0.000000,"Finished" \n "creating"};
@@ -22,9 +22,8 @@ item17[] = {"Wait_for_complet",2,250,425.000000,325.000000,525.000000,375.000000
 item18[] = {"Next_check_",4,218,425.000000,250.000000,525.000000,300.000000,0.000000,"Next" \n "check?"};
 item19[] = {"Do_the_checks",2,250,425.000000,175.000000,525.000000,225.000000,0.000000,"Do" \n "the" \n "checks"};
 item20[] = {"Sub__objective_not",4,218,300.000000,250.000000,400.000000,300.000000,5.000000,"Sub-" \n "objective not" \n "complete?"};
-item21[] = {"Mission_over",8,218,550.000000,100.000000,650.000000,150.000000,0.000000,"Mission" \n "over"};
+item21[] = {"Mission_over",8,4314,550.000000,100.000000,650.000000,150.000000,0.000000,"Mission" \n "over"};
 item22[] = {"Enemy_not_below",4,218,550.000000,250.000000,650.000000,300.000000,4.000000,"Enemy" \n "not below" \n "threshold?"};
-item23[] = {"____FAKE____",9,920,0.000000,0.000000,0.000000,0.000000,0.000000,"____FAKE____"};
 link0[] = {0,1};
 link1[] = {1,2};
 link2[] = {2,3};
@@ -47,14 +46,14 @@ link18[] = {15,16};
 link19[] = {16,2};
 link20[] = {17,18};
 link21[] = {18,19};
-link22[] = {19,21};
-link23[] = {19,22};
-link24[] = {21,15};
-link25[] = {22,17};
-link26[] = {20,23};
-link27[] = {23,20};
-globals[] = {25.000000,1,0,0,0,640,480,1,57,6316128,1,-148.258179,845.264160,600.734436,9.627154,1003,614,1};
-window[] = {0,-1,-1,-1,-1,890,130,1570,130,1,1021};
+link22[] = {19,20};
+link23[] = {19,21};
+link24[] = {19,22};
+link25[] = {20,17};
+link26[] = {21,15};
+link27[] = {22,17};
+globals[] = {25.000000,1,0,0,0,640,480,1,57,6316128,1,-230.966644,703.784546,635.231201,-7.530579,970,667,1};
+window[] = {0,-1,-1,-1,-1,885,2751,4368,72,1,988};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -68,7 +67,10 @@ class FSM
       init = /*%FSM<STATEINIT""">*/"_previousLocations = [];" \n
        "_locations = _this select 0;" \n
        "_number = 0;" \n
-       "_priority = 10;"/*%FSM</STATEINIT""">*/;
+       "_sub_number = 0;" \n
+       "_priority = 10;" \n
+       "" \n
+       "_sub_missions = [""AW_sub""] call BIS_fnc_getCfgSubClasses;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -219,7 +221,24 @@ class FSM
     class Choose_Sub_objec
     {
       name = "Choose_Sub_objec";
-      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"_reverse = (PARAMS_main_minSubObjectivesToSpawn > PARAMS_main_maxSubObjectivesToSpawn);" \n
+       "" \n
+       "_sub_count = if (_reverse) then" \n
+       "{" \n
+       "	(floor (PARAMS_main_maxSubObjectivesToSpawn + (random (PARAMS_main_minSubObjectivesToSpawn - PARAMS_main_maxSubObjectivesToSpawn))))" \n
+       "} else {" \n
+       "	(floor (PARAMS_main_minSubObjectivesToSpawn + (random (PARAMS_main_maxSubObjectivesToSpawn - PARAMS_main_minSubObjectivesToSpawn))))" \n
+       "};" \n
+       "" \n
+       "_subs = [];" \n
+       "" \n
+       "for ""_i"" from 1 to _sub_count do" \n
+       "{" \n
+       "	_sub_mission = _sub_missions call BIS_fnc_selectRandom;" \n
+       "	_sub = [""sub"", [_sub_mission]] execFSM ""machines\mission.fsm"";" \n
+       "" \n
+       "	_subs = _subs + [_sub];" \n
+       "};"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -287,6 +306,23 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
+        /*%FSM<LINK "Sub__objective_not">*/
+        class Sub__objective_not
+        {
+          priority = 5.000000;
+          to="Wait_for_complet";
+          precondition = /*%FSM<CONDPRECONDITION""">*/"_subs_done = true;" \n
+           "" \n
+           "{" \n
+           "	if (!(CompletedFSM _x)) exitWith" \n
+           "	{" \n
+           "		_subs_done = false;" \n
+           "	};" \n
+           "} forEach _subs;"/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_subs_done"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
         /*%FSM<LINK "Enemy_not_below">*/
         class Enemy_not_below
         {
@@ -307,31 +343,9 @@ class FSM
           action=/*%FSM<ACTION""">*/"//DEBUG - Don't show taskSetState notification!" \n
            "//[""main"", ""SUCCEEDED"", false] call BIS_fnc_taskSetState;" \n
            "[[""type"", ""main_completed""], [""message"", _name], [""global"", true]] call AW_fnc_showNotification;" \n
-           "_markers call AW_fnc_deleteMarker;" \n
+           "[_markers] call AW_fnc_deleteMarker;" \n
            "" \n
            "_priority = _priority + 10;"/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "____FAKE____">*/
-    class ____FAKE____
-    {
-      name = "____FAKE____";
-      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "Sub__objective_not">*/
-        class Sub__objective_not
-        {
-          priority = 5.000000;
-          to="____FAKE____";
-          precondition = /*%FSM<CONDPRECONDITION""">*/"_subsExist = false;" \n
-           "{ if ([""sub_"", _x] call BIS_fnc_inString) exitWith { _subsExist = true; }; } forEach allMapMarkers;"/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!(CompletedFSM _subHandle)"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };

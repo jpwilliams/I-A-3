@@ -152,6 +152,38 @@ class Params
 		default = 0;
 	};
 
+		class subUnique
+		{
+			title = "Should Sub-Objectives be unique?";
+			values[] = {0, 1};
+			texts[] = {"No", "Yes"};
+			default = 0;
+		};
+
+		class main_minSubObjectivesToSpawn
+		{
+			title = "Minimum amount of Sub-Objectives to spawn";
+			values[] = {0, 1, 2, 3, 4, 5};
+			texts[] = {"0", "1", "2", "3", "4", "5"};
+			default = 1;
+		};
+
+		class main_maxSubObjectivesToSpawn
+		{
+			title = "Maximum amount of Sub-Objectives to spawn";
+			values[] = {0, 1, 2, 3, 4, 5};
+			texts[] = {"0", "1", "2", "3", "4", "5"};
+			default = 3;
+		};
+
+		class subRadius
+		{
+			title = "How large an area should Sub-Objectives cover?";
+			values[] = {50, 100, 150, 200, 250, 300, 350, 400, 450, 500};
+			texts[] = {"50m", "100m", "200m", "250m", "300m", "350m", "400m", "450m", "500m"};
+			default = 50;
+		};
+
 	class gap5
 	{
 		title = "";
@@ -200,19 +232,27 @@ class Params
 			default = 0;
 		};
 
+		class tacticaRadius
+		{
+			title = "How large an area should Tactical Missions cover?";
+			values[] = {50, 100, 150, 200, 250, 300, 350, 400, 450, 500};
+			texts[] = {"50m", "100m", "200m", "250m", "300m", "350m", "400m", "450m", "500m"};
+			default = 300;
+		};
+
 		class tacticalMinTimeBeforeNext
 		{
 			title = "Minimum time between Tactical Missions spawning";
-			values[] = {900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
-			texts[] = {"15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			values[] = {5, 900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"5 seconds (DEV)", "15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
 			default = 900;
 		};
 
 		class tacticalMaxTimeBeforeNext
 		{
 			title = "Maximum time between Tactical Missions spawning";
-			values[] = {900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
-			texts[] = {"15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			values[] = {60, 900, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"1 minute (DEV)", "15 minutes", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
 			default = 3600;
 		};
 
@@ -267,16 +307,16 @@ class Params
 		class priorityMinTimeBeforeNext
 		{
 			title = "Minimum time between Priority Targets spawning";
-			values[] = {1800, 2700, 3600, 4500, 5400, 6300, 7200};
-			texts[] = {"30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			values[] = {5, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"5 seconds (DEV)", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
 			default = 1800;
 		};
 
 		class priorityMaxTimeBeforeNext
 		{
 			title = "Maximum time between Priority Targets spawning";
-			values[] = {1800, 2700, 3600, 4500, 5400, 6300, 7200};
-			texts[] = {"30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
+			values[] = {60, 1800, 2700, 3600, 4500, 5400, 6300, 7200};
+			texts[] = {"1 minute (DEV)", "30 minutes", "45 minutes", "1 hour", "1 hour 15 minutes", "1 hour 30 minutes", "1 hour 45 minutes", "2 hours"};
 			default = 7200;
 		};
 
@@ -291,17 +331,25 @@ class Params
 		class priorityMinTimeBeforeAttack
 		{
 			title = "Minimum time bewteen Priority Target fire (if applicable)";
-			values[] = {30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300};
-			texts[] = {"30 seconds", "45 seconds", "1 minute", "1 minute 15 seconds", "1 minute 30 seconds", "1 minute 45 seconds", "2 minutes", "2 minutes 15 seconds", "2 minutes 30 seconds", "2 minutes 45 seconds", "3 minutes", "3 minutes 15 seconds", "3 minutes 30 seconds", "3 minutes 45 seconds", "4 minutes", "4 minutes 15 seconds", "4 minutes 30 seconds", "4 minutes 45 seconds", "5 minutes"};
+			values[] = {60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300};
+			texts[] = {"1 minute", "1 minute 15 seconds", "1 minute 30 seconds", "1 minute 45 seconds", "2 minutes", "2 minutes 15 seconds", "2 minutes 30 seconds", "2 minutes 45 seconds", "3 minutes", "3 minutes 15 seconds", "3 minutes 30 seconds", "3 minutes 45 seconds", "4 minutes", "4 minutes 15 seconds", "4 minutes 30 seconds", "4 minutes 45 seconds", "5 minutes"};
 			default = 60;
 		};
 
 		class priorityMaxTimeBeforeAttack
 		{
 			title = "Maximum time bewteen Priority Target fire (if applicable)";
-			values[] = {30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300};
-			texts[] = {"30 seconds", "45 seconds", "1 minute", "1 minute 15 seconds", "1 minute 30 seconds", "1 minute 45 seconds", "2 minutes", "2 minutes 15 seconds", "2 minutes 30 seconds", "2 minutes 45 seconds", "3 minutes", "3 minutes 15 seconds", "3 minutes 30 seconds", "3 minutes 45 seconds", "4 minutes", "4 minutes 15 seconds", "4 minutes 30 seconds", "4 minutes 45 seconds", "5 minutes"};
+			values[] = {60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300};
+			texts[] = {"1 minute", "1 minute 15 seconds", "1 minute 30 seconds", "1 minute 45 seconds", "2 minutes", "2 minutes 15 seconds", "2 minutes 30 seconds", "2 minutes 45 seconds", "3 minutes", "3 minutes 15 seconds", "3 minutes 30 seconds", "3 minutes 45 seconds", "4 minutes", "4 minutes 15 seconds", "4 minutes 30 seconds", "4 minutes 45 seconds", "5 minutes"};
 			default = 180;
+		};
+
+		class priorityChanceToUseAPShells
+		{
+			title = "The percent chance for enemy artillery to use AP shells in Priority Target missions";
+			values[] = {0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1};
+			texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+			default = 0.2;
 		};
 
 	class gap9
@@ -352,6 +400,14 @@ class Params
 			default = 0;
 		};
 
+		class ghostRadius
+		{
+			title = "How large an area should Ghost Missions cover?";
+			values[] = {50, 100, 150, 200, 250, 300, 350, 400, 450, 500};
+			texts[] = {"50m", "100m", "200m", "250m", "300m", "350m", "400m", "450m", "500m"};
+			default = 300;
+		};
+
 		class ghostMinTimeBeforeNext
 		{
 			title = "Minimum time between Ghost Missions spawning";
@@ -376,7 +432,7 @@ OnLoadMission = "Invade &amp; Annex is an ever-popular co-operative game-mode al
 loadScreen = "images\loadingScreen.jpg";
 overviewPicture = "images\loadingScreen.jpg";
 
-disabledAI = 1;
+disabledAI = 0;
 #include "VAS\menu.hpp"
 
 class CfgFunctions
@@ -494,6 +550,11 @@ class CfgMarkers
 	class emplacement
 	{
 		#include "config\markers\emplacement.hpp"
+	};
+
+	class sub
+	{
+		#include "config\markers\sub.hpp"
 	};
 
 	class misc
